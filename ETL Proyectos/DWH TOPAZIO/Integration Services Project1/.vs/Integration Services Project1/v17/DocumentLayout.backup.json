@@ -14,23 +14,27 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DimWorkcenter.dtsx [Dise\u00F1o]",
+              "Title": "DimWorkcenter.dtsx ",
               "DocumentMoniker": "F:\\Especializacion\\repo_especializacion_gp07\\ETL Proyectos\\DWH TOPAZIO\\Integration Services Project1\\DimWorkcenter.dtsx",
               "RelativeDocumentMoniker": "DimWorkcenter.dtsx",
-              "ToolTip": "F:\\Especializacion\\repo_especializacion_gp07\\ETL Proyectos\\DWH TOPAZIO\\Integration Services Project1\\DimWorkcenter.dtsx [Dise\u00F1o]",
-              "RelativeToolTip": "DimWorkcenter.dtsx [Dise\u00F1o]",
+              "ToolTip": "F:\\Especializacion\\repo_especializacion_gp07\\ETL Proyectos\\DWH TOPAZIO\\Integration Services Project1\\DimWorkcenter.dtsx",
+              "RelativeToolTip": "DimWorkcenter.dtsx",
               "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFTSURBVDhPY2QAgqUbD/8H0bjAu49fGG7fvZ8\u002BqTFrFlQIAv7/h\u002BgDGfDv71\u002BcePKi7f9NPZP/59VPSwNrQAJMUJogaK0pZDh\u002B6uxMdEOINqC6pR9MgwwBM6CABUqDQcWCa1AWA0NHghac//k9G0NcZAiYvWj5GjANAxgu\u002BC2rAcYwAGJz6NkxZEe7QUVQAYYBrI9vgDEMwPhffkEFsAFCsfDp\u002B9//D98jYgOqDQwIBiLI5vc/GBjefP/PwMLGARVFABQDQIEGwyCArPnNdwaGf1iSG85ARNb8\u002BhsDwweQAb\u002BBAmgAZyAia371lYHh7MnrDI9/yzA4hhQwlM29/J/BeCbYPSjpABT3MJvf//jP8BZoK4j95TfE7SD5hy\u002B\u002BMFy5846hCyyCZMDUpbugLFxABq75zPU3UDGoAaDchp7C0AHI6TDNyAaAszNRAOpnFHA2nREAjMTvHMVXB8cAAAAASUVORK5CYII=",
               "WhenOpened": "2024-10-05T17:01:57.196Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "EditorCaption": " "
             }
           ]
         }

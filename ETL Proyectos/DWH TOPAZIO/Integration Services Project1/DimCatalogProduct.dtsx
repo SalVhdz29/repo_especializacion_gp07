@@ -1,0 +1,60 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/5/2024 11:02:16 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="FRANK-PC"
+  DTS:CreatorName="FRANK-PC\Francisco Santamaria"
+  DTS:DTSID="{32E4205B-5C0C-40DE-9A2A-457A85B081F9}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="17418"
+  DTS:ObjectName="DimCatalogProduct"
+  DTS:PackageType="5"
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{ED468FDE-6988-46D6-9434-0F466E4A3E14}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Connection with postgres.odoo_user_16]"
+      DTS:CreationName="ODBC"
+      DTS:DTSID="{E5208096-1486-43B5-AB03-1D735715BA11}"
+      DTS:ObjectName="Connection with postgres.odoo_user_16">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="uid=odoo_user_16;Dsn=Connection with postgres;">
+          <DTS:Password
+            DTS:Name="pwd"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAARf0b1becC0G+jJQ0jHTtEQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADM16afQ2msFM3t0PzUk7h0c0GNQ+8pR580m4Sm11SV9AAAAAAOgAAAAAIAACAAAAC/BKLWbLPwil0QvgIgHdpncrSUcZXar78iW0TYrfMj+jAAAADcQinmn9NXI2MFQyiYvhyc2Je8xi1nRmHMDrigyVAXZEdrxll6XWu7tl0vW7FNvv1AAAAApGsDVDOu8nNyHNHm8X/e4AIBPaqNUy4w6v0UvEzgBxjbkZchMl9E6uribEJG9tSZoKLGSxzy98icnwyiDmNHmw</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.sa]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{F3E1149D-5879-4777-BDC8-E3F8A72C0323}"
+      DTS:ObjectName="localhost.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=localhost;User ID=sa;Persist Security Info=True;Application Name=SSIS-DimCatalogProduct-{F3E1149D-5879-4777-BDC8-E3F8A72C0323}localhost.sa;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAARf0b1becC0G+jJQ0jHTtEQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA0J/S21q0P/qPaDgNq9ynBPN2j04IjDsq/m7zPqnnXYQAAAAAOgAAAAAIAACAAAACZrCHdVHigVgXsrS2yeLBB0Hcy7TypVVVYBMd0moGyKiAAAAAhYiPUaqmwBN+heJuB6g86SHuJj5j6D8WRlaaNwq3OTUAAAABRsec/4P0QVB/WftaG7J51IwL/3aQRgRFk+vcpviLlXAfG6ezu/F+kYFWGMPt0uUPQNpa/Uzq13Piy56jFJiKj</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables />
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
