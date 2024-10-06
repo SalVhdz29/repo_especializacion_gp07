@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="mariadb.bn_magento"
+  DTS:DTSID="{DD62083B-46CE-4640-AA9E-4DD5D8364A3F}"
+  DTS:CreationName="ODBC">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="uid=bn_magento;Dsn=mariadb;">
+      <DTS:Password
+        DTS:Name="pwd"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA2s9iyGLx/EKWXkW9E86BQAAAAAACAAAAAAAQZgAAAAEAACAAAACies9lYR7Uzw9P79wYvnwFnRiMN0Ti27zeWqJhqsuJVQAAAAAOgAAAAAIAACAAAAAPQm5cMw1PjKzBKerLwY4kxz3y91SyBWvqN+SoTNwg5nAAAACi+lqJwIeLPTkolBxPw0UDEHiS5FlMlHGidwMLa8mnQLfxfvTERvuMu+3vMotvAzcMUwm7qqdrIMlZM/BO0uek93jXVyU5qev7GKZIr337s7aW1+FtcslqI0Pq4RZJKddsQYlejJTsBni1H5t5kgnAQAAAAJCPs6swoLBpZLfziCsaPz3tYD6VjyglOkOu0DnvEI60LlmlWQDuit2yLyIaKsP0zCBUgdGCvcECkkzmbSxSWCM=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
