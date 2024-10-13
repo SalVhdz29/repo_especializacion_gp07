@@ -1,0 +1,61 @@
+# Ignorar archivos binarios y carpetas de compilación
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+*.cache
+*.log
+
+# Ignorar carpetas temporales y de compilación de VS
+.vs/
+[Bb]uild/
+[Tt]emp/
+
+# Ignorar archivos de configuración y base de datos local
+*.mdf
+*.ldf
+*.suo
+*.user
+*.vspx
+*.psess
+*.sln.docstates
+*.log
+*.ncb
+*.sdf
+*.sln.docstates
+
+# Ignorar archivos de SSIS generados automáticamente
+*.dtproj.user
+*.dtproj.vspscc
+*.dtsx.orig
+*.dtsproj
+
+# Ignorar archivos de configuración y runtime de SSIS
+.dtsx~
+*.deploymentmanifest
+SSISPackages/
+
+# Ignorar archivos de seguridad locales
+*.publish.xml
+*.config
+*.jfm
+
+# Ignorar archivos de respaldo y temporales
+*.bak
+*.tmp
+*.temp
+~$*
+*.swp
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+*.class
+*.swp
+
+# Ignorar archivos de paquetes de integración de SSIS
+Packages/*.ispac
+Packages/obj/
+Packages/bin/
+Packages/*.bak
