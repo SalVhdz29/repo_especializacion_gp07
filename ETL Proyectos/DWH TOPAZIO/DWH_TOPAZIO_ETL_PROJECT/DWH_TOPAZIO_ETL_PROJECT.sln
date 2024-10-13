@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34902.65
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "DWH_TOPAZIO_ETL_PROJECT", "DWH_TOPAZIO_ETL_PROJECT.dtproj", "{8FA150A7-F7DF-4347-934D-017A40DCD19D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8FA150A7-F7DF-4347-934D-017A40DCD19D}.Development|Default.ActiveCfg = Development
+		{8FA150A7-F7DF-4347-934D-017A40DCD19D}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {40AA60CF-932F-4D9C-A79B-091A42E3B4E0}
+	EndGlobalSection
+EndGlobal
