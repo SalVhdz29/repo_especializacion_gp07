@@ -140,3 +140,15 @@ CREATE TABLE fact_sales (
     FOREIGN KEY (customer_id) REFERENCES dim_customer(customer_id),
     FOREIGN KEY (store_id) REFERENCES dim_store(store_id)
 );
+
+
+CREATE TABLE dim_workcenter_product (
+    workcenter_product_id INT IDENTITY(1,1) PRIMARY KEY, -- Llave primaria autoincremental
+    workcenter_id INT NOT NULL,
+    workcenter_name VARCHAR(255) NOT NULL,
+    capacity INT,
+    product_id INT NOT NULL,
+    product_name VARCHAR(255),
+    category VARCHAR(100),
+    description VARCHAR(100)
+);

@@ -1,5 +1,15 @@
--- ODOO 16
+-- dim store
+SELECT
+    s.store_id,
+    s.name AS store_name,
+    (SELECT value FROM core_config_data WHERE path = CONCAT('stores/', s.store_id, '/general/store_information/street_address')) AS address,
+    (SELECT value FROM core_config_data WHERE path = CONCAT('stores/', s.store_id, '/general/store_information/city')) AS city,
+    (SELECT value FROM core_config_data WHERE path = CONCAT('stores/', s.store_id, '/general/store_information/region_id')) AS region,
+    (SELECT value FROM core_config_data WHERE path = CONCAT('stores/', s.store_id, '/general/store_information/manager_name')) AS manager_name
+FROM
+    store s;
 
+-- dim product
 
 SELECT 
     mp.id AS lote_id, 
@@ -39,14 +49,8 @@ ORDER BY
     mp.date_finished, mp.id;
 
 
--- MAGENTO 
 
-SELECT
-ce.sku
-FROM
- catalog_product_entity ce;
-
-
+-- dim catalog product
 SELECT 
     pt.id AS product_id,
     pt.id AS product_bk,
@@ -54,3 +58,43 @@ SELECT
     pc.name AS category
 FROM product_template pt
 JOIN product_category pc ON pt.categ_id = pc.id;
+
+--dim workcenter product
+SELECT 
+    wc.id AS workcenter_id,
+    wc.name AS workcenter_name,
+    wcc.capacity,               
+    pt.id AS product_id,
+    pt.name AS product_name,
+    pc.name AS category,        
+    pt.description_sale AS description 
+FROM 
+    mrp_workcenter wc
+JOIN 
+    mrp_workcenter_capacity wcc ON wc.id = wcc.workcenter_id  
+JOIN 
+    product_template pt ON wcc.product_id = pt.id              
+JOIN 
+    product_category pc ON pt.categ_id = pc.id;
+
+
+-- dim location
+
+-- select workcenter
+SELECT 
+    wc.id AS location_bk,                -- ID del centro de trabajo (workcenter)
+    wc.name AS location_name,            -- Nombre del centro de trabajo
+    CAST('Centro' AS VARCHAR(50)) AS location_type,           -- Definir tipo como "Centro"
+    'N/A' AS region -- Región del centro de trabajo, si no existe, poner "N/A"
+FROM 
+    mrp_workcenter wc;
+
+-- select stores magento
+
+SELECT 
+    store.store_id AS location_bk,             -- ID de la tienda (store)
+    store.name AS location_name,         -- Nombre de la tienda
+    CAST('Tienda' AS CHAR(50) COLLATE latin1_general_ci) AS location_type,-- Definir tipo como "Tienda"
+    (SELECT value FROM core_config_data WHERE path = CONCAT('stores/', store.store_id, '/general/store_information/region_id')) AS region
+FROM 
+    store store;
