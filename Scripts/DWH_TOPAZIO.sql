@@ -178,9 +178,30 @@ BEGIN
         lote_cost DECIMAL(10,2),
         lote_production_time INT,
         date_production_order DATE,
-        cantidad INT
+        cantidad INT,
+        updated_at DATETIME DEFAULT GETDATE()
     );
 END
+
+
+GO 
+
+CREATE TRIGGER trg_UpdateFactLote
+ON fact_lote
+AFTER UPDATE
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    UPDATE fact_lote
+    SET updated_at = GETDATE()
+    FROM fact_lote AS fl
+    INNER JOIN inserted AS i ON fl.lote_id = i.lote_id;
+END;
+
+
+GO
+
 
 -- Crear la tabla dim_workcenter_product
 IF OBJECT_ID('dim_workcenter_product', 'U') IS NULL
@@ -492,3 +513,17 @@ FROM
 	INNER JOIN public.product_template pt ON pt.id = pp.product_tmpl_id 
 where mp.state = 'done'
 AND sml.product_id = mp.product_id;
+
+
+
+SELECT 
+    dp.lote_id,
+    COUNT(fs.order_id) AS order_count
+FROM 
+    fact_sales fs
+JOIN 
+    dim_product dp ON fs.product_id = dp.product_id
+GROUP BY 
+    dp.lote_id
+ORDER BY 
+    dp.lote_id;

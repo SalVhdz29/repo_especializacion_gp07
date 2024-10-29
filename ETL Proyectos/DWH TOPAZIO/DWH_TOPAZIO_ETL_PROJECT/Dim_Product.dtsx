@@ -11,8 +11,8 @@
   DTS:LocaleID="22538"
   DTS:ObjectName="Dim_Product"
   DTS:PackageType="5"
-  DTS:VersionBuild="33"
-  DTS:VersionGUID="{0B0735A0-0F1E-49D6-9DDC-1C26B34F0E80}">
+  DTS:VersionBuild="34"
+  DTS:VersionGUID="{A26C4AB3-99BF-43ED-B28C-1A5DC1BAFBDC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -55,7 +55,7 @@
           <DTS:Password
             DTS:Name="pwd"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm0770QEElEyMseYl/1jRdwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAWlzMpT1JWCUErOTZd726TyVoIwqqXqd6n8022rca1kQAAAAAOgAAAAAIAACAAAAC7HvP9W8SY6FsYAyqjfgYThlgC7CXnnK9AT801k40IzBAAAACV4f3JwyMx2qGJNm2Nnh6YQAAAANljjfLNemOW10gKRE8CIcRcy4Q857VVKsIMonzwBVOIm74RmUS9ADWMSwQNJoQpjsU31Yfv4xxTJDpHKOpYCmg</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm0770QEElEyMseYl/1jRdwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADYg89piXGntYgkLaQ43CGmth+qdARNycp/rSp7JUTsNwAAAAAOgAAAAAIAACAAAAAAOUd3l80Db6McoPTl/EPvsIz6LVcqSR6ki+PXvx4wDhAAAACJSQaVrTE1LpnDYDYVC37IQAAAALJoucX0PIgeftAcy1aeLdxyo2PdGgWa0kaJV0e4YKqecY6VXrmwNQWIQQ3aLnvJdfxyUEwXpMYufDjrj3Uiu2I</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -92,7 +92,7 @@
           <DTS:Password
             DTS:Name="pwd"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm0770QEElEyMseYl/1jRdwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD4dpwLiMEVssB8j+h+VrQdFKnvcggFNy7FC3F0IVhr3wAAAAAOgAAAAAIAACAAAACQ7pqw9+Zk9bYS6pKDfMAZXgozxj5Voo7+746NzatjqjAAAACx7D6NC0FQIR1H8ze5XwXyuDS/6xdqPFGW91IOozKNTjPFTKQ8chMzipLGYtkwA15AAAAA2B2sEfnPNqH9Odqr0HnNHf7N39uQDLrnMDX5ijSSXt7Mp0HM/z2GPovh5LPGkLr5NZwIcwRzcsLcsrNhsodS8A</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm0770QEElEyMseYl/1jRdwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABD9QZBXu3yw08/aOGBNPZl3+ysd4vXEBf/BTPD5OwZVgAAAAAOgAAAAAIAACAAAACxUvSujhJZzLs14elENnjZtUyhxQ7c3PY87xvECqt0cDAAAACDD5OmkmNw4/8Abk4Y5I2XPX1eYHGpLEZjB5ba6jhD2JI5HvedBveGWLgWeDVGzf9AAAAA+ObXKei4Hzt7M4smUpd3kKY8EHz7l+qSaTZKFd1fHU/8qYOA/54uTiCH5ha3IBz8gQhPGOeMOE+pGsTbEjy6bQ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -145,7 +145,7 @@
                       cachedDataType="str"
                       cachedLength="64"
                       cachedName="sku"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[sku]">
+                      lineageId="Package\Data Flow Task\script magento.Outputs[ODBC Source Output].Columns[sku]">
                       <properties>
                         <property
                           dataType="System.String"
@@ -159,7 +159,7 @@
                       cachedName="price"
                       cachedPrecision="20"
                       cachedScale="6"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[price]">
+                      lineageId="Package\Data Flow Task\script magento.Outputs[ODBC Source Output].Columns[price]">
                       <properties>
                         <property
                           dataType="System.String"
@@ -181,11 +181,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\ODBC Source"
+              refId="Package\Data Flow Task\script magento"
               componentClassID="Microsoft.SSISODBCSrc"
               contactInfo="ODBC Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="ODBC Source"
-              name="ODBC Source"
+              name="script magento"
               usesDispositions="true"
               version="1">
               <properties>
@@ -259,7 +259,7 @@ WHERE
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\ODBC Source.Connections[ODBCConnection]"
+                  refId="Package\Data Flow Task\script magento.Connections[ODBCConnection]"
                   connectionManagerID="Package.ConnectionManagers[localhost.bitnami_magento.bn_magento]"
                   connectionManagerRefId="Package.ConnectionManagers[localhost.bitnami_magento.bn_magento]"
                   description="The ODBC runtime connection used to access the database."
@@ -267,24 +267,24 @@ WHERE
               </connections>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output]"
+                  refId="Package\Data Flow Task\script magento.Outputs[ODBC Source Output]"
                   errorRowDisposition="FailComponent"
                   name="ODBC Source Output"
                   truncationRowDisposition="FailComponent">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[sku]"
+                      refId="Package\Data Flow Task\script magento.Outputs[ODBC Source Output].Columns[sku]"
                       codePage="1252"
                       dataType="str"
-                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[sku]"
+                      externalMetadataColumnId="Package\Data Flow Task\script magento.Outputs[ODBC Source Output].ExternalColumns[sku]"
                       length="64"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[sku]"
+                      lineageId="Package\Data Flow Task\script magento.Outputs[ODBC Source Output].Columns[sku]"
                       name="sku" />
                     <outputColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[price]"
+                      refId="Package\Data Flow Task\script magento.Outputs[ODBC Source Output].Columns[price]"
                       dataType="numeric"
-                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[price]"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[price]"
+                      externalMetadataColumnId="Package\Data Flow Task\script magento.Outputs[ODBC Source Output].ExternalColumns[price]"
+                      lineageId="Package\Data Flow Task\script magento.Outputs[ODBC Source Output].Columns[price]"
                       name="price"
                       precision="20"
                       scale="6" />
@@ -292,13 +292,13 @@ WHERE
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[sku]"
+                      refId="Package\Data Flow Task\script magento.Outputs[ODBC Source Output].ExternalColumns[sku]"
                       codePage="1252"
                       dataType="str"
                       length="64"
                       name="sku" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[price]"
+                      refId="Package\Data Flow Task\script magento.Outputs[ODBC Source Output].ExternalColumns[price]"
                       dataType="numeric"
                       name="price"
                       precision="20"
@@ -306,36 +306,36 @@ WHERE
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output]"
+                  refId="Package\Data Flow Task\script magento.Outputs[ODBC Source Error Output]"
                   isErrorOut="true"
                   name="ODBC Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[sku]"
+                      refId="Package\Data Flow Task\script magento.Outputs[ODBC Source Error Output].Columns[sku]"
                       codePage="1252"
                       dataType="str"
-                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[sku]"
+                      externalMetadataColumnId="Package\Data Flow Task\script magento.Outputs[ODBC Source Output].ExternalColumns[sku]"
                       length="64"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[sku]"
+                      lineageId="Package\Data Flow Task\script magento.Outputs[ODBC Source Error Output].Columns[sku]"
                       name="sku" />
                     <outputColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[price]"
+                      refId="Package\Data Flow Task\script magento.Outputs[ODBC Source Error Output].Columns[price]"
                       dataType="numeric"
-                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[price]"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[price]"
+                      externalMetadataColumnId="Package\Data Flow Task\script magento.Outputs[ODBC Source Output].ExternalColumns[price]"
+                      lineageId="Package\Data Flow Task\script magento.Outputs[ODBC Source Error Output].Columns[price]"
                       name="price"
                       precision="20"
                       scale="6" />
                     <outputColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Task\script magento.Outputs[ODBC Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Task\script magento.Outputs[ODBC Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Task\script magento.Outputs[ODBC Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Task\script magento.Outputs[ODBC Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -349,7 +349,7 @@ WHERE
               refId="Package\Data Flow Task.Paths[ODBC Source Output]"
               endId="Package\Data Flow Task\Cache Transform.Inputs[Cache Input]"
               name="ODBC Source Output"
-              startId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output]" />
+              startId="Package\Data Flow Task\script magento.Outputs[ODBC Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -1804,8 +1804,8 @@ WHERE
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="149,42"
-          Id="Package\Data Flow Task\ODBC Source"
+          Size="151,42"
+          Id="Package\Data Flow Task\script magento"
           TopLeft="834,29" />
         <NodeLayout
           Size="164,42"
@@ -1813,13 +1813,13 @@ WHERE
           TopLeft="720,167" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[ODBC Source Output]"
-          TopLeft="908.5,71">
+          TopLeft="909.5,71">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-106.5,96"
+              EndConnector="-107.5,96"
               Start="0,0"
-              End="-106.5,88.5">
+              End="-107.5,88.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -1830,13 +1830,13 @@ WHERE
                     Point2="0,48"
                     Point3="-4,48" />
                   <mssgle:LineSegment
-                    End="-102.5,48" />
+                    End="-103.5,48" />
                   <mssgle:CubicBezierSegment
-                    Point1="-102.5,48"
-                    Point2="-106.5,48"
-                    Point3="-106.5,52" />
+                    Point1="-103.5,48"
+                    Point2="-107.5,48"
+                    Point3="-107.5,52" />
                   <mssgle:LineSegment
-                    End="-106.5,88.5" />
+                    End="-107.5,88.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2024,7 +2024,7 @@ WHERE
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2034,7 +2034,7 @@ WHERE
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
