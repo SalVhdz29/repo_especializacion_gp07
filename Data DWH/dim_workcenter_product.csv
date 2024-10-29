@@ -1,0 +1,4 @@
+workcenter_id,workcenter_bk,workcenter_name,workcenter_code,capacity
+1,1,Diseño,DS01,25
+2,2,Corte,CRT01,25
+3,3,Confeccion,CFCC01,25

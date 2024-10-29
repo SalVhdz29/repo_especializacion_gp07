@@ -1,25 +1,25 @@
 ﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="10/13/2024 3:26:24 PM"
+  DTS:CreationDate="10/26/2024 10:05:29 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="LAPTOP-FF4GG7GJ"
   DTS:CreatorName="LAPTOP-FF4GG7GJ\Lenovo"
-  DTS:DTSID="{823CA716-BD06-4A0E-BB1A-27CCCA5148B3}"
+  DTS:DTSID="{E9E58815-08C2-483C-AECC-F2471FA64ACB}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5556.0"
   DTS:LocaleID="22538"
-  DTS:ObjectName="Package1"
+  DTS:ObjectName="Dim_Discount"
   DTS:PackageType="5"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{593D78E3-1382-4035-A6F9-93858698FEE2}">
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{F8BB41DE-EBFE-4B84-9269-4F262ED8DD16}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[localhost.bitnami_magento.bn_magento]"
       DTS:CreationName="ODBC"
-      DTS:DTSID="{C3C85FB1-C121-4CB1-9657-391BBB1CEE9C}"
+      DTS:DTSID="{48B0408E-36CA-473E-A313-F4CB5A8F64F4}"
       DTS:ObjectName="localhost.bitnami_magento.bn_magento">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -27,45 +27,30 @@
           <DTS:Password
             DTS:Name="pwd"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm0770QEElEyMseYl/1jRdwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADFm//CKis5PqjynkpCftX4krkcv6CkyeCOLHhw22IZLwAAAAAOgAAAAAIAACAAAAAiFJvP86wO37wgqXQ3ic/zBzwp7i4QYyPZV/nIHBrC1xAAAABz5UzqNKXjDhUR6MkN3cIVQAAAAOk/C412cg0cvrS/e6aAcC0eJLiplUUwZw3YLWiyEHTyeqthmkIIFClHtYCJ8I+t4rXH1APZYSzckuXIX8Bl6j4</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm0770QEElEyMseYl/1jRdwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABz0iBLAvZ0upbiHuB7POwizwYaeVaDCHM/G9ipgcnzwQAAAAAOgAAAAAIAACAAAAAcVLQYeQvWVH7UBLbZm9jOm8I+wDkg5+J/UX4ngMJTXhAAAAArSDW/NKqGs/932PuLh+1xQAAAADy6x1rpo/eqVIsoKMGEIPBt1F0pq7/6U6AreOhaEyNfXMxFXprrxW8BCNR6zt4LRGFbh9c8tAlo1cmTs7Pqb/Q</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[localhost.DWH TOPAZIO]"
       DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
-      DTS:DTSID="{9B8D0472-EB9A-4651-947C-3766096870AC}"
+      DTS:DTSID="{BC9ACDDC-1959-45C7-9A1E-8F724859275F}"
       DTS:ObjectName="localhost.DWH TOPAZIO">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=DWH_TOPAZIO;Integrated Security=True;Application Name=&quot;SSIS-Package1-{9B8D0472-EB9A-4651-947C-3766096870AC}localhost.DWH TOPAZIO&quot;;" />
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=DWH_TOPAZIO;Integrated Security=True;Application Name=&quot;SSIS-Dim_Discount-{BC9ACDDC-1959-45C7-9A1E-8F724859275F}localhost.DWH TOPAZIO&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[localhost.DWH_TOPAZIO]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{B002F2BF-786F-4CA4-BFD6-14A7521C0031}"
+      DTS:DTSID="{8870D1EA-2617-4636-9094-FEB11311A364}"
       DTS:ObjectName="localhost.DWH_TOPAZIO">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=DWH_TOPAZIO;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{B002F2BF-786F-4CA4-BFD6-14A7521C0031}localhost.DWH_TOPAZIO;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost.odoo16_bd.odoo_user_16]"
-      DTS:CreationName="ODBC"
-      DTS:DTSID="{98070081-1CFF-4948-82D5-9F3B2AFE7297}"
-      DTS:ObjectName="localhost.odoo16_bd.odoo_user_16">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="server=localhost;uid=odoo_user_16;Driver={PostgreSQL ANSI};database=odoo16_bd;port=5434;sslmode=disable;readonly=0;protocol=7.4;fakeoidindex=0;showoidcolumn=0;rowversioning=0;showsystemtables=0;fetch=100;unknownsizes=0;maxvarcharsize=255;maxlongvarcharsize=8190;debug=0;commlog=0;usedeclarefetch=0;textaslongvarchar=1;unknownsaslongvarchar=0;boolsaschar=1;parse=0;lfconversion=1;updatablecursors=1;trueisminus1=0;bi=0;byteaaslongvarbinary=1;useserversideprepare=1;lowercaseidentifier=0;d6=-101;optionalerrors=0;fetchrefcursors=0;xaopt=1;">
-          <DTS:Password
-            DTS:Name="pwd"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm0770QEElEyMseYl/1jRdwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAsULlG+SBJhnkoW2ILI27oWqFcy4cQOOO+bv2xfO4b7AAAAAAOgAAAAAIAACAAAAAL7y7KJQ8yoeokQGb0gCqeKgY5ue9O0uj70n16Pa38PTAAAABc7PYHG5q+HYVWOk/vaSO2lo2Dg5F4vGZrM1cZz7HdJyGUDdP8PrfNRPajefr/w4BAAAAA+lHyjPGP+ngX8rK9AmFXsmbLpM1YRz9P8oGz8DZZfTinlBF1XO3WAIviqYk1Qjn67yCE6tgPJRneVDUIzpBKYQ</DTS:Password>
-        </DTS:ConnectionManager>
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=DWH_TOPAZIO;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Dim_Discount-{8870D1EA-2617-4636-9094-FEB11311A364}localhost.DWH_TOPAZIO;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -75,7 +60,7 @@
       DTS:refId="Package\Data Flow Task"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{C62E3FBC-2721-425B-AC93-5AC8491573D6}"
+      DTS:DTSID="{C21B8A28-1958-4246-BE59-46865A054598}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Data Flow Task">
@@ -98,7 +83,7 @@
                   description="Nombre de la tabla de la base de datos de destino."
                   expressionType="Notify"
                   name="TableOrViewName"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">dim_catalog_product</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">dim_discount</property>
                 <property
                   dataType="System.Int32"
                   description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
@@ -134,74 +119,94 @@
                   name="Entrada de destino de ADO NET">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[product_name]"
+                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[discount_type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="discount_type"
+                      externalMetadataColumnId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[discount_type]"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[discount_type]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[discount_name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
-                      cachedName="product_name"
-                      externalMetadataColumnId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[product_name]"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[product_name]" />
+                      cachedName="discount_name"
+                      externalMetadataColumnId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[discount_name]"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[discount_name]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[category]"
+                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[discount_details]"
                       cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
-                      cachedName="category"
-                      externalMetadataColumnId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[category]"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[category]" />
+                      cachedDataType="text"
+                      cachedName="discount_details"
+                      externalMetadataColumnId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[discount_details]"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[discount_details]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[description]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
-                      cachedName="description"
-                      externalMetadataColumnId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[description]"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[description]" />
+                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[discount_value]"
+                      cachedDataType="numeric"
+                      cachedName="discount_value"
+                      cachedPrecision="20"
+                      cachedScale="6"
+                      externalMetadataColumnId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[discount_value]"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[discount_value]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[sku]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="64"
-                      cachedName="sku"
-                      externalMetadataColumnId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[sku]"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[sku]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[product_id]"
+                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[rule_id]"
                       cachedDataType="i4"
-                      cachedName="product_id"
-                      externalMetadataColumnId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[product_bk]"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[product_id]" />
+                      cachedName="rule_id"
+                      externalMetadataColumnId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[discount_bk]"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[rule_id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[from_date]"
+                      cachedDataType="dbDate"
+                      cachedName="from_date"
+                      externalMetadataColumnId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[valid_from]"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[from_date]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[to_date]"
+                      cachedDataType="dbDate"
+                      cachedName="to_date"
+                      externalMetadataColumnId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[valid_to]"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[to_date]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[product_id]"
+                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[discount_id]"
                       dataType="i4"
-                      name="product_id" />
+                      name="discount_id" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[product_bk]"
+                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[discount_bk]"
                       dataType="i4"
-                      name="product_bk" />
+                      name="discount_bk" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[product_name]"
+                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[discount_type]"
                       dataType="wstr"
                       length="255"
-                      name="product_name" />
+                      name="discount_type" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[category]"
+                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[discount_name]"
                       dataType="wstr"
                       length="255"
-                      name="category" />
+                      name="discount_name" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[sku]"
+                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[discount_value]"
+                      dataType="numeric"
+                      name="discount_value"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[discount_details]"
                       dataType="wstr"
                       length="255"
-                      name="sku" />
+                      name="discount_details" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[description]"
-                      dataType="wstr"
-                      length="255"
-                      name="description" />
+                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[valid_from]"
+                      dataType="dbTimeStamp"
+                      name="valid_from" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[valid_to]"
+                      dataType="dbTimeStamp"
+                      name="valid_to" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -231,11 +236,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\Filtrando Nuevos Productos"
+              refId="Package\Data Flow Task\Filtrando nuevos Discount"
               componentClassID="Microsoft.Lookup"
               contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
               description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-              name="Filtrando Nuevos Productos"
+              name="Filtrando nuevos Discount"
               usesDispositions="true"
               version="6">
               <properties>
@@ -244,14 +249,14 @@
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[dim_catalog_product]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[dim_discount]</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[dim_catalog_product]) [refTable]
-where [refTable].[sku] = ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[dim_discount]) [refTable]
+where [refTable].[discount_bk] = ? and [refTable].[discount_type] = ? and [refTable].[discount_name] = ? and [refTable].[valid_from] = ? and [refTable].[valid_to] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the type of connection used to access the reference dataset."
@@ -282,12 +287,12 @@ where [refTable].[sku] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="product_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="product_bk" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="product_name" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="category" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="sku" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="description" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="discount_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="discount_bk" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="discount_type" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="discount_name" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="discount_value" dataType="DT_NUMERIC" length="0" precision="10" scale="2" codePage="0"/&gt;&lt;referenceColumn name="discount_details" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="valid_from" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="valid_to" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[sku]};</property>
+                  name="ParameterMap">#{Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[rule_id]};#{Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[discount_type]};#{Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[discount_name]};#{Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[from_date]};#{Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[to_date]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -299,7 +304,7 @@ where [refTable].[sku] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\Filtrando Nuevos Productos.Connections[OleDbConnection]"
+                  refId="Package\Data Flow Task\Filtrando nuevos Discount.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[localhost.DWH_TOPAZIO]"
                   connectionManagerRefId="Package.ConnectionManagers[localhost.DWH_TOPAZIO]"
                   description="Connection manager used to access lookup data."
@@ -307,21 +312,87 @@ where [refTable].[sku] = ?</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\Filtrando Nuevos Productos.Inputs[Lookup Input]"
+                  refId="Package\Data Flow Task\Filtrando nuevos Discount.Inputs[Lookup Input]"
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Filtrando Nuevos Productos.Inputs[Lookup Input].Columns[sku]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="64"
-                      cachedName="sku"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[sku]">
+                      refId="Package\Data Flow Task\Filtrando nuevos Discount.Inputs[Lookup Input].Columns[rule_id]"
+                      cachedDataType="i4"
+                      cachedName="rule_id"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[rule_id]">
                       <properties>
                         <property
                           dataType="System.String"
                           description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">sku</property>
+                          name="JoinToReferenceColumn">discount_bk</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Filtrando nuevos Discount.Inputs[Lookup Input].Columns[discount_type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="discount_type"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[discount_type]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">discount_type</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Filtrando nuevos Discount.Inputs[Lookup Input].Columns[discount_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="discount_name"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[discount_name]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">discount_name</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Filtrando nuevos Discount.Inputs[Lookup Input].Columns[from_date]"
+                      cachedDataType="dbDate"
+                      cachedName="from_date"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[from_date]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">valid_from</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Filtrando nuevos Discount.Inputs[Lookup Input].Columns[to_date]"
+                      cachedDataType="dbDate"
+                      cachedName="to_date"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[to_date]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">valid_to</property>
                         <property
                           dataType="System.Null"
                           description="Specifies the column in the reference table from which a column is copied."
@@ -334,38 +405,38 @@ where [refTable].[sku] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\Filtrando Nuevos Productos.Outputs[Lookup Match Output]"
+                  refId="Package\Data Flow Task\Filtrando nuevos Discount.Outputs[Lookup Match Output]"
                   errorOrTruncationOperation="Lookup"
                   exclusionGroup="1"
                   name="Lookup Match Output"
-                  synchronousInputId="Package\Data Flow Task\Filtrando Nuevos Productos.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Data Flow Task\Filtrando nuevos Discount.Inputs[Lookup Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Task\Filtrando Nuevos Productos.Outputs[Lookup No Match Output]"
+                  refId="Package\Data Flow Task\Filtrando nuevos Discount.Outputs[Lookup No Match Output]"
                   description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
                   exclusionGroup="1"
                   name="Lookup No Match Output"
-                  synchronousInputId="Package\Data Flow Task\Filtrando Nuevos Productos.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Data Flow Task\Filtrando nuevos Discount.Inputs[Lookup Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Task\Filtrando Nuevos Productos.Outputs[Lookup Error Output]"
+                  refId="Package\Data Flow Task\Filtrando nuevos Discount.Outputs[Lookup Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Lookup Error Output"
-                  synchronousInputId="Package\Data Flow Task\Filtrando Nuevos Productos.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Data Flow Task\Filtrando nuevos Discount.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Filtrando Nuevos Productos.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Task\Filtrando nuevos Discount.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Filtrando Nuevos Productos.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Task\Filtrando nuevos Discount.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Filtrando Nuevos Productos.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Task\Filtrando nuevos Discount.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Filtrando Nuevos Productos.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Task\Filtrando nuevos Discount.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -392,29 +463,17 @@ where [refTable].[sku] = ?</property>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT
-    p.entity_id AS product_id,
-    pn.value AS product_name,
-    catp.category_id,
-    cat.value AS category,
-    p.sku,
-    CAST(REPLACE(REPLACE(pd.value, '&lt;p&gt;', ''), '&lt;/p&gt;', '') AS VARCHAR(255)) AS description 
-FROM
-    catalog_product_entity AS p
-LEFT JOIN
-    catalog_product_entity_varchar AS pn ON p.entity_id = pn.entity_id
-    AND pn.attribute_id = (SELECT attribute_id FROM eav_attribute WHERE attribute_code = 'name' AND entity_type_id = 4)
-LEFT JOIN
-    catalog_category_product AS catp ON p.entity_id = catp.product_id
-LEFT JOIN
-    catalog_category_entity_varchar AS cat ON catp.category_id = cat.entity_id
-    AND cat.attribute_id = (SELECT attribute_id FROM eav_attribute WHERE attribute_code = 'name' AND entity_type_id = 3)
-LEFT JOIN
-    catalog_category_entity_text AS pd ON p.entity_id = pd.entity_id
-    AND pd.attribute_id = (SELECT attribute_id FROM eav_attribute WHERE attribute_code = 'description' AND entity_type_id = 3)
-WHERE
-    cat.value IS NOT NULL;
-</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT 
+    rule_id,
+    'catalog_rule' AS discount_type,
+    name AS discount_name,
+    description AS discount_details,
+    discount_amount AS discount_value,
+    'Y' AS active_flag,
+    from_date,
+    to_date
+FROM 
+    catalogrule;</property>
                 <property
                   dataType="System.Int32"
                   description="Specify the number of rows fetched per batch."
@@ -478,84 +537,106 @@ WHERE
                   truncationRowDisposition="FailComponent">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[product_id]"
+                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[rule_id]"
                       dataType="i4"
-                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[product_id]"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[product_id]"
-                      name="product_id" />
+                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[rule_id]"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[rule_id]"
+                      name="rule_id" />
                     <outputColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[product_name]"
+                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[discount_type]"
                       codePage="1252"
                       dataType="str"
-                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[product_name]"
+                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[discount_type]"
+                      length="12"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[discount_type]"
+                      name="discount_type" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[discount_name]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[discount_name]"
                       length="255"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[product_name]"
-                      name="product_name" />
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[discount_name]"
+                      name="discount_name" />
                     <outputColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[category]"
+                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[discount_details]"
+                      codePage="1252"
+                      dataType="text"
+                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[discount_details]"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[discount_details]"
+                      name="discount_details" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[discount_value]"
+                      dataType="numeric"
+                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[discount_value]"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[discount_value]"
+                      name="discount_value"
+                      precision="20"
+                      scale="6" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[active_flag]"
                       codePage="1252"
                       dataType="str"
-                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[category]"
-                      length="255"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[category]"
-                      name="category" />
+                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[active_flag]"
+                      length="1"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[active_flag]"
+                      name="active_flag" />
                     <outputColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[description]"
-                      codePage="1252"
-                      dataType="str"
-                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[description]"
-                      length="255"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[description]"
-                      name="description" />
+                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[from_date]"
+                      dataType="dbDate"
+                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[from_date]"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[from_date]"
+                      name="from_date" />
                     <outputColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[sku]"
-                      codePage="1252"
-                      dataType="str"
-                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[sku]"
-                      length="64"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[sku]"
-                      name="sku" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[category_id]"
-                      dataType="ui4"
-                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[category_id]"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[category_id]"
-                      name="category_id" />
+                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[to_date]"
+                      dataType="dbDate"
+                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[to_date]"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[to_date]"
+                      name="to_date" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[product_id]"
+                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[rule_id]"
                       dataType="ui4"
-                      name="product_id" />
+                      name="rule_id" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[product_name]"
+                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[discount_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="discount_type" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[discount_name]"
                       codePage="1252"
                       dataType="str"
                       length="255"
-                      name="product_name" />
+                      name="discount_name" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[category]"
+                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[discount_details]"
+                      codePage="1252"
+                      dataType="text"
+                      name="discount_details" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[discount_value]"
+                      dataType="numeric"
+                      name="discount_value"
+                      precision="20"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[active_flag]"
                       codePage="1252"
                       dataType="str"
-                      length="255"
-                      name="category" />
+                      length="1"
+                      name="active_flag" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[description]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
-                      name="description" />
+                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[from_date]"
+                      dataType="dbDate"
+                      name="from_date" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[sku]"
-                      codePage="1252"
-                      dataType="str"
-                      length="64"
-                      name="sku" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[category_id]"
-                      dataType="ui4"
-                      name="category_id" />
+                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[to_date]"
+                      dataType="dbDate"
+                      name="to_date" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -564,49 +645,62 @@ WHERE
                   name="ODBC Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[product_id]"
+                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[rule_id]"
                       dataType="ui4"
-                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[product_id]"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[product_id]"
-                      name="product_id" />
+                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[rule_id]"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[rule_id]"
+                      name="rule_id" />
                     <outputColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[product_name]"
+                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[discount_type]"
                       codePage="1252"
                       dataType="str"
-                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[product_name]"
+                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[discount_type]"
+                      length="12"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[discount_type]"
+                      name="discount_type" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[discount_name]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[discount_name]"
                       length="255"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[product_name]"
-                      name="product_name" />
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[discount_name]"
+                      name="discount_name" />
                     <outputColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[category]"
+                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[discount_details]"
+                      codePage="1252"
+                      dataType="text"
+                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[discount_details]"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[discount_details]"
+                      name="discount_details" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[discount_value]"
+                      dataType="numeric"
+                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[discount_value]"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[discount_value]"
+                      name="discount_value"
+                      precision="20"
+                      scale="6" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[active_flag]"
                       codePage="1252"
                       dataType="str"
-                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[category]"
-                      length="255"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[category]"
-                      name="category" />
+                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[active_flag]"
+                      length="1"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[active_flag]"
+                      name="active_flag" />
                     <outputColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[description]"
-                      codePage="1252"
-                      dataType="str"
-                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[description]"
-                      length="255"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[description]"
-                      name="description" />
+                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[from_date]"
+                      dataType="dbDate"
+                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[from_date]"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[from_date]"
+                      name="from_date" />
                     <outputColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[sku]"
-                      codePage="1252"
-                      dataType="str"
-                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[sku]"
-                      length="64"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[sku]"
-                      name="sku" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[category_id]"
-                      dataType="ui4"
-                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[category_id]"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[category_id]"
-                      name="category_id" />
+                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[to_date]"
+                      dataType="dbDate"
+                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[to_date]"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[to_date]"
+                      name="to_date" />
                     <outputColumn
                       refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -630,10 +724,10 @@ WHERE
               refId="Package\Data Flow Task.Paths[Lookup No Match Output]"
               endId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]"
               name="Lookup No Match Output"
-              startId="Package\Data Flow Task\Filtrando Nuevos Productos.Outputs[Lookup No Match Output]" />
+              startId="Package\Data Flow Task\Filtrando nuevos Discount.Outputs[Lookup No Match Output]" />
             <path
               refId="Package\Data Flow Task.Paths[ODBC Source Output]"
-              endId="Package\Data Flow Task\Filtrando Nuevos Productos.Inputs[Lookup Input]"
+              endId="Package\Data Flow Task\Filtrando nuevos Discount.Inputs[Lookup Input]"
               name="ODBC Source Output"
               startId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output]" />
           </paths>
@@ -666,43 +760,43 @@ WHERE
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="149,42"
-          Id="Package\Data Flow Task\ODBC Source"
-          TopLeft="5.5,5.5" />
-        <NodeLayout
           Size="183,42"
           Id="Package\Data Flow Task\Destino de ADO NET"
-          TopLeft="584,265" />
+          TopLeft="803,299" />
         <NodeLayout
-          Size="215,42"
-          Id="Package\Data Flow Task\Filtrando Nuevos Productos"
-          TopLeft="274,142" />
+          Size="149,42"
+          Id="Package\Data Flow Task\ODBC Source"
+          TopLeft="272,153" />
+        <NodeLayout
+          Size="206,42"
+          Id="Package\Data Flow Task\Filtrando nuevos Discount"
+          TopLeft="502,243" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[ODBC Source Output]"
-          TopLeft="80,47.5">
+          TopLeft="346.5,195">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="301.5,94.5"
+              EndConnector="258.5,48"
               Start="0,0"
-              End="301.5,87">
+              End="258.5,40.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,43.25" />
+                    End="0,20" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,43.25"
-                    Point2="0,47.25"
-                    Point3="4,47.25" />
+                    Point1="0,20"
+                    Point2="0,24"
+                    Point3="4,24" />
                   <mssgle:LineSegment
-                    End="297.5,47.25" />
+                    End="254.5,24" />
                   <mssgle:CubicBezierSegment
-                    Point1="297.5,47.25"
-                    Point2="301.5,47.25"
-                    Point3="301.5,51.25" />
+                    Point1="254.5,24"
+                    Point2="258.5,24"
+                    Point3="258.5,28" />
                   <mssgle:LineSegment
-                    End="301.5,87" />
+                    End="258.5,40.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -713,37 +807,37 @@ WHERE
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Lookup No Match Output]"
-          TopLeft="381.5,184">
+          TopLeft="708,264">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="294,81"
+              EndConnector="95,56"
               Start="0,0"
-              End="294,73.5">
+              End="87.5,56">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36.5" />
+                    End="43.5,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,36.5"
-                    Point2="0,40.5"
-                    Point3="4,40.5" />
+                    Point1="43.5,0"
+                    Point2="47.5,0"
+                    Point3="47.5,4" />
                   <mssgle:LineSegment
-                    End="290,40.5" />
+                    End="47.5,52" />
                   <mssgle:CubicBezierSegment
-                    Point1="290,40.5"
-                    Point2="294,40.5"
-                    Point3="294,44.5" />
+                    Point1="47.5,52"
+                    Point2="47.5,56"
+                    Point3="51.5,56" />
                   <mssgle:LineSegment
-                    End="294,73.5" />
+                    End="87.5,56" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="91.19361328125,45.5,111.6127734375,11.609375"
+              BoundingBox="-8.30638671875,-17.609375,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -751,7 +845,7 @@ WHERE
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Filtrando Nuevos Productos">
+    design-time-name="Package\Data Flow Task\Filtrando nuevos Discount">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -761,7 +855,7 @@ WHERE
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[dim_catalog_product]</Value>
+          type="q3:string">[dbo].[dim_discount]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>

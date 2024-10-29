@@ -1,0 +1,4 @@
+customer_id,customer_bk,customer_name,customer_address,customer_city,customer_region,customer_email,customer_segment,loyalty_status
+0,0,Guest,Unknown,Unknown,Unknown,guest@unknown.com,Unregistered,N/A
+1,1,Mauricio Ordoñez,Res. Altos Del Escorial,Mejicanos,No Region,vasquez9600@gmail.com,Leal,Activo
+2,2,Orlando Proud,Calle la mascota,San Salvador,No Region,df64@gmail.com,Nuevo,Activo

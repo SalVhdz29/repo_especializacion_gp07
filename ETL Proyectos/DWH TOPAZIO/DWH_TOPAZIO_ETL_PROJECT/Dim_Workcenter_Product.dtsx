@@ -1,35 +1,62 @@
 ﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="10/13/2024 6:09:05 PM"
+  DTS:CreationDate="10/27/2024 12:45:00 AM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="LAPTOP-FF4GG7GJ"
   DTS:CreatorName="LAPTOP-FF4GG7GJ\Lenovo"
-  DTS:DTSID="{3E5D160D-A5DC-4C36-AC60-29304157FCB5}"
+  DTS:DTSID="{9681F5D1-CC4D-44D0-864B-6F3E4535718D}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5556.0"
   DTS:LocaleID="22538"
-  DTS:ObjectName="Package1"
+  DTS:ObjectName="Dim_Workcenter_Product"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{6CFB04BF-2542-46C2-915D-15312ECA017F}">
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{97F853AC-0D16-4D44-9B3D-5D3530041301}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.bitnami_magento.bn_magento]"
+      DTS:CreationName="ODBC"
+      DTS:DTSID="{1D27C4A2-12E3-4FFD-896C-C4B39545A1B9}"
+      DTS:ObjectName="localhost.bitnami_magento.bn_magento">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="server=localhost;uid=bn_magento;Driver={MySQL ODBC 9.0 ANSI Driver};database=bitnami_magento;db=bitnami_magento;no_schema=1;port=3307;user=bn_magento;">
+          <DTS:Password
+            DTS:Name="pwd"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm0770QEElEyMseYl/1jRdwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABBzZ120IXPcYtB/OA09mX0GBmrJJ+xpMbxJtHtv3bOZAAAAAAOgAAAAAIAACAAAADLGZdiVHlm6HmUAKyUA4YGIXBDIMWktK1JWaqS5n+CBRAAAAB7xgpjH2ZYYZT08TE07uQQQAAAAHXmhC3zGTKhMYnc+1ucTsQYTT4FslHaOIhqMkIDajtdBgoeAnOyyl0jW9fxh+ZkzKJd57G7BeiXQ82xXNR/E04</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[localhost.DWH TOPAZIO]"
       DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
-      DTS:DTSID="{C979C5EA-52D4-41AF-BC7B-DDD6876EB836}"
+      DTS:DTSID="{201E4958-8081-4DAB-9653-DEF84CB6A075}"
       DTS:ObjectName="localhost.DWH TOPAZIO">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=DWH TOPAZIO;Integrated Security=True;Application Name=SSIS-Package1-{C979C5EA-52D4-41AF-BC7B-DDD6876EB836}localhost.DWH TOPAZIO;" />
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=DWH_TOPAZIO;Integrated Security=True;Application Name=&quot;SSIS-Package1-{201E4958-8081-4DAB-9653-DEF84CB6A075}localhost.DWH TOPAZIO&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.DWH_TOPAZIO]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8919ED5B-0246-4D37-A8E6-84E09D7218DA}"
+      DTS:ObjectName="localhost.DWH_TOPAZIO">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=DWH_TOPAZIO;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Dim_Workcenter_Product-{8919ED5B-0246-4D37-A8E6-84E09D7218DA}localhost.DWH_TOPAZIO;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[localhost.odoo16_bd.odoo_user_16]"
       DTS:CreationName="ODBC"
-      DTS:DTSID="{2B1B551A-AC7B-4027-9F7D-2046A427FE16}"
+      DTS:DTSID="{A8388CE8-CC11-4AC3-B9B0-D95245D736E6}"
       DTS:ObjectName="localhost.odoo16_bd.odoo_user_16">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -37,7 +64,7 @@
           <DTS:Password
             DTS:Name="pwd"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm0770QEElEyMseYl/1jRdwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAArJ6e/9tGwbsI9nVf2VDH85rxuGsa556oRncOjFAq93AAAAAAOgAAAAAIAACAAAAAzCY0/47GVTDJuYmnXOUqZecmZdSdEleo4MIiTyg+I4TAAAABQ8HC1M4ZZ3831RlYkzCLiYqDPScLH0C0t/55OW4OoH9qH1juqkh/CKN0TLVBIWKZAAAAAyXrgwCHo4Z8HRD+D8rnjDBbWo8Fe+YhwQOM/lx3l54f+NDNJwHKQeuegVpYsK7NnW9B4fmAiB3SdZ/BYUos8Ig</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm0770QEElEyMseYl/1jRdwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB21tgN2KAvzwigg2ECHXSwD+zPgI5OyFn+syyv406mpwAAAAAOgAAAAAIAACAAAABQVRUBw5nzhmMdswMpXdawfld1RcT5YFefo7GAZF/ByjAAAAAIsfoNFEZwlniw9U/TuqAYTUBXwGJsgXAeVC8RokwrjtZnyQ5iOEBhmLOM0utulkxAAAAABySWAFBNIMa+FRJh2r7FWbcQ8Rd9xDSvnqB5gCyRwBzwYVrbhJZllLkLRTzuF20A9/5ztSFG1xSovMSNSwGPSg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -48,7 +75,7 @@
       DTS:refId="Package\Data Flow Task"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{4E455EF8-2715-420E-9E99-A53AB6FA18B0}"
+      DTS:DTSID="{405AC287-83C0-4600-8C0A-8EFF8312991D}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Data Flow Task">
@@ -107,11 +134,11 @@
                   name="Entrada de destino de ADO NET">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[workcenter_id]"
+                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[workcenter_bk]"
                       cachedDataType="i4"
-                      cachedName="workcenter_id"
-                      externalMetadataColumnId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[workcenter_id]"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[workcenter_id]" />
+                      cachedName="workcenter_bk"
+                      externalMetadataColumnId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[workcenter_bk]"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[workcenter_bk]" />
                     <inputColumn
                       refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[workcenter_name]"
                       cachedCodepage="1252"
@@ -127,74 +154,38 @@
                       externalMetadataColumnId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[capacity]"
                       lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[capacity]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[product_id]"
-                      cachedDataType="i4"
-                      cachedName="product_id"
-                      externalMetadataColumnId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[product_id]"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[product_id]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[product_name]"
+                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[workcenter_code]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
-                      cachedName="product_name"
-                      externalMetadataColumnId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[product_name]"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[product_name]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[category]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
-                      cachedName="category"
-                      externalMetadataColumnId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[category]"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[category]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[description]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
-                      cachedName="description"
-                      externalMetadataColumnId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[description]"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[description]" />
+                      cachedName="workcenter_code"
+                      externalMetadataColumnId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[workcenter_code]"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[workcenter_code]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[workcenter_product_id]"
-                      dataType="i4"
-                      name="workcenter_product_id" />
-                    <externalMetadataColumn
                       refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[workcenter_id]"
                       dataType="i4"
                       name="workcenter_id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[workcenter_bk]"
+                      dataType="i4"
+                      name="workcenter_bk" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[workcenter_name]"
                       dataType="wstr"
                       length="255"
                       name="workcenter_name" />
                     <externalMetadataColumn
+                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[workcenter_code]"
+                      dataType="wstr"
+                      length="255"
+                      name="workcenter_code" />
+                    <externalMetadataColumn
                       refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[capacity]"
                       dataType="i4"
                       name="capacity" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[product_id]"
-                      dataType="i4"
-                      name="product_id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[product_name]"
-                      dataType="wstr"
-                      length="255"
-                      name="product_name" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[category]"
-                      dataType="wstr"
-                      length="100"
-                      name="category" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[description]"
-                      dataType="wstr"
-                      length="100"
-                      name="description" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -224,6 +215,165 @@
               </outputs>
             </component>
             <component
+              refId="Package\Data Flow Task\Filtrando Workcenters"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Filtrando Workcenters"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[dim_workcenter_product]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[dim_workcenter_product]) [refTable]
+where [refTable].[workcenter_bk] = ? and [refTable].[workcenter_name] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="workcenter_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="workcenter_bk" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="workcenter_name" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="capacity" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[workcenter_bk]};#{Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[workcenter_name]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Filtrando Workcenters.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.DWH_TOPAZIO]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.DWH_TOPAZIO]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Filtrando Workcenters.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Filtrando Workcenters.Inputs[Lookup Input].Columns[workcenter_bk]"
+                      cachedDataType="i4"
+                      cachedName="workcenter_bk"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[workcenter_bk]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">workcenter_bk</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Filtrando Workcenters.Inputs[Lookup Input].Columns[workcenter_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="workcenter_name"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[workcenter_name]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">workcenter_name</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Filtrando Workcenters.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Data Flow Task\Filtrando Workcenters.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Filtrando Workcenters.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Data Flow Task\Filtrando Workcenters.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Filtrando Workcenters.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Data Flow Task\Filtrando Workcenters.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Filtrando Workcenters.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Filtrando Workcenters.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Filtrando Workcenters.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Filtrando Workcenters.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Data Flow Task\ODBC Source"
               componentClassID="Microsoft.SSISODBCSrc"
               contactInfo="ODBC Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
@@ -243,21 +393,12 @@
                   expressionType="Notify"
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT 
-    wc.id AS workcenter_id,
+    wc.id AS workcenter_bk,            
     wc.name AS workcenter_name,
-    wcc.capacity,               
-    pt.id AS product_id,
-    pt.name AS product_name,
-    pc.name AS category,        
-    pt.description_sale AS description 
+    wc.code AS workcenter_code,
+    wc.default_capacity AS capacity
 FROM 
-    mrp_workcenter wc
-JOIN 
-    mrp_workcenter_capacity wcc ON wc.id = wcc.workcenter_id  
-JOIN 
-    product_template pt ON wcc.product_id = pt.id              
-JOIN 
-    product_category pc ON pt.categ_id = pc.id;</property>
+    mrp_workcenter AS wc;</property>
                 <property
                   dataType="System.Int32"
                   description="Specify the number of rows fetched per batch."
@@ -321,11 +462,11 @@ JOIN
                   truncationRowDisposition="FailComponent">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[workcenter_id]"
+                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[workcenter_bk]"
                       dataType="i4"
-                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[workcenter_id]"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[workcenter_id]"
-                      name="workcenter_id" />
+                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[workcenter_bk]"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[workcenter_bk]"
+                      name="workcenter_bk" />
                     <outputColumn
                       refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[workcenter_name]"
                       codePage="1252"
@@ -341,42 +482,20 @@ JOIN
                       lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[capacity]"
                       name="capacity" />
                     <outputColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[product_id]"
-                      dataType="i4"
-                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[product_id]"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[product_id]"
-                      name="product_id" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[product_name]"
+                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[workcenter_code]"
                       codePage="1252"
                       dataType="str"
-                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[product_name]"
+                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[workcenter_code]"
                       length="255"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[product_name]"
-                      name="product_name" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[category]"
-                      codePage="1252"
-                      dataType="str"
-                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[category]"
-                      length="255"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[category]"
-                      name="category" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[description]"
-                      codePage="1252"
-                      dataType="str"
-                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[description]"
-                      length="255"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[description]"
-                      name="description" />
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[workcenter_code]"
+                      name="workcenter_code" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[workcenter_id]"
+                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[workcenter_bk]"
                       dataType="i4"
-                      name="workcenter_id" />
+                      name="workcenter_bk" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[workcenter_name]"
                       codePage="1252"
@@ -388,27 +507,11 @@ JOIN
                       dataType="r8"
                       name="capacity" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[product_id]"
-                      dataType="i4"
-                      name="product_id" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[product_name]"
+                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[workcenter_code]"
                       codePage="1252"
                       dataType="str"
                       length="255"
-                      name="product_name" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[category]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
-                      name="category" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[description]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
-                      name="description" />
+                      name="workcenter_code" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -417,11 +520,11 @@ JOIN
                   name="ODBC Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[workcenter_id]"
+                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[workcenter_bk]"
                       dataType="i4"
-                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[workcenter_id]"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[workcenter_id]"
-                      name="workcenter_id" />
+                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[workcenter_bk]"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[workcenter_bk]"
+                      name="workcenter_bk" />
                     <outputColumn
                       refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[workcenter_name]"
                       codePage="1252"
@@ -437,35 +540,13 @@ JOIN
                       lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[capacity]"
                       name="capacity" />
                     <outputColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[product_id]"
-                      dataType="i4"
-                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[product_id]"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[product_id]"
-                      name="product_id" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[product_name]"
+                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[workcenter_code]"
                       codePage="1252"
                       dataType="str"
-                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[product_name]"
+                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[workcenter_code]"
                       length="255"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[product_name]"
-                      name="product_name" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[category]"
-                      codePage="1252"
-                      dataType="str"
-                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[category]"
-                      length="255"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[category]"
-                      name="category" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[description]"
-                      codePage="1252"
-                      dataType="str"
-                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[description]"
-                      length="255"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[description]"
-                      name="description" />
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[workcenter_code]"
+                      name="workcenter_code" />
                     <outputColumn
                       refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -486,8 +567,13 @@ JOIN
           </components>
           <paths>
             <path
-              refId="Package\Data Flow Task.Paths[ODBC Source Output]"
+              refId="Package\Data Flow Task.Paths[Lookup No Match Output]"
               endId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]"
+              name="Lookup No Match Output"
+              startId="Package\Data Flow Task\Filtrando Workcenters.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[ODBC Source Output]"
+              endId="Package\Data Flow Task\Filtrando Workcenters.Inputs[Lookup Input]"
               name="ODBC Source Output"
               startId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output]" />
           </paths>
@@ -518,41 +604,45 @@ JOIN
     design-time-name="Package\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="149,42"
           Id="Package\Data Flow Task\ODBC Source"
-          TopLeft="277,136" />
+          TopLeft="583,159" />
         <NodeLayout
           Size="183,42"
           Id="Package\Data Flow Task\Destino de ADO NET"
-          TopLeft="734,371" />
+          TopLeft="900,376" />
+        <NodeLayout
+          Size="187,42"
+          Id="Package\Data Flow Task\Filtrando Workcenters"
+          TopLeft="711,276" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[ODBC Source Output]"
-          TopLeft="351.5,178">
+          TopLeft="657.5,201">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="474,193"
+              EndConnector="147,75"
               Start="0,0"
-              End="474,185.5">
+              End="147,67.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,92.5" />
+                    End="0,33.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,92.5"
-                    Point2="0,96.5"
-                    Point3="4,96.5" />
+                    Point1="0,33.5"
+                    Point2="0,37.5"
+                    Point3="4,37.5" />
                   <mssgle:LineSegment
-                    End="470,96.5" />
+                    End="143,37.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="470,96.5"
-                    Point2="474,96.5"
-                    Point3="474,100.5" />
+                    Point1="143,37.5"
+                    Point2="147,37.5"
+                    Point3="147,41.5" />
                   <mssgle:LineSegment
-                    End="474,185.5" />
+                    End="147,67.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -561,8 +651,75 @@ JOIN
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Lookup No Match Output]"
+          TopLeft="804.5,318">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="187,58"
+              Start="0,0"
+              End="187,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25"
+                    Point2="0,29"
+                    Point3="4,29" />
+                  <mssgle:LineSegment
+                    End="183,29" />
+                  <mssgle:CubicBezierSegment
+                    Point1="183,29"
+                    Point2="187,29"
+                    Point3="187,33" />
+                  <mssgle:LineSegment
+                    End="187,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="37.69361328125,34,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Destino de ADO NET">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Filtrando Workcenters">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[dim_workcenter_product]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
