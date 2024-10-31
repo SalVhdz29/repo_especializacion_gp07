@@ -11,8 +11,8 @@
   DTS:LocaleID="22538"
   DTS:ObjectName="Dim_Store"
   DTS:PackageType="5"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{07674BB7-2EDF-4F25-98B6-C621900B8B6B}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{399299C0-45E8-4A20-A0A0-47DBC5F62F89}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="pwd"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm0770QEElEyMseYl/1jRdwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAXflQy3Erd1PcggUUnntQruPIbgOGmS0vmxAixJwxbewAAAAAOgAAAAAIAACAAAAAR7REA73u1Rj7JLAt1jnBVmFI0+RPj/9ya74hRMf/5xRAAAADeMaQda3vDod6AL8oytik2QAAAADImHkJw2RIul6uAyWo9UAYyK315GjYcLcEGdU3xDhNcDtjfMXWZS7/r5uE5WdGRG901pasJWKzZGGUSZ2zDeOo</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm0770QEElEyMseYl/1jRdwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAXNifx5+dRhEST7TyMRm+uFhrmq1JwcosGKUUrOMfikAAAAAAOgAAAAAIAACAAAAAe9b1CasaKXxO1xTRBrFrMOIMfoDacea596wKoxKHgGxAAAABG1RNnd5s4BQgIDNBPrY7GQAAAAHD+JIA8aslwegVdLTPGInGijxBlva6NKKlChyTJz7w213J/aaLfMFhHkYkkxUk90gXQ+pEcSn1ou6rnTHILyyA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -384,7 +384,8 @@ where [refTable].[store_bk] = ? and [refTable].[store_name] = ?</property>
     (SELECT value FROM core_config_data WHERE path = CONCAT('stores/', s.store_id, '/general/store_information/region_id')) AS region,
     (SELECT value FROM core_config_data WHERE path = CONCAT('stores/', s.store_id, '/general/store_information/manager_name')) AS manager_name
 FROM
-    store s;</property>
+    store s
+Where s.store_id &gt; 0;</property>
                 <property
                   dataType="System.Int32"
                   description="Specify the number of rows fetched per batch."
@@ -630,51 +631,17 @@ FROM
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="183,42"
-          Id="Package\Data Flow Task\Destino de ADO NET"
-          TopLeft="563,367" />
-        <NodeLayout
           Size="149,42"
           Id="Package\Data Flow Task\ODBC Source"
           TopLeft="160,54" />
         <NodeLayout
+          Size="183,42"
+          Id="Package\Data Flow Task\Destino de ADO NET"
+          TopLeft="563,367" />
+        <NodeLayout
           Size="188,42"
           Id="Package\Data Flow Task\Filtrando store nuevas"
           TopLeft="365,221" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[ODBC Source Output]"
-          TopLeft="234.5,96">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="224.5,125"
-              Start="0,0"
-              End="224.5,117.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,58.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,58.5"
-                    Point2="0,62.5"
-                    Point3="4,62.5" />
-                  <mssgle:LineSegment
-                    End="220.5,62.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="220.5,62.5"
-                    Point2="224.5,62.5"
-                    Point3="224.5,66.5" />
-                  <mssgle:LineSegment
-                    End="224.5,117.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Lookup No Match Output]"
           TopLeft="459,263">
@@ -711,6 +678,40 @@ FROM
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[ODBC Source Output]"
+          TopLeft="234.5,96">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="224.5,125"
+              Start="0,0"
+              End="224.5,117.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,58.5"
+                    Point2="0,62.5"
+                    Point3="4,62.5" />
+                  <mssgle:LineSegment
+                    End="220.5,62.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="220.5,62.5"
+                    Point2="224.5,62.5"
+                    Point3="224.5,66.5" />
+                  <mssgle:LineSegment
+                    End="224.5,117.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -720,7 +721,7 @@ FROM
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -730,7 +731,7 @@ FROM
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

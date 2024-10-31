@@ -100,9 +100,29 @@ BEGIN
         customer_region VARCHAR(255),
         customer_email VARCHAR(100),
         customer_segment VARCHAR(100),
-        loyalty_status VARCHAR(100)
+        loyalty_status VARCHAR(100),
+        updated_at DATETIME DEFAULT GETDATE()
     );
 END
+
+GO 
+
+CREATE TRIGGER trg_UpdateDimCustomer
+ON dim_customer
+AFTER UPDATE
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    UPDATE dim_customer
+    SET updated_at = GETDATE()
+    FROM dim_customer AS dc
+    INNER JOIN inserted AS i ON dc.customer_id = i.customer_id;
+END;
+
+
+GO
+
 
 IF OBJECT_ID('dim_discount', 'U') IS NULL
 BEGIN
@@ -512,13 +532,14 @@ FROM
 	INNER JOIN public.product_product pp ON pp.id = mp.product_id 
 	INNER JOIN public.product_template pt ON pt.id = pp.product_tmpl_id 
 where mp.state = 'done'
-AND sml.product_id = mp.product_id;
+AND sml.product_id = mp.product_id
+AND ;
 
 
 
 SELECT 
     dp.lote_id,
-    COUNT(fs.order_id) AS order_count
+    SUM(fs.quantity) AS total_quantity
 FROM 
     fact_sales fs
 JOIN 
@@ -527,3 +548,66 @@ GROUP BY
     dp.lote_id
 ORDER BY 
     dp.lote_id;
+
+
+
+UPDATE dim_customer
+SET customer_segment = ?, 
+    loyalty_status = ?
+WHERE customer_bk = ?
+
+
+-- FACT LOTE
+SELECT  
+    mp.id AS orden_id, 
+    mp.name AS orden_nombre, 
+    mp.state AS estado_orden, 
+    mp.product_id AS orden_producto_id, 
+    (pt.name ->> 'en_US')::VARCHAR AS nombre_producto_orden,
+    pp.default_code as sku,
+    mp.product_qty AS cantidad_producida, 
+    mp.date_start AS fecha_inicio, 
+    mp.date_finished AS fecha_fin,
+    
+    sm.id AS stock_move_id, 
+    sm.product_id AS stock_move_producto_id, 
+    sm.product_qty AS cantidad_movimiento, 
+    sm.quantity_done AS cantidad_terminada,
+    
+    sml.id AS stock_move_line_id, 
+    sml.product_id AS stock_move_line_producto_id, 
+    sml.production_id AS produccion_id_linea, 
+    sml.date AS fecha_movimiento, 
+    sml.lot_id AS lote_id,
+    sl.create_date AS lote_production_date,
+    sl.create_date AS lote_date_entera,
+    sl.name AS codigo_lote, -- Código de lote
+    
+    svl.unit_cost AS costo_unitario,
+    svl.value AS costo_total_lote,
+    sl.company_id AS company_id,
+    rc.name AS company_name
+
+FROM 
+    public.mrp_production mp
+
+LEFT JOIN public.stock_move sm ON sm.production_id = mp.id 
+
+LEFT JOIN public.stock_move_line sml ON sml.move_id = sm.id 
+
+LEFT JOIN public.stock_valuation_layer svl ON svl.stock_move_id = sm.id 
+    AND svl.product_id = sml.product_id
+
+LEFT JOIN public.stock_lot sl ON sl.id = sml.lot_id
+    AND sl.product_id = sml.product_id
+
+LEFT JOIN public.res_company rc ON rc.id = sl.company_id
+
+INNER JOIN public.product_product pp ON pp.id = mp.product_id 
+INNER JOIN public.product_template pt ON pt.id = pp.product_tmpl_id 
+
+WHERE 
+    mp.state = 'done'
+    AND sml.product_id = mp.product_id
+    and sl.name is not null 
+    AND mp.date_start is not null;

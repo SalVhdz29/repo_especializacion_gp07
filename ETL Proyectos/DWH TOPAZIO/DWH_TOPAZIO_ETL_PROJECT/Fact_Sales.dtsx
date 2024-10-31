@@ -11,8 +11,8 @@
   DTS:LocaleID="22538"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="42"
-  DTS:VersionGUID="{706A12AB-F4CF-4538-B410-BE50C40CC969}">
+  DTS:VersionBuild="43"
+  DTS:VersionGUID="{86DB94D2-64D4-4845-B1FE-889CD8F28CC6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="pwd"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm0770QEElEyMseYl/1jRdwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB53DmqNraehhVDD5zZPuoJA5MIlHNQJN8SZRIKMe1ohwAAAAAOgAAAAAIAACAAAACrBckKN2QmzcSI4C+EvK9t5e/l0Czx8/z2lqYbqmgj0RAAAADwxlgESlzkhwUvqy4iOtPsQAAAAAnGAgvp1OgxiRaFVr/EghGyxuOKmKIwj4BDYbrox6+NT9cqAPN9u8m3RUA4aAsn/z/umpzFeg5URtYBIy/xLw0</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm0770QEElEyMseYl/1jRdwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAXuQvpHKz2UjIT2lXJbO4mism7ddfDrfTAKXfn37H4xQAAAAAOgAAAAAIAACAAAAAnQmu1muiyx7NdIXjA64QFDzqVyDx4ohWUrOQvKNg3fxAAAACyJpQTd5I0oZ1IT08bHw80QAAAAGg1sSgVFFCukHahjj7kNV/ZFe2xIkagQTrNgSsQ7Z/dNwLn6s5m7dvOAJ70NDztyqf1rRS2JckIO+/ZV+J6kGQ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -2482,6 +2482,29 @@ GROUP BY
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Filtrando sales">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[fact_sales]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task\Dim Time">
     <Properties>
       <Property>
@@ -2576,29 +2599,6 @@ GROUP BY
   <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task\Destino de ADO NET">
     <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Filtrando sales">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[fact_sales]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
