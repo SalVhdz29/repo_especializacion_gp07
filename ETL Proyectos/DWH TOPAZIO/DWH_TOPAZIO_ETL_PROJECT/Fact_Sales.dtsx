@@ -11,8 +11,8 @@
   DTS:LocaleID="22538"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="43"
-  DTS:VersionGUID="{86DB94D2-64D4-4845-B1FE-889CD8F28CC6}">
+  DTS:VersionBuild="51"
+  DTS:VersionGUID="{597FC4C1-D885-4CBF-B376-7B8967AB959C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="pwd"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm0770QEElEyMseYl/1jRdwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAXuQvpHKz2UjIT2lXJbO4mism7ddfDrfTAKXfn37H4xQAAAAAOgAAAAAIAACAAAAAnQmu1muiyx7NdIXjA64QFDzqVyDx4ohWUrOQvKNg3fxAAAACyJpQTd5I0oZ1IT08bHw80QAAAAGg1sSgVFFCukHahjj7kNV/ZFe2xIkagQTrNgSsQ7Z/dNwLn6s5m7dvOAJ70NDztyqf1rRS2JckIO+/ZV+J6kGQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm0770QEElEyMseYl/1jRdwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACB9IVWmOWK8GMo+BWJBC8rF4BUorMETSk7T0FtomYgPwAAAAAOgAAAAAIAACAAAAAedp35Jw/Cgj3JRUNW3tj5DDTMyKAXSJ3ApF4nmFCtrBAAAAByNGt87NDUd2LUCQ1tVVLEQAAAAL0YVJmegtt8LYm3VPbIcuv97JsjOGgy30/UmBHCH7ui+xIwJUEVWe7U1JV1Hx9G4f9Lwu+MJqAxQFbAZ6izagM</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -125,12 +125,6 @@
                       externalMetadataColumnId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[order_id]"
                       lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[order_id]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[store_id]"
-                      cachedDataType="i4"
-                      cachedName="store_id"
-                      externalMetadataColumnId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[store_id]"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[store_id]" />
-                    <inputColumn
                       refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[time_id]"
                       cachedDataType="i4"
                       cachedName="time_id"
@@ -218,6 +212,12 @@
                       cachedScale="6"
                       externalMetadataColumnId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[total_profit]"
                       lineageId="Package\Data Flow Task\total_profit_calculado.Outputs[Derived Column Output].Columns[total_profit_calculado]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[store_id_dim]"
+                      cachedDataType="i4"
+                      cachedName="store_id_dim"
+                      externalMetadataColumnId="Package\Data Flow Task\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[store_id]"
+                      lineageId="Package\Data Flow Task\Dim Store.Outputs[Lookup Match Output].Columns[store_id_dim]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1387,7 +1387,8 @@ LEFT JOIN
     ) AS isi ON oi.sku = isi.sku
 WHERE oi.product_type = 'configurable'
 GROUP BY 
-    o.entity_id;</property>
+    o.entity_id;
+</property>
                 <property
                   dataType="System.Int32"
                   description="Specify the number of rows fetched per batch."
@@ -2102,6 +2103,10 @@ GROUP BY
           Id="Package\Data Flow Task\Dim Discount"
           TopLeft="473,436" />
         <NodeLayout
+          Size="151,42"
+          Id="Package\Data Flow Task\Filtrando sales"
+          TopLeft="359,152" />
+        <NodeLayout
           Size="149,42"
           Id="Package\Data Flow Task\ODBC Source"
           TopLeft="192,65" />
@@ -2109,6 +2114,10 @@ GROUP BY
           Size="126,42"
           Id="Package\Data Flow Task\Dim Time"
           TopLeft="667,607" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\Data Flow Task\total_profit_calculado"
+          TopLeft="873,789" />
         <NodeLayout
           Size="149,42"
           Id="Package\Data Flow Task\Dim Customer"
@@ -2118,14 +2127,6 @@ GROUP BY
           Id="Package\Data Flow Task\Dim Product"
           TopLeft="333,252" />
         <NodeLayout
-          Size="183,42"
-          Id="Package\Data Flow Task\total_profit_calculado"
-          TopLeft="873,789" />
-        <NodeLayout
-          Size="179,42"
-          Id="Package\Data Flow Task\total_cost_calculado"
-          TopLeft="750,708" />
-        <NodeLayout
           Size="128,42"
           Id="Package\Data Flow Task\Dim Store"
           TopLeft="577,518" />
@@ -2133,6 +2134,80 @@ GROUP BY
           Size="183,42"
           Id="Package\Data Flow Task\Destino de ADO NET"
           TopLeft="1016,886" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Data Flow Task\total_cost_calculado"
+          TopLeft="750,708" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[ODBC Source Output]"
+          TopLeft="266.5,107">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="168,45"
+              Start="0,0"
+              End="168,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.5"
+                    Point2="0,22.5"
+                    Point3="4,22.5" />
+                  <mssgle:LineSegment
+                    End="164,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="164,22.5"
+                    Point2="168,22.5"
+                    Point3="168,26.5" />
+                  <mssgle:LineSegment
+                    End="168,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Lookup No Match Output]"
+          TopLeft="434.5,194">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-32,58"
+              Start="0,0"
+              End="-32,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25"
+                    Point2="0,29"
+                    Point3="-4,29" />
+                  <mssgle:LineSegment
+                    End="-28,29" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-28,29"
+                    Point2="-32,29"
+                    Point3="-32,33" />
+                  <mssgle:LineSegment
+                    End="-32,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-71.80638671875,34,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Lookup Match Output4]"
           TopLeft="545,478">
@@ -2373,80 +2448,6 @@ GROUP BY
                     Point3="125,23.5" />
                   <mssgle:LineSegment
                     End="125,31.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="151,42"
-          Id="Package\Data Flow Task\Filtrando sales"
-          TopLeft="359,152" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Lookup No Match Output]"
-          TopLeft="434.5,194">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-32,58"
-              Start="0,0"
-              End="-32,50.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25"
-                    Point2="0,29"
-                    Point3="-4,29" />
-                  <mssgle:LineSegment
-                    End="-28,29" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-28,29"
-                    Point2="-32,29"
-                    Point3="-32,33" />
-                  <mssgle:LineSegment
-                    End="-32,50.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-71.80638671875,34,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[ODBC Source Output]"
-          TopLeft="266.5,107">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="168,45"
-              Start="0,0"
-              End="168,37.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.5"
-                    Point2="0,22.5"
-                    Point3="4,22.5" />
-                  <mssgle:LineSegment
-                    End="164,22.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="164,22.5"
-                    Point2="168,22.5"
-                    Point3="168,26.5" />
-                  <mssgle:LineSegment
-                    End="168,37.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
