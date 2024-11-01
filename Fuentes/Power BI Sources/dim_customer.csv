@@ -1,14 +1,14 @@
 customer_id,customer_bk,customer_name,customer_address,customer_city,customer_region,customer_email,customer_segment,loyalty_status,updated_at
-0,0,Guest,Unknown,Unknown,Unknown,guest@unknown.com,Unregistered,N/A,2024-10-30 23:57:34.623000000
-61,1,Mauricio Ordoñez,Res. Altos Del Escorial,Mejicanos,No Region,vasquez9600@gmail.com,Leal,Activo,2024-10-30 23:57:46.117000000
-62,2,Orlando Proud,Calle la mascota,San Salvador,No Region,df64@gmail.com,Frecuente,Activo,2024-10-30 23:57:46.117000000
-63,3,Guadalupe Belmont,Calle Guadalupana,San Salvador,No Region,gt@gmail.com,Frecuente,Activo,2024-10-30 23:57:46.117000000
-64,4,Fagoaga Benitez,Avenida bernal,San Salvador,No Region,gf@gmail.com,Frecuente,Activo,2024-10-30 23:57:46.117000000
-65,5,Lopez Hernandez,Avenida el cocal,San Salvador,No Region,lp@gmail.com,Nuevo,Activo,2024-10-30 23:57:46.117000000
-66,6,Kevin Solis,Colonia el amate,San Salvador,No Region,kv@gmail.com,Nuevo,Activo,2024-10-30 23:57:46.117000000
-67,7,cj Benavides,Sitio del niño,Opico,No Region,cj@gmail.com,Frecuente,Activo,2024-10-30 23:57:46.117000000
-68,8,Luciana Mendoza,Calle el Jabali,Opico,No Region,lcm@gmail.com,Frecuente,Activo,2024-10-30 23:57:46.117000000
-69,9,Jorge Luna,Barrio opico,Opico,No Region,jl@gmail.com,Frecuente,Activo,2024-10-30 23:57:46.117000000
-70,10,Marbella Fuentes,Calle Toreros,San Vicente,No Region,mb@gmail.com,Nuevo,Activo,2024-10-30 23:57:46.117000000
-71,11,Antonio Banderas,Calle San Antonio Abad,San Salvador,No Region,at@gmail.com,Frecuente,Activo,2024-10-30 23:57:46.117000000
-72,12,Mauricio Ordoñez,Res. Altos Del Escorial,Mejicanos,No Region,vasquez9600@gmail.com,Frecuente,Activo,2024-10-30 23:57:46.117000000
+0,0,Guest,Unknown,Unknown,Unknown,guest@unknown.com,Unregistered,N/A,2024-10-31 18:56:26.673000000
+1121,1,Mauricio Ordoñez,Res. Altos Del Escorial,Mejicanos,No Region,vasquez9600@gmail.com,Leal,Activo,2024-10-31 19:05:11.323000000
+1122,2,Orlando Proud,Calle la mascota,San Salvador,No Region,df64@gmail.com,Frecuente,Activo,2024-10-31 19:05:11.323000000
+1123,3,Guadalupe Belmont,Calle Guadalupana,San Salvador,No Region,gt@gmail.com,Frecuente,Activo,2024-10-31 19:05:11.323000000
+1124,4,Fagoaga Benitez,Avenida bernal,San Salvador,No Region,gf@gmail.com,Frecuente,Activo,2024-10-31 19:05:11.323000000
+1125,5,Lopez Hernandez,Avenida el cocal,San Salvador,No Region,lp@gmail.com,Nuevo,Activo,2024-10-31 19:05:11.323000000
+1126,6,Kevin Solis,Colonia el amate,San Salvador,No Region,kv@gmail.com,Nuevo,Activo,2024-10-31 19:05:11.327000000
+1127,7,cj Benavides,Sitio del niño,Opico,No Region,cj@gmail.com,Frecuente,Activo,2024-10-31 19:05:11.327000000
+1128,8,Luciana Mendoza,Calle el Jabali,Opico,No Region,lcm@gmail.com,Frecuente,Activo,2024-10-31 19:05:11.327000000
+1129,9,Jorge Luna,Barrio opico,Opico,No Region,jl@gmail.com,Frecuente,Activo,2024-10-31 19:05:11.327000000
+1130,10,Marbella Fuentes,Calle Toreros,San Vicente,No Region,mb@gmail.com,Nuevo,Activo,2024-10-31 19:05:11.327000000
+1131,11,Antonio Banderas,Calle San Antonio Abad,San Salvador,No Region,at@gmail.com,Frecuente,Activo,2024-10-31 19:05:11.327000000
+1132,12,Mauricio Ordoñez,Res. Altos Del Escorial,Mejicanos,No Region,vasquez9600@gmail.com,Frecuente,Activo,2024-10-31 19:05:11.327000000
