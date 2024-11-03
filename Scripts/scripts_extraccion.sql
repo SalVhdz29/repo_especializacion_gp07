@@ -188,13 +188,7 @@ SELECT
     
     COALESCE(sr_coupon.rule_id, sr_name.rule_id) AS discount_rule_id,  
     COALESCE(o.discount_description, 'No Discount Applied') AS discount_applied,
-    isi.source_code,
-
-    SUBSTRING(
-	    isi.source_code, 
-	    LOCATE('-', isi.source_code) + 1, 
-	    LOCATE('-', isi.source_code, LOCATE('-', isi.source_code) + 1) - LOCATE('-', isi.source_code) - 1
-	) AS LOTEID
+    '' AS LOTEID
 
 FROM 
     sales_order o
@@ -208,14 +202,9 @@ LEFT JOIN
     salesrule sr_coupon ON sc.rule_id = sr_coupon.rule_id  
 LEFT JOIN 
     salesrule sr_name ON o.discount_description = sr_name.name 
-LEFT JOIN 
-    inventory_reservation ir ON oi.sku = ir.sku AND JSON_EXTRACT(ir.metadata, '$.object_id') = o.entity_id
-LEFT JOIN 
-    inventory_source_item isi ON ir.sku = isi.sku AND ir.stock_id = isi.stock_id
 WHERE oi.product_type = 'configurable'
 GROUP BY 
     o.entity_id;
-
 
 
 

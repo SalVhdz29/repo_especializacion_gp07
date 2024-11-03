@@ -11,8 +11,8 @@
   DTS:LocaleID="22538"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="51"
-  DTS:VersionGUID="{597FC4C1-D885-4CBF-B376-7B8967AB959C}">
+  DTS:VersionBuild="71"
+  DTS:VersionGUID="{3C494828-25F2-4CDD-94A5-90D22F1310C0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="pwd"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm0770QEElEyMseYl/1jRdwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACB9IVWmOWK8GMo+BWJBC8rF4BUorMETSk7T0FtomYgPwAAAAAOgAAAAAIAACAAAAAedp35Jw/Cgj3JRUNW3tj5DDTMyKAXSJ3ApF4nmFCtrBAAAAByNGt87NDUd2LUCQ1tVVLEQAAAAL0YVJmegtt8LYm3VPbIcuv97JsjOGgy30/UmBHCH7ui+xIwJUEVWe7U1JV1Hx9G4f9Lwu+MJqAxQFbAZ6izagM</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm0770QEElEyMseYl/1jRdwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA91qV7df7GLUNyzFkGnlXokB6kh2ERkVIKvyDOgrNhKAAAAAAOgAAAAAIAACAAAACuuVH1hX7C+giGKJ9jiwUVY/W9jfxXHqG+KR4zsIUrdhAAAADfqZQHj3iIbfh5VeutyoAgQAAAAJ8AvaYm+FIyxhGlW6of972m0PzvjPg3j3cikgagM6B5dVPJGauzhzLRx7HT9GzTMsy69mAu73gFMQZ7Wz12aQM</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -69,6 +69,1347 @@
         <pipeline
           version="1">
           <components>
+            <component
+              refId="Package\Data Flow Task\Componente de script"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Incluye y ejecuta código de scripts personalizados. Por ejemplo, se usa para aplicar una regla de negocios que limita el intervalo de valores válidos de una columna de ingresos o para sumar los valores de dos columnas y calcular el promedio de la suma.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;13"
+              description="Incluye y ejecuta código de scripts personalizados. Por ejemplo, se usa para aplicar una regla de negocios que limita el intervalo de valores válidos de una columna de ingresos o para sumar los valores de dos columnas y calcular el promedio de la suma."
+              name="Componente de script"
+              version="13">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Almacena el código fuente del componente"
+                  isArray="true"
+                  name="SourceCode"
+                  state="cdata">
+                  <arrayElements
+                    arrayElementCount="30">
+                    <arrayElement
+                      dataType="System.String"><![CDATA[ComponentWrapper.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services component wrapper
+*  This module defines the base class for your component
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+
+public class UserComponent: ScriptComponent
+{
+    public Connections Connections;
+    public Variables Variables;
+    public UserComponent()
+    {
+        Connections = new Connections(this);
+        Variables = new Variables(this);
+    }
+
+    public override void ProcessInput(int InputID, string InputName, PipelineBuffer Buffer, OutputNameMap OutputMap)
+    {
+
+        if (InputName.Equals(@"Entrada 0", StringComparison.Ordinal))
+        {
+            Entrada0_ProcessInput(new Entrada0Buffer(Buffer, GetColumnIndexes(InputID), OutputMap));
+        }
+
+    }
+
+    public virtual void Entrada0_ProcessInput(Entrada0Buffer Buffer)
+    {
+        while (Buffer.NextRow())
+        {
+            Entrada0_ProcessInputRow(Buffer);
+        }
+    }
+
+    public virtual void Entrada0_ProcessInputRow(Entrada0Buffer Row)
+    {
+    }
+
+}
+
+public class Connections
+{
+    ScriptComponent ParentComponent;
+
+    public Connections(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+
+public class Variables
+{
+    ScriptComponent ParentComponent;
+
+    public Variables(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Resources.resx]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[main.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[#region Help:  Introduction to the Script Component
+/* The Script Component allows you to perform virtually any operation that can be accomplished in
+ * a .Net application within the context of an Integration Services data flow.
+ *
+ * Expand the other regions which have "Help" prefixes for examples of specific ways to use
+ * Integration Services features within this script component. */
+#endregion
+
+#region Namespaces
+using System;
+using System.Data;
+using System.Data.SqlClient;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+#endregion
+
+/// <summary>
+/// This is the class to which to add your code.  Do not change the name, attributes, or parent
+/// of this class.
+/// </summary>
+[Microsoft.SqlServer.Dts.Pipeline.SSISScriptComponentEntryPointAttribute]
+public class ScriptMain : UserComponent
+{
+    #region Help:  Using Integration Services variables and parameters
+    /* To use a variable in this script, first ensure that the variable has been added to
+     * either the list contained in the ReadOnlyVariables property or the list contained in
+     * the ReadWriteVariables property of this script component, according to whether or not your
+     * code needs to write into the variable.  To do so, save this script, close this instance of
+     * Visual Studio, and update the ReadOnlyVariables and ReadWriteVariables properties in the
+     * Script Transformation Editor window.
+     * To use a parameter in this script, follow the same steps. Parameters are always read-only.
+     *
+     * Example of reading from a variable or parameter:
+     *  DateTime startTime = Variables.MyStartTime;
+     *
+     * Example of writing to a variable:
+     *  Variables.myStringVariable = "new value";
+     */
+    #endregion
+
+    #region Help:  Using Integration Services Connnection Managers
+    /* Some types of connection managers can be used in this script component.  See the help topic
+     * "Working with Connection Managers Programatically" for details.
+     *
+     * To use a connection manager in this script, first ensure that the connection manager has
+     * been added to either the list of connection managers on the Connection Managers page of the
+     * script component editor.  To add the connection manager, save this script, close this instance of
+     * Visual Studio, and add the Connection Manager to the list.
+     *
+     * If the component needs to hold a connection open while processing rows, override the
+     * AcquireConnections and ReleaseConnections methods.
+     * 
+     * Example of using an ADO.Net connection manager to acquire a SqlConnection:
+     *  object rawConnection = Connections.SalesDB.AcquireConnection(transaction);
+     *  SqlConnection salesDBConn = (SqlConnection)rawConnection;
+     *
+     * Example of using a File connection manager to acquire a file path:
+     *  object rawConnection = Connections.Prices_zip.AcquireConnection(transaction);
+     *  string filePath = (string)rawConnection;
+     *
+     * Example of releasing a connection manager:
+     *  Connections.SalesDB.ReleaseConnection(rawConnection);
+     */
+    #endregion
+
+    #region Help:  Firing Integration Services Events
+    /* This script component can fire events.
+     *
+     * Example of firing an error event:
+     *  ComponentMetaData.FireError(10, "Process Values", "Bad value", "", 0, out cancel);
+     *
+     * Example of firing an information event:
+     *  ComponentMetaData.FireInformation(10, "Process Values", "Processing has started", "", 0, fireAgain);
+     *
+     * Example of firing a warning event:
+     *  ComponentMetaData.FireWarning(10, "Process Values", "No rows were received", "", 0);
+     */
+    #endregion
+    private SqlConnection _connection;
+
+    /// <summary>
+    /// This method is called once, before rows begin to be processed in the data flow.
+    ///
+    /// You can remove this method if you don't need to do anything here.
+    /// </summary>
+    public override void PreExecute()
+    {
+        base.PreExecute();
+        _connection = new SqlConnection("Data Source=localhost;Initial Catalog=DWH_TOPAZIO;Integrated Security=SSPI;");
+        _connection.Open();
+    }
+
+    /// <summary>
+    /// This method is called after all the rows have passed through this component.
+    ///
+    /// You can delete this method if you don't need to do anything here.
+    /// </summary>
+    public override void PostExecute()
+    {
+        base.PostExecute();
+        if (_connection != null && _connection.State == System.Data.ConnectionState.Open)
+        {
+            _connection.Close();
+        }
+    }
+
+    /// <summary>
+    /// This method is called once for every row that passes through the component from Entrada0.
+    ///
+    /// Example of reading a value from a column in the the row:
+    ///  string zipCode = Row.ZipCode
+    ///
+    /// Example of writing a value to a column in the row:
+    ///  Row.ZipCode = zipCode
+    /// </summary>
+    /// <param name="Row">The row that is currently passing through the component</param>
+    public override void Entrada0_ProcessInputRow(Entrada0Buffer Row)
+    {
+        decimal cantidadVenta = Row.quantity; // Cantidad de la venta
+        string skuRow = Row.productsku;
+        string loteCode = null;
+        decimal cantidadUtilizada = 0;
+
+
+        string querySelectLote = @"
+            SELECT TOP 1 lote_code, cantidad_disponible
+            FROM dbo.LoteCantidadTemporal
+            WHERE cantidad_disponible >= @cantidadVenta
+            AND sku = @sku
+            ORDER BY lote_date ASC";
+
+
+        using (SqlCommand selectCommand = new SqlCommand(querySelectLote, _connection))
+        {
+            selectCommand.Parameters.AddWithValue("@cantidadVenta", cantidadVenta);
+            selectCommand.Parameters.AddWithValue("@sku", skuRow);
+
+            using (SqlDataReader reader = selectCommand.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    loteCode = reader["lote_code"].ToString();
+                    cantidadUtilizada = cantidadVenta;
+                }
+            }
+        }
+
+        if (loteCode != null)
+        {
+            string queryUpdateLote = @"
+                UPDATE dbo.LoteCantidadTemporal
+                SET cantidad_disponible = cantidad_disponible - @cantidadUtilizada
+                WHERE lote_code = @loteCode";
+
+            using (SqlCommand updateCommand = new SqlCommand(queryUpdateLote, _connection))
+            {
+                updateCommand.Parameters.AddWithValue("@cantidadUtilizada", cantidadUtilizada);
+                updateCommand.Parameters.AddWithValue("@loteCode", loteCode);
+                updateCommand.ExecuteNonQuery();
+            }
+
+            // Asigna los valores al buffer de salida
+            Row.LOTEID = loteCode;
+        }
+        else
+        {
+            // Manejo en caso de que no haya suficiente cantidad en ning?n lote
+            Row.LOTEID = "No disponible";
+        }
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[BufferWrapper.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services buffer wrappers
+*  This module defines classes for accessing data flow buffers
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+
+public class Entrada0Buffer: ScriptBuffer
+
+{
+    public Entrada0Buffer(PipelineBuffer Buffer, int[] BufferColumnIndexes, OutputNameMap OutputMap)
+        : base(Buffer, BufferColumnIndexes, OutputMap)
+    {
+    }
+
+    public Int32 orderid
+    {
+        get
+        {
+            return Buffer.GetInt32(BufferColumnIndexes[0]);
+        }
+    }
+    public bool orderid_IsNull
+    {
+        get
+        {
+            return IsNull(0);
+        }
+    }
+
+    public Int32 storeid
+    {
+        get
+        {
+            return Buffer.GetInt32(BufferColumnIndexes[1]);
+        }
+    }
+    public bool storeid_IsNull
+    {
+        get
+        {
+            return IsNull(1);
+        }
+    }
+
+    public UInt32 productid
+    {
+        get
+        {
+            return Buffer.GetUInt32(BufferColumnIndexes[2]);
+        }
+    }
+    public bool productid_IsNull
+    {
+        get
+        {
+            return IsNull(2);
+        }
+    }
+
+    public String productsku
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[3]);
+        }
+    }
+    public bool productsku_IsNull
+    {
+        get
+        {
+            return IsNull(3);
+        }
+    }
+
+    public Int32 customerid
+    {
+        get
+        {
+            return Buffer.GetInt32(BufferColumnIndexes[4]);
+        }
+    }
+    public bool customerid_IsNull
+    {
+        get
+        {
+            return IsNull(4);
+        }
+    }
+
+    public Int32 timeid
+    {
+        get
+        {
+            return Buffer.GetInt32(BufferColumnIndexes[5]);
+        }
+    }
+    public bool timeid_IsNull
+    {
+        get
+        {
+            return IsNull(5);
+        }
+    }
+
+    public Decimal quantity
+    {
+        get
+        {
+            return Buffer.GetDecimal(BufferColumnIndexes[6]);
+        }
+    }
+    public bool quantity_IsNull
+    {
+        get
+        {
+            return IsNull(6);
+        }
+    }
+
+    public Decimal totalamount
+    {
+        get
+        {
+            return Buffer.GetDecimal(BufferColumnIndexes[7]);
+        }
+    }
+    public bool totalamount_IsNull
+    {
+        get
+        {
+            return IsNull(7);
+        }
+    }
+
+    public Decimal totaldiscount
+    {
+        get
+        {
+            return Buffer.GetDecimal(BufferColumnIndexes[8]);
+        }
+    }
+    public bool totaldiscount_IsNull
+    {
+        get
+        {
+            return IsNull(8);
+        }
+    }
+
+    public Decimal totalcharged
+    {
+        get
+        {
+            return Buffer.GetDecimal(BufferColumnIndexes[9]);
+        }
+    }
+    public bool totalcharged_IsNull
+    {
+        get
+        {
+            return IsNull(9);
+        }
+    }
+
+    public Decimal totalcost
+    {
+        get
+        {
+            return Buffer.GetDecimal(BufferColumnIndexes[10]);
+        }
+    }
+    public bool totalcost_IsNull
+    {
+        get
+        {
+            return IsNull(10);
+        }
+    }
+
+    public Decimal totalprofit
+    {
+        get
+        {
+            return Buffer.GetDecimal(BufferColumnIndexes[11]);
+        }
+    }
+    public bool totalprofit_IsNull
+    {
+        get
+        {
+            return IsNull(11);
+        }
+    }
+
+    public String paymentmethod
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[12]);
+        }
+    }
+    public bool paymentmethod_IsNull
+    {
+        get
+        {
+            return IsNull(12);
+        }
+    }
+
+    public UInt32 discountruleid
+    {
+        get
+        {
+            return Buffer.GetUInt32(BufferColumnIndexes[13]);
+        }
+    }
+    public bool discountruleid_IsNull
+    {
+        get
+        {
+            return IsNull(13);
+        }
+    }
+
+    public String discountapplied
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[14]);
+        }
+    }
+    public bool discountapplied_IsNull
+    {
+        get
+        {
+            return IsNull(14);
+        }
+    }
+
+    public String LOTEID
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[15]);
+        }
+        set
+        {
+            this[15] = value;
+        }
+    }
+    public bool LOTEID_IsNull
+    {
+        get
+        {
+            return IsNull(15);
+        }
+        set
+        {
+            if (value)
+            {
+                SetNull(15);
+            }
+            else
+            {
+                throw new InvalidOperationException("La propiedad IsNull no puede establecerse en False. En su lugar, asigne un valor a la columna.");
+            }
+        }
+    }
+
+    public String ordercode
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[16]);
+        }
+    }
+    public bool ordercode_IsNull
+    {
+        get
+        {
+            return IsNull(16);
+        }
+    }
+
+    new public bool NextRow()
+    {
+        return base.NextRow();
+    }
+
+    new public bool EndOfRowset()
+    {
+        return base.EndOfRowset();
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Settings.Designer.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_9e8f144183594946baa3a681c86954dd.Properties.Settings.get_Default():SC_9e8f144183594946baa3a681c86954dd.Properties.Sett" +
+    "ings")]
+
+namespace SC_9e8f144183594946baa3a681c86954dd.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[SC_9e8f144183594946baa3a681c86954dd.csproj]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{599F6FE1-7F33-41B4-ABB7-2E762BD4C7BA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SC_9e8f144183594946baa3a681c86954dd</RootNamespace>
+    <AssemblyName>SC_9e8f144183594946baa3a681c86954dd</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.TxScript, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Compile Include="main.cs" />
+    <Compile Include="BufferWrapper.cs" />
+    <Compile Include="ComponentWrapper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <!-- Include the build rules for a C# project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- This section defines VSTA properties that describe the host-changable project properties. -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" />
+        <Host Name="ScriptComponent" IconIndex="0" />
+        <ProjectClient>
+          <HostIdentifier>SSIS_SC160</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Project]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF16LE]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:CodeName>SC_9e8f144183594946baa3a681c86954dd</msb:CodeName>
+    <msb:Language>msBuild</msb:Language>
+    <msb:DisplayName>SC_9e8f144183594946baa3a681c86954dd</msb:DisplayName>
+    <msb:ProjectId>{784E4D6C-B8FF-4F30-99B9-CF3DFA5D57C6}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="SC_9e8f144183594946baa3a681c86954dd.csproj" />
+    <msb:File Include="Properties\Resources.Designer.cs" />
+    <msb:File Include="main.cs" />
+    <msb:File Include="BufferWrapper.cs" />
+    <msb:File Include="ComponentWrapper.cs" />
+    <msb:File Include="Properties\Settings.settings" />
+    <msb:File Include="Properties\AssemblyInfo.cs" />
+    <msb:File Include="Properties\Resources.resx" />
+    <msb:File Include="Properties\Settings.Designer.cs" />
+  </msb:ItemGroup>
+</c:Project>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\AssemblyInfo.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("SC_9e8f144183594946baa3a681c86954dd")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("SC_9e8f144183594946baa3a681c86954dd")]
+[assembly: AssemblyCopyright("Copyright @  2024")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.0.0")]
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Settings.settings]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Resources.Designer.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_9e8f144183594946baa3a681c86954dd.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+    "rceManager")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_9e8f144183594946baa3a681c86954dd.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+    "fo")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_9e8f144183594946baa3a681c86954dd.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+    "):Void")]
+
+namespace SC_9e8f144183594946baa3a681c86954dd.Properties {
+    
+    
+    /// <summary>
+    ///   A strongly-typed resource class, for looking up localized strings, etc.
+    /// </summary>
+    // This class was auto-generated by the StronglyTypedResourceBuilder
+    // class via a tool like ResGen or Visual Studio.
+    // To add or remove a member, edit your .ResX file then rerun ResGen
+    // with the /str option, or rebuild your VS project.
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    internal class Resources {
+        
+        private static global::System.Resources.ResourceManager resourceMan;
+        
+        private static global::System.Globalization.CultureInfo resourceCulture;
+        
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources() {
+        }
+        
+        /// <summary>
+        ///   Returns the cached ResourceManager instance used by this class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SC_9e8f144183594946baa3a681c86954dd.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+        
+        /// <summary>
+        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   resource lookups using this strongly typed resource class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
+                return resourceCulture;
+            }
+            set {
+                resourceCulture = value;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                  </arrayElements>
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Almacena la representación binaria del componente"
+                  isArray="true"
+                  name="BinaryCode"
+                  state="cdata">
+                  <arrayElements
+                    arrayElementCount="2">
+                    <arrayElement
+                      dataType="System.String"><![CDATA[SC_9e8f144183594946baa3a681c86954dd.dll]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDALLfJ2cAAAAAAAAAAOAAIiALATAAACIAAAAIAAAAAAAAYkEA
+AAAgAAAAYAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACgAAAAAgAAAAAAAAMAYIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAABBBAABPAAAAAGAAAEgEAAAAAAAAAAAAAAAAAAAA
+AAAAAIAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAaCEAAAAgAAAAIgAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAEgEAAAAYAAAAAYAAAAkAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAIAAAAACAAAAKgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAABE
+QQAAAAAAAEgAAAACAAUA/CQAAFwbAAABAAAAAAAAAFhAAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIoCKBAAAAoCcgEAAHBzEQAACn0BAAAEAnsBAAAEbxIAAAoq
+ogIoEwAACgJ7AQAABCwZAnsBAAAEbxQAAAoXMwsCewEAAARvFQAACiobMAMA/wAAAAEAABEDbxIA
+AAYKA28MAAAGCxQMEgP+FQ8AAAFymgAAcAJ7AQAABHMWAAAKEwQRBG8XAAAKclcCAHAGjA8AAAFv
+GAAACiYRBG8XAAAKcnUCAHAHbxgAAAomEQRvGQAAChMFEQVvGgAACiwUEQVyfwIAcG8bAAAKbxwA
+AAoMBg3eGBEFLAcRBW8dAAAK3BEELAcRBG8dAAAK3AgsW3KTAgBwAnsBAAAEcxYAAAoTBhEGbxcA
+AApy+gMAcAmMDwAAAW8YAAAKJhEGbxcAAApyIAQAcAhvGAAACiYRBm8eAAAKJt4MEQYsBxEGbx0A
+AArcAwhvJQAABioDcjQEAHBvJQAABioAASgAAAIAXgAffQAMAAAAAAIAKgBfiQAMAAAAAAIAqgA1
+3wAMAAAAAB4CKCwAAAYqKgIDBAUoHwAACipSAnsgAAAKAnshAAAKFpRvIgAACioiAhYoIwAACipS
+AnsgAAAKAnshAAAKF5RvIgAACioiAhcoIwAACipSAnsgAAAKAnshAAAKGJRvJAAACioiAhgoIwAA
+CipSAnsgAAAKAnshAAAKGZRvJQAACioiAhkoIwAACipSAnsgAAAKAnshAAAKGpRvIgAACioiAhoo
+IwAACipSAnsgAAAKAnshAAAKG5RvIgAACioiAhsoIwAACipSAnsgAAAKAnshAAAKHJRvJgAACioi
+AhwoIwAACipSAnsgAAAKAnshAAAKHZRvJgAACioiAh0oIwAACipSAnsgAAAKAnshAAAKHpRvJgAA
+CioiAh4oIwAACipWAnsgAAAKAnshAAAKHwmUbyYAAAoqJgIfCSgjAAAKKlYCeyAAAAoCeyEAAAof
+CpRvJgAACiomAh8KKCMAAAoqVgJ7IAAACgJ7IQAACh8LlG8mAAAKKiYCHwsoIwAACipWAnsgAAAK
+AnshAAAKHwyUbyUAAAoqJgIfDCgjAAAKKlYCeyAAAAoCeyEAAAofDZRvJAAACiomAh8NKCMAAAoq
+VgJ7IAAACgJ7IQAACh8OlG8lAAAKKiYCHw4oIwAACipWAnsgAAAKAnshAAAKHw+UbyUAAAoqKgIf
+DwMoJwAACiomAh8PKCMAAAoqXgMsCQIfDygoAAAKKnJQBABwcykAAAp6VgJ7IAAACgJ7IQAACh8Q
+lG8lAAAKKiYCHxAoIwAACioeAigqAAAKKh4CKCsAAAoqfgIoLAAACgICczAAAAZ9AgAABAICczEA
+AAZ9AwAABCqSBHIPBQBwGm8tAAAKLBUCBQIDKC4AAAoOBHMFAAAGby4AAAYqSisHAgNvLwAABgNv
+KgAABi3xKgYqOgIoLwAACgIDfQQAAAQqOgIoLwAACgIDfQUAAAQqHgIoLwAACiqufgYAAAQtHnIj
+BQBw0AcAAAIoMAAACm8xAAAKczIAAAqABgAABH4GAAAEKhp+BwAABCoeAoAHAAAEKhp+CAAABCoe
+AigzAAAKKi5zNwAABoAIAAAEKgAAQlNKQgEAAQAAAAAADAAAAHY0LjAuMzAzMTkAAAAABQBsAAAA
+XAkAACN+AADICQAA5AkAACNTdHJpbmdzAAAAAKwTAACYBQAAI1VTAEQZAAAQAAAAI0dVSUQAAABU
+GQAACAIAACNCbG9iAAAAAAAAAAIAAAFXFaIBCQEAAAD6ATMAFgAAAQAAACoAAAAIAAAACAAAADgA
+AAAPAAAAMwAAABAAAAABAAAAAwAAACUAAAAoAAAAAQAAAAUAAAABAAAAAAApBAEAAAAAAAYA/wKH
+BwYAkwOHBwYASwJ0Bw8A+wcAAAYAeAJABgYA4gJABgYAwwJABgYAegNABgYAHwNABgYAOANABgYA
+jwJABgYAqgLbAwoAUwNwAQ4AdgbCCAYACwTzBQ4A+wDCCA4A/wbCCAoAOQdwARIAKgdwAQoA2gZw
+AQoA9ghwAQYAkwjzBQYALgJ0BwYASgenBwYAzgYrBhYA7gETBBYAXwITBBYAvgEWBgYAEwKHBw4A
+aQaqBg4AAwI7AA4AUgbCCA4AWgfCCA4A8gaqBgYANgHzBQ4A8QCqBgYAkAbzBQYAAQTzBQYAvQbz
+BQYAkQHzBQYAQgHzBQYAvglABgAAAAAUAAAAAAABAAEAAQAQAAsGAAAQAAEAAQABABAAGwcAAEkA
+AgAFAAEAEADYCAAAVQACACwAAQAQAHgIAABZAAQAMAABABAAOQgAAFkABQAxAAAAEACuBwoIWQAG
+ADIAAAEQAGgICghxAAgANgABAIQGwwAGAHgIxwAGADkIywABAOYIzwABAOYIzwARAPoF0wARAK4B
+1wARABgB2wBQIAAAAADGALEDBgABAHMgAAAAAMYAvAMGAAEAnCAAAAAAxgCZCd8AAQDQIQAAAACG
+GGcHBgACANghAAAAAIYYZwdaAAIA4yEAAAAAhgjIAFYABQD4IQAAAACGCOcESQAFAAEiAAAAAIYI
+vABWAAUAFiIAAAAAhgjUBEkABQAfIgAAAACGCOMA5QAFADQiAAAAAIYIEAVJAAUAPSIAAAAAhgiK
+CVIABQBSIgAAAACGCK8FSQAFAFsiAAAAAIYI1ABWAAUAcCIAAAAAhgj6BEkABQB5IgAAAACGCLEA
+VgAFAI4iAAAAAIYIwgRJAAUAlyIAAAAAhgjXCekABQCsIgAAAACGCMUFSQAFALUiAAAAAIYIGAnp
+AAUAyiIAAAAAhgiDBUkABQDTIgAAAACGCAYJ6QAFAOgiAAAAAIYIagVJAAUA8SIAAAAAhgh5AOkA
+BQAHIwAAAACGCHUESQAFABEjAAAAAIYIZgnpAAUAJyMAAAAAhgiaBUkABQAxIwAAAACGCKYI6QAF
+AEcjAAAAAIYIUwVJAAUAUSMAAAAAhggGAVIABQBnIwAAAACGCCUFSQAFAHEjAAAAAIYIngDlAAUA
+hyMAAAAAhgioBEkABQCRIwAAAACGCIoAUgAFAKcjAAAAAIYIjQRJAAUAsSMAAAAAhggdAFIABQDH
+IwAAAACGCCgAEAAFANIjAAAAAIYIUQRJAAYA3CMAAAAAhghjBO4ABgD0IwAAAACGCCgBUgAHAAok
+AAAAAIYIPgVJAAcAFCQAAAAAhgCyCUkABwAcJAAAAACGAJoISQAHACQkAAAAAIYYZwcGAAcARCQA
+AAAAxgB9CfMABwBpJAAAAADGAXQJ3wALAHwkAAAAAMYBmQnfAAwAfiQAAAAAhhhnB/0ADQCNJAAA
+AACGGGcH/QAOAJwkAAAAAIMYZwcGAA8ApCQAAAAAkwhGBwMBDwDQJAAAAACTCJYBCAEPANckAAAA
+AJMIogENAQ8A3yQAAAAAlgi2CBMBEADmJAAAAACGGGcHBgAQAO4kAAAAAJEYbQcYARAAAAABALYJ
+AAABAD8HAAACAEMIAAADAOgGAAABANUDAAABANUDAAABADMAAAACAGYBAAADAD8HAAAEAOgGAAAB
+AD8HAAABALYJAAABAPwIAAABAPwIAAABANUDCQBnBwEAEQBnBwYAGQBnBwoAKQBnBxAAMQBnBxAA
+OQBnBxAAQQBnBxAASQBnBxAAUQBnBxAAWQBnBxAAYQBnBxAAaQBnBwYAuQBnBwYA2QBnBxUA6QBn
+BwYAqQCxAwYAcQBnBxAA8QAGBgYAqQC8AwYA8QDkARsA8QDWAQYAgQBnBy8AgQCECDYAAQHIAzwA
+gQANB0QAEQFQAEkAEQHhBU0AsQD1A1IAGQHcAQYAIQHHCVYAkQBnB1oAkQA/B2QAkQBDCGgAmQAL
+AGwAkQDSBXEAmQABAHYAmQD+A3sAmQAIBIAAkQDqBYYAkQDZBQEAKQFnBxAAkQCyCUkAkQCaCEkA
+qQBnBwYAMQFxCIwAqQBXCJQAsQBnBwYAQQFUAZoAQQG6CaMAwQBnB6kA4QBnBwYALgALAEABLgAT
+AEkBLgAbAGgBLgAjAHEBLgArAJoBLgAzAJoBLgA7AJoBLgBDAHEBLgBLAKABLgBTAJoBLgBbALcB
+QwBjAAEC4wBrAAECAQF7AAECaQRzAGgBiQRzAGgBIAADAAEABwAjAAgAJQAAAMwAHAEAAOsEIAEA
+AMAAHAEAANgEIAEAAOcAJAEAABQFIAEAAI4JKAEAALMFIAEAANgAHAEAAP4EIAEAALUAHAEAAMYE
+IAEAANsJLAEAAMkFIAEAABwJLAEAAIcFIAEAAAoJLAEAAG4FIAEAAH0ALAEAAHkEIAEAAGoJLAEA
+AJ4FIAEAAKoILAEAAFcFIAEAAAoBKAEAACkFIAEAAKIAJAEAAKwEIAEAAI4AKAEAAJEEIAEAACwA
+KAEAAGcEIAEAACwBKAEAAEIFIAEAAEoHMQEAALYBNgEAALoIOwECAAYAAwACAAcABQACAAgABwAC
+AAkACQACAAoACwACAAsADQACAAwADwACAA0AEQACAA4AEwACAA8AFQACABAAFwACABEAGQACABIA
+GwACABMAHQACABQAHwACABUAIQACABYAIwACABcAJQACABgAJwACABkAKQACABoAKwACABsALQAC
+ABwALwACAB0AMQACAB4AMwACAB8ANQACACAANwACACEAOQACACIAOwACACMAPQACACQAPwABACUA
+PwACACYAQQABACcAQQACACgAQwACACkARQACADMARwACADQASQABADUASQACADYASwAEgAAAAQAA
+AAAAAAAAAAAAAABVAAAABAAAAAAAAAAAAAAAsQBHAAAAAAAQAAAAAAAAAAAAAAC6ACgJAAAAAAQA
+AAAAAAAAAAAAALEAOwAAAAAAEAAAAAAAAAAAAAAAugBFCQAAAAAEAAAAAAAAAAAAAACxAPMFAAAA
+AAAAAAABAAAAuAcAAAAAAAAAR2V0VUludDMyAEdldEludDMyADxNb2R1bGU+AGdldF9MT1RFSUQA
+c2V0X0xPVEVJRABJbnB1dElEAFN5c3RlbS5EYXRhAG1zY29ybGliAFJlYWQAU0NfOWU4ZjE0NDE4
+MzU5NDk0NmJhYTNhNjgxYzg2OTU0ZGQAZ2V0X3RvdGFsY2hhcmdlZABnZXRfZGlzY291bnRhcHBs
+aWVkAGdldF9kaXNjb3VudHJ1bGVpZABnZXRfdGltZWlkAGdldF9zdG9yZWlkAGdldF9vcmRlcmlk
+AGdldF9jdXN0b21lcmlkAGdldF9wcm9kdWN0aWQARGJDb21tYW5kAFNxbENvbW1hbmQAZ2V0X3Bh
+eW1lbnRtZXRob2QAZGVmYXVsdEluc3RhbmNlAGdldF9vcmRlcmNvZGUASURpc3Bvc2FibGUAUnVu
+dGltZVR5cGVIYW5kbGUAR2V0VHlwZUZyb21IYW5kbGUASW5wdXROYW1lAE1pY3Jvc29mdC5TcWxT
+ZXJ2ZXIuRHRzLlBpcGVsaW5lAFR5cGUAZ2V0X0N1bHR1cmUAc2V0X0N1bHR1cmUAcmVzb3VyY2VD
+dWx0dXJlAEFwcGxpY2F0aW9uU2V0dGluZ3NCYXNlAENsb3NlAERpc3Bvc2UAZ2V0X1N0YXRlAEVk
+aXRvckJyb3dzYWJsZVN0YXRlAENvbm5lY3Rpb25TdGF0ZQBDb21waWxlckdlbmVyYXRlZEF0dHJp
+YnV0ZQBEZWJ1Z2dlck5vblVzZXJDb2RlQXR0cmlidXRlAERlYnVnZ2FibGVBdHRyaWJ1dGUARWRp
+dG9yQnJvd3NhYmxlQXR0cmlidXRlAEFzc2VtYmx5VGl0bGVBdHRyaWJ1dGUAQXNzZW1ibHlUcmFk
+ZW1hcmtBdHRyaWJ1dGUAVGFyZ2V0RnJhbWV3b3JrQXR0cmlidXRlAEFzc2VtYmx5Q29uZmlndXJh
+dGlvbkF0dHJpYnV0ZQBBc3NlbWJseURlc2NyaXB0aW9uQXR0cmlidXRlAENvbXBpbGF0aW9uUmVs
+YXhhdGlvbnNBdHRyaWJ1dGUAQXNzZW1ibHlQcm9kdWN0QXR0cmlidXRlAEFzc2VtYmx5Q29weXJp
+Z2h0QXR0cmlidXRlAFNTSVNTY3JpcHRDb21wb25lbnRFbnRyeVBvaW50QXR0cmlidXRlAEFzc2Vt
+Ymx5Q29tcGFueUF0dHJpYnV0ZQBSdW50aW1lQ29tcGF0aWJpbGl0eUF0dHJpYnV0ZQBQcmVFeGVj
+dXRlAFBvc3RFeGVjdXRlAEFkZFdpdGhWYWx1ZQB2YWx1ZQBTeXN0ZW0uUnVudGltZS5WZXJzaW9u
+aW5nAFRvU3RyaW5nAEdldFN0cmluZwBHZXREZWNpbWFsAFN5c3RlbS5Db21wb25lbnRNb2RlbABT
+Q185ZThmMTQ0MTgzNTk0OTQ2YmFhM2E2ODFjODY5NTRkZC5kbGwAZ2V0X0xPVEVJRF9Jc051bGwA
+c2V0X0xPVEVJRF9Jc051bGwAZ2V0X3RvdGFsY2hhcmdlZF9Jc051bGwAZ2V0X2Rpc2NvdW50YXBw
+bGllZF9Jc051bGwAZ2V0X2Rpc2NvdW50cnVsZWlkX0lzTnVsbABnZXRfdGltZWlkX0lzTnVsbABn
+ZXRfc3RvcmVpZF9Jc051bGwAZ2V0X29yZGVyaWRfSXNOdWxsAGdldF9jdXN0b21lcmlkX0lzTnVs
+bABnZXRfcHJvZHVjdGlkX0lzTnVsbABnZXRfcGF5bWVudG1ldGhvZF9Jc051bGwAZ2V0X29yZGVy
+Y29kZV9Jc051bGwAZ2V0X3RvdGFscHJvZml0X0lzTnVsbABnZXRfdG90YWxkaXNjb3VudF9Jc051
+bGwAZ2V0X3RvdGFsYW1vdW50X0lzTnVsbABnZXRfdG90YWxjb3N0X0lzTnVsbABnZXRfcHJvZHVj
+dHNrdV9Jc051bGwAZ2V0X3F1YW50aXR5X0lzTnVsbABTZXROdWxsAGdldF9JdGVtAHNldF9JdGVt
+AFN5c3RlbQByZXNvdXJjZU1hbgBPcGVuAFNjcmlwdE1haW4AU3lzdGVtLkNvbmZpZ3VyYXRpb24A
+U3lzdGVtLkdsb2JhbGl6YXRpb24AU3lzdGVtLlJlZmxlY3Rpb24AU3FsUGFyYW1ldGVyQ29sbGVj
+dGlvbgBEYkNvbm5lY3Rpb24AU3FsQ29ubmVjdGlvbgBfY29ubmVjdGlvbgBJbnZhbGlkT3BlcmF0
+aW9uRXhjZXB0aW9uAFN5c3RlbS5EYXRhLkNvbW1vbgBTdHJpbmdDb21wYXJpc29uAEN1bHR1cmVJ
+bmZvAE91dHB1dE5hbWVNYXAAT3V0cHV0TWFwAERiRGF0YVJlYWRlcgBTcWxEYXRhUmVhZGVyAEV4
+ZWN1dGVSZWFkZXIARW50cmFkYTBCdWZmZXIAUGlwZWxpbmVCdWZmZXIAU2NyaXB0QnVmZmVyAGdl
+dF9SZXNvdXJjZU1hbmFnZXIAU3FsUGFyYW1ldGVyAC5jdG9yAC5jY3RvcgBTeXN0ZW0uRGlhZ25v
+c3RpY3MAU3lzdGVtLlJ1bnRpbWUuQ29tcGlsZXJTZXJ2aWNlcwBTeXN0ZW0uUmVzb3VyY2VzAFND
+XzllOGYxNDQxODM1OTQ5NDZiYWEzYTY4MWM4Njk1NGRkLlByb3BlcnRpZXMuUmVzb3VyY2VzLnJl
+c291cmNlcwBEZWJ1Z2dpbmdNb2RlcwBTQ185ZThmMTQ0MTgzNTk0OTQ2YmFhM2E2ODFjODY5NTRk
+ZC5Qcm9wZXJ0aWVzAFZhcmlhYmxlcwBCdWZmZXJDb2x1bW5JbmRleGVzAEdldENvbHVtbkluZGV4
+ZXMAU2V0dGluZ3MARXF1YWxzAENvbm5lY3Rpb25zAGdldF9QYXJhbWV0ZXJzAE9iamVjdABFbmRP
+ZlJvd3NldABnZXRfdG90YWxwcm9maXQAZ2V0X0RlZmF1bHQAU3lzdGVtLkRhdGEuU3FsQ2xpZW50
+AFVzZXJDb21wb25lbnQAUGFyZW50Q29tcG9uZW50AFNjcmlwdENvbXBvbmVudABnZXRfdG90YWxk
+aXNjb3VudABnZXRfdG90YWxhbW91bnQATWljcm9zb2Z0LlNxbFNlcnZlci5UeFNjcmlwdABNaWNy
+b3NvZnQuU3FsU2VydmVyLlBpcGVsaW5lSG9zdABnZXRfdG90YWxjb3N0AEVudHJhZGEwX1Byb2Nl
+c3NJbnB1dABnZXRfcHJvZHVjdHNrdQBFbnRyYWRhMF9Qcm9jZXNzSW5wdXRSb3cATmV4dFJvdwBn
+ZXRfQXNzZW1ibHkARXhlY3V0ZU5vblF1ZXJ5AGdldF9xdWFudGl0eQAAgJdEAGEAdABhACAAUwBv
+AHUAcgBjAGUAPQBsAG8AYwBhAGwAaABvAHMAdAA7AEkAbgBpAHQAaQBhAGwAIABDAGEAdABhAGwA
+bwBnAD0ARABXAEgAXwBUAE8AUABBAFoASQBPADsASQBuAHQAZQBnAHIAYQB0AGUAZAAgAFMAZQBj
+AHUAcgBpAHQAeQA9AFMAUwBQAEkAOwAAgbsNAAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAUwBF
+AEwARQBDAFQAIABUAE8AUAAgADEAIABsAG8AdABlAF8AYwBvAGQAZQAsACAAYwBhAG4AdABpAGQA
+YQBkAF8AZABpAHMAcABvAG4AaQBiAGwAZQANAAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAARgBS
+AE8ATQAgAGQAYgBvAC4ATABvAHQAZQBDAGEAbgB0AGkAZABhAGQAVABlAG0AcABvAHIAYQBsAA0A
+CgAgACAAIAAgACAAIAAgACAAIAAgACAAIABXAEgARQBSAEUAIABjAGEAbgB0AGkAZABhAGQAXwBk
+AGkAcwBwAG8AbgBpAGIAbABlACAAPgA9ACAAQABjAGEAbgB0AGkAZABhAGQAVgBlAG4AdABhAA0A
+CgAgACAAIAAgACAAIAAgACAAIAAgACAAIABBAE4ARAAgAHMAawB1ACAAPQAgAEAAcwBrAHUADQAK
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgAE8AUgBEAEUAUgAgAEIAWQAgAGwAbwB0AGUAXwBkAGEA
+dABlACAAQQBTAEMAAB1AAGMAYQBuAHQAaQBkAGEAZABWAGUAbgB0AGEAAAlAAHMAawB1AAATbABv
+AHQAZQBfAGMAbwBkAGUAAIFlDQAKACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAVQBQ
+AEQAQQBUAEUAIABkAGIAbwAuAEwAbwB0AGUAQwBhAG4AdABpAGQAYQBkAFQAZQBtAHAAbwByAGEA
+bAANAAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIABTAEUAVAAgAGMAYQBuAHQAaQBk
+AGEAZABfAGQAaQBzAHAAbwBuAGkAYgBsAGUAIAA9ACAAYwBhAG4AdABpAGQAYQBkAF8AZABpAHMA
+cABvAG4AaQBiAGwAZQAgAC0AIABAAGMAYQBuAHQAaQBkAGEAZABVAHQAaQBsAGkAegBhAGQAYQAN
+AAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIABXAEgARQBSAEUAIABsAG8AdABlAF8A
+YwBvAGQAZQAgAD0AIABAAGwAbwB0AGUAQwBvAGQAZQABJUAAYwBhAG4AdABpAGQAYQBkAFUAdABp
+AGwAaQB6AGEAZABhAAATQABsAG8AdABlAEMAbwBkAGUAABtOAG8AIABkAGkAcwBwAG8AbgBpAGIA
+bABlAACAvUwAYQAgAHAAcgBvAHAAaQBlAGQAYQBkACAASQBzAE4AdQBsAGwAIABuAG8AIABwAHUA
+ZQBkAGUAIABlAHMAdABhAGIAbABlAGMAZQByAHMAZQAgAGUAbgAgAEYAYQBsAHMAZQAuACAARQBu
+ACAAcwB1ACAAbAB1AGcAYQByACwAIABhAHMAaQBnAG4AZQAgAHUAbgAgAHYAYQBsAG8AcgAgAGEA
+IABsAGEAIABjAG8AbAB1AG0AbgBhAC4AABNFAG4AdAByAGEAZABhACAAMAAAcVMAQwBfADkAZQA4
+AGYAMQA0ADQAMQA4ADMANQA5ADQAOQA0ADYAYgBhAGEAMwBhADYAOAAxAGMAOAA2ADkANQA0AGQA
+ZAAuAFAAcgBvAHAAZQByAHQAaQBlAHMALgBSAGUAcwBvAHUAcgBjAGUAcwAAAAAAexLK6B4aPUmr
+Qs69hyxiGgAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERaQQgABF9DgcHET0ODhE9EkESRRJBBiAC
+AQ4SOQUgABKAgQcgAhKAhQ4cBCAAEkUDIAACBCABHA4DIAAOAyAACAkgAwESTR0IElEDBhJNAwYd
+CAQgAQgIBCABAggEIAEJCAQgAQ4IBSABET0IBSACAQgcByACAg4RgJ0FIAEdCAgIAAESgKERgKUF
+IAASgKkHIAIBDhKAqQi3elxWGTTgiQiJhF3NgIDMkQMGEjkDBhIUAwYSGAMGElUDBhJhAwYSZQMG
+EiAFIAEBEgwDIAAJBCAAET0EIAEBAgkgBAEIDhJNElEFIAEBElUEAAASYQQAABJlBQABARJlBAAA
+EiADAAABAygACAMoAAIDKAAJAygADgQoABE9BAgAEmEECAASZQQIABIgCAEACAAAAAAAHgEAAQBU
+AhZXcmFwTm9uRXhjZXB0aW9uVGhyb3dzAQgBAAIAAAAAACgBACNTQ185ZThmMTQ0MTgzNTk0OTQ2
+YmFhM2E2ODFjODY5NTRkZAAABQEAAAAAFgEAEUNvcHlyaWdodCBAICAyMDI0AABJAQAaLk5FVEZy
+YW1ld29yayxWZXJzaW9uPXY0LjcBAFQOFEZyYW1ld29ya0Rpc3BsYXlOYW1lEi5ORVQgRnJhbWV3
+b3JrIDQuNwQBAAAAAAC0AAAAzsrvvgEAAACRAAAAbFN5c3RlbS5SZXNvdXJjZXMuUmVzb3VyY2VS
+ZWFkZXIsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGlj
+S2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OSNTeXN0ZW0uUmVzb3VyY2VzLlJ1bnRpbWVSZXNvdXJj
+ZVNldAIAAAAAAAAAAAAAAFBBRFBBRFC0AAAAOEEAAAAAAAAAAAAAUkEAAAAgAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAERBAAAAAAAAAAAAAAAAX0NvckRsbE1haW4AbXNjb3JlZS5kbGwAAAAAAP8lACAA
+EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABABAA
+AAAYAACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAAAABIAAAAWGAA
+AOwDAAAAAAAAAAAAAOwDNAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBPAAAAAAC9BO/+
+AAABAAAAAQAAAAAAAAABAAAAAAA/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAARAAAAAEAVgBh
+AHIARgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBvAG4AAAAAAAAA
+sARMAwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAAAoAwAAAQAwADAAMAAwADAANABi
+ADAAAAAaAAEAAQBDAG8AbQBtAGUAbgB0AHMAAAAAAAAAIgABAAEAQwBvAG0AcABhAG4AeQBOAGEA
+bQBlAAAAAAAAAAAAcAAkAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4AAAAAAFMAQwBf
+ADkAZQA4AGYAMQA0ADQAMQA4ADMANQA5ADQAOQA0ADYAYgBhAGEAMwBhADYAOAAxAGMAOAA2ADkA
+NQA0AGQAZAAAADAACAABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAALgAwAC4AMAAA
+AHAAKAABAEkAbgB0AGUAcgBuAGEAbABOAGEAbQBlAAAAUwBDAF8AOQBlADgAZgAxADQANAAxADgA
+MwA1ADkANAA5ADQANgBiAGEAYQAzAGEANgA4ADEAYwA4ADYAOQA1ADQAZABkAC4AZABsAGwAAABI
+ABIAAQBMAGUAZwBhAGwAQwBvAHAAeQByAGkAZwBoAHQAAABDAG8AcAB5AHIAaQBnAGgAdAAgAEAA
+IAAgADIAMAAyADQAAAAqAAEAAQBMAGUAZwBhAGwAVAByAGEAZABlAG0AYQByAGsAcwAAAAAAAAAA
+AHgAKAABAE8AcgBpAGcAaQBuAGEAbABGAGkAbABlAG4AYQBtAGUAAABTAEMAXwA5AGUAOABmADEA
+NAA0ADEAOAAzADUAOQA0ADkANAA2AGIAYQBhADMAYQA2ADgAMQBjADgANgA5ADUANABkAGQALgBk
+AGwAbAAAAGgAJAABAFAAcgBvAGQAdQBjAHQATgBhAG0AZQAAAAAAUwBDAF8AOQBlADgAZgAxADQA
+NAAxADgAMwA1ADkANAA5ADQANgBiAGEAYQAzAGEANgA4ADEAYwA4ADYAOQA1ADQAZABkAAAANAAI
+AAEAUAByAG8AZAB1AGMAdABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgAwAC4AMAAAADgACAABAEEA
+cwBzAGUAbQBiAGwAeQAgAFYAZQByAHMAaQBvAG4AAAAxAC4AMAAuADAALgAwAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAwAAABkMQAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
+                  </arrayElements>
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del proyecto de Microsoft Visual Studio Tools para Aplicaciones. Los nombres de proyecto deben ser únicos en el paquete."
+                  name="VSTAProjectName"
+                  typeConverter="NOTBROWSABLE">SC_9e8f144183594946baa3a681c86954dd</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el lenguaje de programación que utiliza el script."
+                  name="ScriptLanguage"
+                  typeConverter="Microsoft.SqlServer.VSTAHosting.ScriptingLanguages">CSharp</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica una lista separada por comas de variables de solo lectura."
+                  name="ReadOnlyVariables"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIVariablePickerDlg"></property>
+                <property
+                  dataType="System.String"
+                  description="Especifica una lista separada por comas de variables de lectura/escritura."
+                  name="ReadWriteVariables"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIWriteableVariablePickerDlg"></property>
+                <property
+                  dataType="System.String"
+                  description="Lista de puntos de interrupción presentes en el script."
+                  isArray="true"
+                  name="BreakpointCollection"
+                  typeConverter="NOTBROWSABLE">
+                  <arrayElements
+                    arrayElementCount="0" />
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Suma de comprobación para comparar los metadatos del componente con los códigos compilados."
+                  name="MetadataChecksum140"
+                  typeConverter="NOTBROWSABLE">FC</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ScriptComponentHost</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Componente de script.Inputs[Entrada 0]"
+                  hasSideEffects="true"
+                  name="Entrada 0">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Componente de script.Inputs[Entrada 0].Columns[order_id]"
+                      cachedDataType="i4"
+                      cachedName="order_id"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[order_id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Componente de script.Inputs[Entrada 0].Columns[store_id]"
+                      cachedDataType="i4"
+                      cachedName="store_id"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[store_id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Componente de script.Inputs[Entrada 0].Columns[product_id]"
+                      cachedDataType="ui4"
+                      cachedName="product_id"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[product_id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Componente de script.Inputs[Entrada 0].Columns[product_sku]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="product_sku"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[product_sku]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Componente de script.Inputs[Entrada 0].Columns[customer_id]"
+                      cachedDataType="i4"
+                      cachedName="customer_id"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[customer_id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Componente de script.Inputs[Entrada 0].Columns[time_id]"
+                      cachedDataType="i4"
+                      cachedName="time_id"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[time_id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Componente de script.Inputs[Entrada 0].Columns[quantity]"
+                      cachedDataType="numeric"
+                      cachedName="quantity"
+                      cachedPrecision="12"
+                      cachedScale="4"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[quantity]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Componente de script.Inputs[Entrada 0].Columns[total_amount]"
+                      cachedDataType="numeric"
+                      cachedName="total_amount"
+                      cachedPrecision="20"
+                      cachedScale="4"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[total_amount]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Componente de script.Inputs[Entrada 0].Columns[total_discount]"
+                      cachedDataType="numeric"
+                      cachedName="total_discount"
+                      cachedPrecision="20"
+                      cachedScale="4"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[total_discount]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Componente de script.Inputs[Entrada 0].Columns[total_charged]"
+                      cachedDataType="numeric"
+                      cachedName="total_charged"
+                      cachedPrecision="20"
+                      cachedScale="4"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[total_charged]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Componente de script.Inputs[Entrada 0].Columns[total_cost]"
+                      cachedDataType="numeric"
+                      cachedName="total_cost"
+                      cachedPrecision="12"
+                      cachedScale="4"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[total_cost]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Componente de script.Inputs[Entrada 0].Columns[total_profit]"
+                      cachedDataType="numeric"
+                      cachedName="total_profit"
+                      cachedPrecision="22"
+                      cachedScale="4"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[total_profit]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Componente de script.Inputs[Entrada 0].Columns[payment_method]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="128"
+                      cachedName="payment_method"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[payment_method]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Componente de script.Inputs[Entrada 0].Columns[discount_rule_id]"
+                      cachedDataType="ui4"
+                      cachedName="discount_rule_id"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[discount_rule_id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Componente de script.Inputs[Entrada 0].Columns[discount_applied]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="discount_applied"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[discount_applied]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Componente de script.Inputs[Entrada 0].Columns[LOTEID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="LOTEID"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[LOTEID]"
+                      usageType="readWrite" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Componente de script.Inputs[Entrada 0].Columns[order_code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="order_code"
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[order_code]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Componente de script.Outputs[Salida 0]"
+                  name="Salida 0"
+                  synchronousInputId="Package\Data Flow Task\Componente de script.Inputs[Entrada 0]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
             <component
               refId="Package\Data Flow Task\Destino de ADO NET"
               componentClassID="Microsoft.ManagedComponentHost"
@@ -1287,6 +2628,22 @@ where [refTable].[order_id] = ? and [refTable].[store_id] = ? and [refTable].[or
                   exclusionGroup="1"
                   name="Lookup Match Output"
                   synchronousInputId="Package\Data Flow Task\Filtrando sales.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Filtrando sales.Outputs[Lookup Match Output].Columns[sales_id_fact]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Data Flow Task\Filtrando sales.Outputs[Lookup Match Output].Columns[sales_id_fact]"
+                      name="sales_id_fact"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">sales_id</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
                   <externalMetadataColumns />
                 </output>
                 <output
@@ -1358,13 +2715,7 @@ where [refTable].[order_id] = ? and [refTable].[store_id] = ? and [refTable].[or
     
     COALESCE(sr_coupon.rule_id, sr_name.rule_id) AS discount_rule_id,  
     COALESCE(o.discount_description, 'No Discount Applied') AS discount_applied,
-    isi.source_code,
-
-    SUBSTRING(
-	    isi.source_code, 
-	    LOCATE('-', isi.source_code) + 1, 
-	    LOCATE('-', isi.source_code, LOCATE('-', isi.source_code) + 1) - LOCATE('-', isi.source_code) - 1
-	) AS LOTEID
+    '' AS LOTEID
 
 FROM 
     sales_order o
@@ -1377,14 +2728,7 @@ LEFT JOIN
 LEFT JOIN 
     salesrule sr_coupon ON sc.rule_id = sr_coupon.rule_id  
 LEFT JOIN 
-    salesrule sr_name ON o.discount_description = sr_name.name 
-LEFT JOIN 
-    (
-        SELECT source_code, sku
-        FROM inventory_source_item
-        WHERE sku IS NOT NULL
-        ORDER BY RAND()
-    ) AS isi ON oi.sku = isi.sku
+    salesrule sr_name ON o.discount_description = sr_name.name
 WHERE oi.product_type = 'configurable'
 GROUP BY 
     o.entity_id;
@@ -1568,14 +2912,6 @@ GROUP BY
                       lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[LOTEID]"
                       name="LOTEID" />
                     <outputColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[source_code]"
-                      codePage="1252"
-                      dataType="str"
-                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[source_code]"
-                      length="255"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[source_code]"
-                      name="source_code" />
-                    <outputColumn
                       refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[order_code]"
                       codePage="1252"
                       dataType="str"
@@ -1669,14 +3005,8 @@ GROUP BY
                       refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[LOTEID]"
                       codePage="1252"
                       dataType="str"
-                      length="765"
-                      name="LOTEID" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[source_code]"
-                      codePage="1252"
-                      dataType="str"
                       length="255"
-                      name="source_code" />
+                      name="LOTEID" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[order_code]"
                       codePage="1252"
@@ -1804,17 +3134,9 @@ GROUP BY
                       codePage="1252"
                       dataType="str"
                       externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[LOTEID]"
-                      length="765"
+                      length="255"
                       lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[LOTEID]"
                       name="LOTEID" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[source_code]"
-                      codePage="1252"
-                      dataType="str"
-                      externalMetadataColumnId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].ExternalColumns[source_code]"
-                      length="255"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[source_code]"
-                      name="source_code" />
                     <outputColumn
                       refId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Error Output].Columns[order_code]"
                       codePage="1252"
@@ -2061,7 +3383,7 @@ GROUP BY
               startId="Package\Data Flow Task\Dim Discount.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Data Flow Task.Paths[Lookup No Match Output]"
-              endId="Package\Data Flow Task\Dim Product.Inputs[Lookup Input]"
+              endId="Package\Data Flow Task\Componente de script.Inputs[Entrada 0]"
               name="Lookup No Match Output"
               startId="Package\Data Flow Task\Filtrando sales.Outputs[Lookup No Match Output]" />
             <path
@@ -2069,11 +3391,1208 @@ GROUP BY
               endId="Package\Data Flow Task\Filtrando sales.Inputs[Lookup Input]"
               name="ODBC Source Output"
               startId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Salida 0]"
+              endId="Package\Data Flow Task\Dim Product.Inputs[Lookup Input]"
+              name="Salida 0"
+              startId="Package\Data Flow Task\Componente de script.Outputs[Salida 0]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task 1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{B93B55EB-5EC3-43A1-812A-9A343F15DE67}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task 1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task 1\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Derived Column.Inputs[Derived Column Input].Columns[lote_id]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="lote_id"
+                      lineageId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[lote_id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Derived Column.Inputs[Derived Column Input].Columns[lote_quantity]"
+                      cachedDataType="i4"
+                      cachedName="lote_quantity"
+                      lineageId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[lote_quantity]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Task 1\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Derived Column.Outputs[Derived Column Output].Columns[new_lote_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Derived Column.Outputs[Derived Column Output].Columns[new_lote_id]"
+                      name="new_lote_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,255,1252)#{Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[lote_id]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,255,1252)lote_id</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Derived Column.Outputs[Derived Column Output].Columns[cantidad_disponible]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task 1\Derived Column.Outputs[Derived Column Output].Columns[cantidad_disponible]"
+                      name="cantidad_disponible"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[lote_quantity]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">lote_quantity</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Destino de ADO NET"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC."
+              name="Destino de ADO NET"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de destino."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."LoteCantidadTemporal"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si se debe usar la interfaz SqlBulkCopy para mejorar el rendimiento de las operaciones de inserción masiva. No todos los proveedores admiten esta interfaz."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Destino de ADO NET.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.DWH TOPAZIO]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.DWH TOPAZIO]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de ADO NET">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[sku]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="sku"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[sku]"
+                      lineageId="Package\Data Flow Task 1\Sort 1.Outputs[Sort Output].Columns[sku]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[cantidad_disponible]"
+                      cachedDataType="i4"
+                      cachedName="cantidad_disponible"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[cantidad_disponible]"
+                      lineageId="Package\Data Flow Task 1\Sort 1.Outputs[Sort Output].Columns[cantidad_disponible]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[lote_id]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="lote_id"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[lote_code]"
+                      lineageId="Package\Data Flow Task 1\Sort 1.Outputs[Sort Output].Columns[lote_id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[lote_production_date]"
+                      cachedDataType="dbDate"
+                      cachedName="lote_production_date"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[lote_date]"
+                      lineageId="Package\Data Flow Task 1\Sort 1.Outputs[Sort Output].Columns[lote_production_date]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[lote_quantity]"
+                      cachedDataType="i4"
+                      cachedName="lote_quantity"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[cantidad_original]"
+                      lineageId="Package\Data Flow Task 1\Sort 1.Outputs[Sort Output].Columns[lote_quantity]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Id]"
+                      dataType="i4"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[lote_code]"
+                      dataType="wstr"
+                      length="255"
+                      name="lote_code" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[lote_date]"
+                      dataType="dbTimeStamp"
+                      name="lote_date" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[sku]"
+                      dataType="wstr"
+                      length="255"
+                      name="sku" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[cantidad_original]"
+                      dataType="numeric"
+                      name="cantidad_original"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[cantidad_disponible]"
+                      dataType="numeric"
+                      name="cantidad_disponible"
+                      precision="10"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de ADO NET"
+                  synchronousInputId="Package\Data Flow Task 1\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[LoteCantidadTemporal]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[LoteCantidadTemporal]) [refTable]
+where [refTable].[lote_code] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="lote_code" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="sku" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="cantidad_original" dataType="DT_NUMERIC" length="0" precision="10" scale="2" codePage="0"/&gt;&lt;referenceColumn name="cantidad_disponible" dataType="DT_NUMERIC" length="0" precision="10" scale="2" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Data Flow Task 1\Derived Column.Outputs[Derived Column Output].Columns[new_lote_id]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.DWH_TOPAZIO]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.DWH_TOPAZIO]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Lookup.Inputs[Lookup Input].Columns[new_lote_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="new_lote_id"
+                      lineageId="Package\Data Flow Task 1\Derived Column.Outputs[Derived Column Output].Columns[new_lote_id]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">lote_code</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Data Flow Task 1\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Data Flow Task 1\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Origen de ADO NET"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server."
+              name="Origen de ADO NET"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL utilizada por el componente para extraer datos."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si se debe permitir que columnas externas que no sean de cadenas se conviertan implícitamente en cadenas en las columnas de salida."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de origen."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."dim_product"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especificar el modo de recuperar información de columnas externas"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">0</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Origen de ADO NET.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.DWH TOPAZIO]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.DWH TOPAZIO]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET]"
+                  name="Salida de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[product_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[product_id]"
+                      lineageId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[product_id]"
+                      name="product_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[product_bk]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[product_bk]"
+                      lineageId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[product_bk]"
+                      name="product_bk"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[lote_id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[lote_id]"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[lote_id]"
+                      name="lote_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[lote_production_date]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[lote_production_date]"
+                      lineageId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[lote_production_date]"
+                      name="lote_production_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[lote_quantity]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[lote_quantity]"
+                      lineageId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[lote_quantity]"
+                      name="lote_quantity"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[unit_cost]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[unit_cost]"
+                      lineageId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[unit_cost]"
+                      name="unit_cost"
+                      precision="10"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[sku]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[sku]"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[sku]"
+                      name="sku"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[product_name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[product_name]"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[product_name]"
+                      name="product_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[category]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[category]"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[category]"
+                      name="category"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[lote_cost]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[lote_cost]"
+                      lineageId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[lote_cost]"
+                      name="lote_cost"
+                      precision="10"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[unit_price]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[unit_price]"
+                      lineageId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[unit_price]"
+                      name="unit_price"
+                      precision="10"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[product_id]"
+                      dataType="i4"
+                      name="product_id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[product_bk]"
+                      dataType="i4"
+                      name="product_bk" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[lote_id]"
+                      dataType="wstr"
+                      length="255"
+                      name="lote_id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[lote_production_date]"
+                      dataType="dbDate"
+                      name="lote_production_date" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[lote_quantity]"
+                      dataType="i4"
+                      name="lote_quantity" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[unit_cost]"
+                      dataType="numeric"
+                      name="unit_cost"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[sku]"
+                      dataType="wstr"
+                      length="255"
+                      name="sku" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[product_name]"
+                      dataType="wstr"
+                      length="255"
+                      name="product_name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[category]"
+                      dataType="wstr"
+                      length="255"
+                      name="category" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[lote_cost]"
+                      dataType="numeric"
+                      name="lote_cost"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[unit_price]"
+                      dataType="numeric"
+                      name="unit_price"
+                      precision="10"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[product_id]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[product_id]"
+                      name="product_id" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[product_bk]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[product_bk]"
+                      name="product_bk" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[lote_id]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[lote_id]"
+                      name="lote_id" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[lote_production_date]"
+                      dataType="dbDate"
+                      lineageId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[lote_production_date]"
+                      name="lote_production_date" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[lote_quantity]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[lote_quantity]"
+                      name="lote_quantity" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[unit_cost]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[unit_cost]"
+                      name="unit_cost"
+                      precision="10"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[sku]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[sku]"
+                      name="sku" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[product_name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[product_name]"
+                      name="product_name" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[category]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[category]"
+                      name="category" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[lote_cost]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[lote_cost]"
+                      name="lote_cost"
+                      precision="10"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[unit_price]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[unit_price]"
+                      name="unit_price"
+                      precision="10"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Sort 1"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort 1"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Sort 1.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Sort 1.Inputs[Sort Input].Columns[product_id]"
+                      cachedDataType="i4"
+                      cachedName="product_id"
+                      lineageId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[product_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Sort 1.Inputs[Sort Input].Columns[product_bk]"
+                      cachedDataType="i4"
+                      cachedName="product_bk"
+                      lineageId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[product_bk]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Sort 1.Inputs[Sort Input].Columns[lote_id]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="lote_id"
+                      lineageId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[lote_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Sort 1.Inputs[Sort Input].Columns[lote_production_date]"
+                      cachedDataType="dbDate"
+                      cachedName="lote_production_date"
+                      lineageId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[lote_production_date]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Sort 1.Inputs[Sort Input].Columns[lote_quantity]"
+                      cachedDataType="i4"
+                      cachedName="lote_quantity"
+                      lineageId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[lote_quantity]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Sort 1.Inputs[Sort Input].Columns[unit_cost]"
+                      cachedDataType="numeric"
+                      cachedName="unit_cost"
+                      cachedPrecision="10"
+                      cachedScale="2"
+                      lineageId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[unit_cost]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Sort 1.Inputs[Sort Input].Columns[sku]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="sku"
+                      lineageId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[sku]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Sort 1.Inputs[Sort Input].Columns[product_name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="product_name"
+                      lineageId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[product_name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Sort 1.Inputs[Sort Input].Columns[category]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="category"
+                      lineageId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[category]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Sort 1.Inputs[Sort Input].Columns[lote_cost]"
+                      cachedDataType="numeric"
+                      cachedName="lote_cost"
+                      cachedPrecision="10"
+                      cachedScale="2"
+                      lineageId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[lote_cost]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Sort 1.Inputs[Sort Input].Columns[unit_price]"
+                      cachedDataType="numeric"
+                      cachedName="unit_price"
+                      cachedPrecision="10"
+                      cachedScale="2"
+                      lineageId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[unit_price]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Sort 1.Inputs[Sort Input].Columns[new_lote_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="new_lote_id"
+                      lineageId="Package\Data Flow Task 1\Derived Column.Outputs[Derived Column Output].Columns[new_lote_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Sort 1.Inputs[Sort Input].Columns[cantidad_disponible]"
+                      cachedDataType="i4"
+                      cachedName="cantidad_disponible"
+                      lineageId="Package\Data Flow Task 1\Derived Column.Outputs[Derived Column Output].Columns[cantidad_disponible]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Sort 1.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Sort 1.Outputs[Sort Output].Columns[product_id]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Sort 1.Outputs[Sort Output].Columns[product_id]"
+                      name="product_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[product_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Sort 1.Outputs[Sort Output].Columns[product_bk]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Sort 1.Outputs[Sort Output].Columns[product_bk]"
+                      name="product_bk">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[product_bk]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Sort 1.Outputs[Sort Output].Columns[lote_id]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Sort 1.Outputs[Sort Output].Columns[lote_id]"
+                      name="lote_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[lote_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Sort 1.Outputs[Sort Output].Columns[lote_production_date]"
+                      dataType="dbDate"
+                      lineageId="Package\Data Flow Task 1\Sort 1.Outputs[Sort Output].Columns[lote_production_date]"
+                      name="lote_production_date"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[lote_production_date]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Sort 1.Outputs[Sort Output].Columns[lote_quantity]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Sort 1.Outputs[Sort Output].Columns[lote_quantity]"
+                      name="lote_quantity">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[lote_quantity]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Sort 1.Outputs[Sort Output].Columns[unit_cost]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task 1\Sort 1.Outputs[Sort Output].Columns[unit_cost]"
+                      name="unit_cost"
+                      precision="10"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[unit_cost]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Sort 1.Outputs[Sort Output].Columns[sku]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Sort 1.Outputs[Sort Output].Columns[sku]"
+                      name="sku">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[sku]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Sort 1.Outputs[Sort Output].Columns[product_name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Sort 1.Outputs[Sort Output].Columns[product_name]"
+                      name="product_name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[product_name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Sort 1.Outputs[Sort Output].Columns[category]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Sort 1.Outputs[Sort Output].Columns[category]"
+                      name="category">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[category]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Sort 1.Outputs[Sort Output].Columns[lote_cost]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task 1\Sort 1.Outputs[Sort Output].Columns[lote_cost]"
+                      name="lote_cost"
+                      precision="10"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[lote_cost]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Sort 1.Outputs[Sort Output].Columns[unit_price]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task 1\Sort 1.Outputs[Sort Output].Columns[unit_price]"
+                      name="unit_price"
+                      precision="10"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[unit_price]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Sort 1.Outputs[Sort Output].Columns[new_lote_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Sort 1.Outputs[Sort Output].Columns[new_lote_id]"
+                      name="new_lote_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task 1\Derived Column.Outputs[Derived Column Output].Columns[new_lote_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Sort 1.Outputs[Sort Output].Columns[cantidad_disponible]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Sort 1.Outputs[Sort Output].Columns[cantidad_disponible]"
+                      name="cantidad_disponible">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task 1\Derived Column.Outputs[Derived Column Output].Columns[cantidad_disponible]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task 1.Paths[Derived Column Output]"
+              endId="Package\Data Flow Task 1\Lookup.Inputs[Lookup Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task 1\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task 1.Paths[Lookup No Match Output]"
+              endId="Package\Data Flow Task 1\Sort 1.Inputs[Sort Input]"
+              name="Lookup No Match Output"
+              startId="Package\Data Flow Task 1\Lookup.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Data Flow Task 1.Paths[Salida de origen de ADO NET]"
+              endId="Package\Data Flow Task 1\Derived Column.Inputs[Derived Column Input]"
+              name="Salida de origen de ADO NET"
+              startId="Package\Data Flow Task 1\Origen de ADO NET.Outputs[Salida de origen de ADO NET]" />
+            <path
+              refId="Package\Data Flow Task 1.Paths[Sort Output]"
+              endId="Package\Data Flow Task 1\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]"
+              name="Sort Output"
+              startId="Package\Data Flow Task 1\Sort 1.Outputs[Sort Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{773C1709-3B62-4E42-8B5E-40399BC11037}"
+      DTS:From="Package\Data Flow Task 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\Data Flow Task" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
 <!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
@@ -2085,11 +4604,49 @@ GROUP BY
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="155,42"
           Id="Package\Data Flow Task"
-          TopLeft="5.5,5.5" />
+          TopLeft="304.5,157.5" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Data Flow Task 1"
+          TopLeft="117,20" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="199,62">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="183,95.5"
+              Start="0,0"
+              End="183,88">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,43.75"
+                    Point2="0,47.75"
+                    Point3="4,47.75" />
+                  <mssgle:LineSegment
+                    End="179,47.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="179,47.75"
+                    Point2="183,47.75"
+                    Point3="183,51.75" />
+                  <mssgle:LineSegment
+                    End="183,88" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -2101,116 +4658,82 @@ GROUP BY
         <NodeLayout
           Size="144,42"
           Id="Package\Data Flow Task\Dim Discount"
-          TopLeft="473,436" />
+          TopLeft="740,431" />
         <NodeLayout
           Size="151,42"
           Id="Package\Data Flow Task\Filtrando sales"
-          TopLeft="359,152" />
+          TopLeft="202,109" />
         <NodeLayout
           Size="149,42"
           Id="Package\Data Flow Task\ODBC Source"
-          TopLeft="192,65" />
+          TopLeft="37,23" />
         <NodeLayout
           Size="126,42"
           Id="Package\Data Flow Task\Dim Time"
-          TopLeft="667,607" />
+          TopLeft="934,602" />
         <NodeLayout
           Size="183,42"
           Id="Package\Data Flow Task\total_profit_calculado"
-          TopLeft="873,789" />
+          TopLeft="1140,784" />
         <NodeLayout
           Size="149,42"
           Id="Package\Data Flow Task\Dim Customer"
-          TopLeft="394,352" />
+          TopLeft="661,347" />
         <NodeLayout
           Size="139,42"
           Id="Package\Data Flow Task\Dim Product"
-          TopLeft="333,252" />
+          TopLeft="600,247" />
         <NodeLayout
           Size="128,42"
           Id="Package\Data Flow Task\Dim Store"
-          TopLeft="577,518" />
+          TopLeft="844,513" />
         <NodeLayout
           Size="183,42"
           Id="Package\Data Flow Task\Destino de ADO NET"
-          TopLeft="1016,886" />
+          TopLeft="1283,881" />
         <NodeLayout
           Size="179,42"
           Id="Package\Data Flow Task\total_cost_calculado"
-          TopLeft="750,708" />
+          TopLeft="1017,703" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[ODBC Source Output]"
-          TopLeft="266.5,107">
+          TopLeft="111.5,65">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="168,45"
+              EndConnector="166,44"
               Start="0,0"
-              End="168,37.5">
+              End="166,36.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.5" />
+                    End="0,18" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,18.5"
-                    Point2="0,22.5"
-                    Point3="4,22.5" />
+                    Point1="0,18"
+                    Point2="0,22"
+                    Point3="4,22" />
                   <mssgle:LineSegment
-                    End="164,22.5" />
+                    End="162,22" />
                   <mssgle:CubicBezierSegment
-                    Point1="164,22.5"
-                    Point2="168,22.5"
-                    Point3="168,26.5" />
+                    Point1="162,22"
+                    Point2="166,22"
+                    Point3="166,26" />
                   <mssgle:LineSegment
-                    End="168,37.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Lookup No Match Output]"
-          TopLeft="434.5,194">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-32,58"
-              Start="0,0"
-              End="-32,50.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25"
-                    Point2="0,29"
-                    Point3="-4,29" />
-                  <mssgle:LineSegment
-                    End="-28,29" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-28,29"
-                    Point2="-32,29"
-                    Point3="-32,33" />
-                  <mssgle:LineSegment
-                    End="-32,50.5" />
+                    End="166,36.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-71.80638671875,34,111.6127734375,11.609375"
+              BoundingBox="75,27,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Lookup Match Output4]"
-          TopLeft="545,478">
+          TopLeft="812,473">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2240,13 +4763,13 @@ GROUP BY
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-0.191386718750003,25,96.3827734375,11.609375"
+              BoundingBox="-9.0600390625,25,114.120078125,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Lookup Match Output3]"
-          TopLeft="730,649">
+          TopLeft="997,644">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2276,13 +4799,13 @@ GROUP BY
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="6.55861328125,34.5,96.3827734375,11.609375"
+              BoundingBox="-2.3100390625,34.5,114.120078125,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Lookup Match Output2]"
-          TopLeft="641,560">
+          TopLeft="908,555">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2312,13 +4835,13 @@ GROUP BY
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-3.69138671875,28.5,96.3827734375,11.609375"
+              BoundingBox="-12.5600390625,28.5,114.120078125,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Lookup Match Output1]"
-          TopLeft="468.5,394">
+          TopLeft="735.5,389">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2348,13 +4871,13 @@ GROUP BY
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-9.94138671875,26,96.3827734375,11.609375"
+              BoundingBox="-18.8100390625,26,114.120078125,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Lookup Match Output]"
-          TopLeft="402.5,294">
+          TopLeft="669.5,289">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2384,13 +4907,13 @@ GROUP BY
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-15.19138671875,34,96.3827734375,11.609375"
+              BoundingBox="-24.0600390625,34,114.120078125,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Derived Column Output1]"
-          TopLeft="964.5,831">
+          TopLeft="1231.5,826">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2419,12 +4942,14 @@ GROUP BY
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="63.5,32.5,16,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="839.5,750">
+          TopLeft="1106.5,745">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2453,7 +4978,85 @@ GROUP BY
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="54.5,24.5,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Data Flow Task\Componente de script"
+          TopLeft="264.5,202.5" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Lookup No Match Output]"
+          TopLeft="277.5,151">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="80,51.5"
+              Start="0,0"
+              End="80,44">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.75"
+                    Point2="0,25.75"
+                    Point3="4,25.75" />
+                  <mssgle:LineSegment
+                    End="76,25.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="76,25.75"
+                    Point2="80,25.75"
+                    Point3="80,29.75" />
+                  <mssgle:LineSegment
+                    End="80,44" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-24.6750390625,30.75,129.350078125,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Salida 0]"
+          TopLeft="450.5,223.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="149.5,44.5"
+              Start="0,0"
+              End="142,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="70.75,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="70.75,0"
+                    Point2="74.75,0"
+                    Point3="74.75,4" />
+                  <mssgle:LineSegment
+                    End="74.75,40.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="74.75,40.5"
+                    Point2="74.75,44.5"
+                    Point3="78.75,44.5" />
+                  <mssgle:LineSegment
+                    End="142,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="66.75,-22,16,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2488,7 +5091,7 @@ GROUP BY
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2498,7 +5101,7 @@ GROUP BY
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2557,7 +5160,7 @@ GROUP BY
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2567,7 +5170,7 @@ GROUP BY
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2599,6 +5202,199 @@ GROUP BY
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task\Destino de ADO NET">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Data Flow Task 1">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Data Flow Task 1\Origen de ADO NET"
+          TopLeft="80,32" />
+        <NodeLayout
+          Size="115,42"
+          Id="Package\Data Flow Task 1\Lookup"
+          TopLeft="503.5,310.5" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Data Flow Task 1\Derived Column"
+          TopLeft="174,180" />
+        <EdgeLayout
+          Id="Package\Data Flow Task 1.Paths[Salida de origen de ADO NET]"
+          TopLeft="169.5,74">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="83.5,106"
+              Start="0,0"
+              End="83.5,98.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,49"
+                    Point2="0,53"
+                    Point3="4,53" />
+                  <mssgle:LineSegment
+                    End="79.5,53" />
+                  <mssgle:CubicBezierSegment
+                    Point1="79.5,53"
+                    Point2="83.5,53"
+                    Point3="83.5,57" />
+                  <mssgle:LineSegment
+                    End="83.5,98.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task 1.Paths[Derived Column Output]"
+          TopLeft="253,222">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="308,88.5"
+              Start="0,0"
+              End="308,81">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,40.25"
+                    Point2="0,44.25"
+                    Point3="4,44.25" />
+                  <mssgle:LineSegment
+                    End="304,44.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="304,44.25"
+                    Point2="308,44.25"
+                    Point3="308,48.25" />
+                  <mssgle:LineSegment
+                    End="308,81" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="183,42"
+          Id="Package\Data Flow Task 1\Destino de ADO NET"
+          TopLeft="981,451" />
+        <NodeLayout
+          Size="108,42"
+          Id="Package\Data Flow Task 1\Sort 1"
+          TopLeft="709,452" />
+        <EdgeLayout
+          Id="Package\Data Flow Task 1.Paths[Lookup No Match Output]"
+          TopLeft="561,352.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="202,99.5"
+              Start="0,0"
+              End="202,92">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,45.75"
+                    Point2="0,49.75"
+                    Point3="4,49.75" />
+                  <mssgle:LineSegment
+                    End="198,49.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="198,49.75"
+                    Point2="202,49.75"
+                    Point3="202,53.75" />
+                  <mssgle:LineSegment
+                    End="202,92" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="45.19361328125,54.75,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task 1.Paths[Sort Output]"
+          TopLeft="817,472.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="164,0"
+              Start="0,0"
+              End="156.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="156.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task 1\Origen de ADO NET">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task 1\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[LoteCantidadTemporal]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task 1\Destino de ADO NET">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

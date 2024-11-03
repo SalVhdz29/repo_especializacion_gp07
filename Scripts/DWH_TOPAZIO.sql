@@ -253,6 +253,18 @@ BEGIN
     );
 END
 
+IF OBJECT_ID('dbo.LoteCantidadTemporal', 'U') IS NOT NULL
+    DROP TABLE dbo.LoteCantidadTemporal;
+
+CREATE TABLE dbo.LoteCantidadTemporal (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    lote_code VARCHAR(255),
+    lote_date DATE,
+    sku VARCHAR(255),
+    cantidad_original DECIMAL(10,2),
+    cantidad_disponible DECIMAL(10,2)
+);
+
 -- default inserts
 
 SET IDENTITY_INSERT dim_customer ON;
