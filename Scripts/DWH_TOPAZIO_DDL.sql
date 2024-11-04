@@ -1,19 +1,16 @@
--- Eliminar la base de datos si ya existe
+
 IF EXISTS (SELECT * FROM sys.databases WHERE name = 'DWH_TOPAZIO')
 BEGIN
     DROP DATABASE DWH_TOPAZIO;
 END
 GO
-
--- Crear la base de datos
+-- CREAR BASE
 CREATE DATABASE DWH_TOPAZIO;
 GO
 
--- Usar la base de datos creada
 USE DWH_TOPAZIO;
 GO
 
--- Limpiar tablas si ya existen
 IF OBJECT_ID('fact_sales', 'U') IS NOT NULL
     TRUNCATE TABLE fact_sales;
 IF OBJECT_ID('dim_discount', 'U') IS NOT NULL
@@ -27,7 +24,8 @@ IF OBJECT_ID('dim_product', 'U') IS NOT NULL
 IF OBJECT_ID('dim_time', 'U') IS NOT NULL
     TRUNCATE TABLE dim_time;
 
--- Crear las tablas solo si no existen
+-- CREANDO TABLAS
+
 IF OBJECT_ID('dim_time', 'U') IS NULL
 BEGIN
 CREATE TABLE dim_time (
@@ -105,6 +103,8 @@ BEGIN
     );
 END
 
+-- TRIGGER DE UPDATE AT AUTOMATICO PARA DIM CUSTOMER
+
 GO 
 
 CREATE TRIGGER trg_UpdateDimCustomer
@@ -159,7 +159,6 @@ BEGIN
     );
 END
 
--- Crear la tabla dim_catalog_product
 IF OBJECT_ID('dim_catalog_product', 'U') IS NULL
 BEGIN
     CREATE TABLE dim_catalog_product (
@@ -172,7 +171,6 @@ BEGIN
     );
 END
 
--- Crear la tabla dim_factory
 IF OBJECT_ID('dim_factory', 'U') IS NULL
 BEGIN
     CREATE TABLE dim_factory (
@@ -182,7 +180,6 @@ BEGIN
     );
 END
 
--- Crear la tabla fact_lote
 IF OBJECT_ID('fact_lote', 'U') IS NULL
 BEGIN
     CREATE TABLE fact_lote (
@@ -203,8 +200,7 @@ BEGIN
     );
 END
 
-
-GO 
+-- TRIGGER DE UPDATE AT AUTOMATICO PARA FACT LOTE
 
 CREATE TRIGGER trg_UpdateFactLote
 ON fact_lote
@@ -223,7 +219,6 @@ END;
 GO
 
 
--- Crear la tabla dim_workcenter_product
 IF OBJECT_ID('dim_workcenter_product', 'U') IS NULL
 BEGIN
     CREATE TABLE dim_workcenter_product (
@@ -235,7 +230,6 @@ BEGIN
     );
 END
 
--- Crear la tabla fact_inventory_movements
 IF OBJECT_ID('fact_inventory_movements', 'U') IS NULL
 BEGIN
     CREATE TABLE fact_inventory_movements (
@@ -248,8 +242,6 @@ BEGIN
         production_minutes_time DECIMAL(10,2),
         unit_production_time DECIMAL(10,2),
         parallel_capacity INT,
-
-
     );
 END
 
@@ -265,7 +257,7 @@ CREATE TABLE dbo.LoteCantidadTemporal (
     cantidad_disponible DECIMAL(10,2)
 );
 
--- default inserts
+-- INSERTS POR DEFAULT PARA DIMS
 
 SET IDENTITY_INSERT dim_customer ON;
 INSERT INTO dim_customer (customer_id, customer_bk, customer_name, customer_address, customer_city, customer_region, customer_email, customer_segment, loyalty_status)

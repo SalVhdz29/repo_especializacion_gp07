@@ -243,7 +243,7 @@ select
     pp.default_code as sku
 	
 FROM 
-	public.mrp_production mp -- orden de produccion
+	public.mrp_production mp
 	inner join public.mrp_workorder wo on wo.production_id = mp.id 
 	inner join public.mrp_workcenter wk on wk.id = wo.workcenter_id
 	inner join public.stock_move sm ON sm.production_id = mp.id 
@@ -256,7 +256,7 @@ AND sml.product_id = mp.product_id
 AND ;
 
 
-
+-- Script de update de campos SCD Tipo 1 en dim_customer.
 SELECT 
     dp.lote_id,
     SUM(fs.quantity) AS total_quantity
@@ -269,12 +269,11 @@ GROUP BY
 ORDER BY 
     dp.lote_id;
 
-
-
 UPDATE dim_customer
 SET customer_segment = ?, 
     loyalty_status = ?
 WHERE customer_bk = ?
+
 
 
 -- FACT LOTE
