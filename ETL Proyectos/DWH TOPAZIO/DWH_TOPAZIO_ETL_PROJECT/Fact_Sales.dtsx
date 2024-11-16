@@ -11,8 +11,8 @@
   DTS:LocaleID="22538"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="71"
-  DTS:VersionGUID="{3C494828-25F2-4CDD-94A5-90D22F1310C0}">
+  DTS:VersionBuild="80"
+  DTS:VersionGUID="{E8DC9378-557B-443C-999D-80005186F734}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="pwd"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm0770QEElEyMseYl/1jRdwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA91qV7df7GLUNyzFkGnlXokB6kh2ERkVIKvyDOgrNhKAAAAAAOgAAAAAIAACAAAACuuVH1hX7C+giGKJ9jiwUVY/W9jfxXHqG+KR4zsIUrdhAAAADfqZQHj3iIbfh5VeutyoAgQAAAAJ8AvaYm+FIyxhGlW6of972m0PzvjPg3j3cikgagM6B5dVPJGauzhzLRx7HT9GzTMsy69mAu73gFMQZ7Wz12aQM</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAXebiD/MEi0WuZ9O+dPFg3wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACdCN8/KL4DzUahYdWwK+IJa6YWrwcHRhySukIQm3UTLAAAAAAOgAAAAAIAACAAAABo3KA1AY8mW1sHm2aE/UQh7bSHmw/AI6dGwP6h3AQ4XBAAAABtWTCmPTPWGMQ5moPDpnBlQAAAAKA6xbk5uoZiwzODkuinrCAAk0OxaoYTjn/MMrluA4DdTv5GLgtP4tuMvFMz45SfcyzYAfXcysYKehLgvmExrsE</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -409,7 +409,7 @@ public class ScriptMain : UserComponent
 
 
         string querySelectLote = @"
-            SELECT TOP 1 lote_code, cantidad_disponible
+            SELECT TOP 1 Id, lote_code, cantidad_disponible
             FROM dbo.LoteCantidadTemporal
             WHERE cantidad_disponible >= @cantidadVenta
             AND sku = @sku
@@ -900,7 +900,7 @@ namespace SC_9e8f144183594946baa3a681c86954dd.Properties {
     <msb:CodeName>SC_9e8f144183594946baa3a681c86954dd</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
     <msb:DisplayName>SC_9e8f144183594946baa3a681c86954dd</msb:DisplayName>
-    <msb:ProjectId>{784E4D6C-B8FF-4F30-99B9-CF3DFA5D57C6}</msb:ProjectId>
+    <msb:ProjectId>{6C8E276B-DD08-4374-B409-69C78D4EB43B}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
     <msb:Project Include="SC_9e8f144183594946baa3a681c86954dd.csproj" />
@@ -1047,21 +1047,21 @@ namespace SC_9e8f144183594946baa3a681c86954dd.Properties {
                     <arrayElement
                       dataType="System.String"><![CDATA[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
-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
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAGlBOGcAAAAAAAAAAOAAIiALATAAACIAAAAIAAAAAAAAWkEA
 AAAgAAAAYAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACgAAAAAgAAAAAAAAMAYIUAABAA
-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
+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
-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
+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
-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
+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
-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
+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
@@ -1071,13 +1071,13 @@ CioiAh4oIwAACipWAnsgAAAKAnshAAAKHwmUbyYAAAoqJgIfCSgjAAAKKlYCeyAAAAoCeyEAAAof
 CpRvJgAACiomAh8KKCMAAAoqVgJ7IAAACgJ7IQAACh8LlG8mAAAKKiYCHwsoIwAACipWAnsgAAAK
 AnshAAAKHwyUbyUAAAoqJgIfDCgjAAAKKlYCeyAAAAoCeyEAAAofDZRvJAAACiomAh8NKCMAAAoq
 VgJ7IAAACgJ7IQAACh8OlG8lAAAKKiYCHw4oIwAACipWAnsgAAAKAnshAAAKHw+UbyUAAAoqKgIf
-DwMoJwAACiomAh8PKCMAAAoqXgMsCQIfDygoAAAKKnJQBABwcykAAAp6VgJ7IAAACgJ7IQAACh8Q
+DwMoJwAACiomAh8PKCMAAAoqXgMsCQIfDygoAAAKKnJIBABwcykAAAp6VgJ7IAAACgJ7IQAACh8Q
 lG8lAAAKKiYCHxAoIwAACioeAigqAAAKKh4CKCsAAAoqfgIoLAAACgICczAAAAZ9AgAABAICczEA
-AAZ9AwAABCqSBHIPBQBwGm8tAAAKLBUCBQIDKC4AAAoOBHMFAAAGby4AAAYqSisHAgNvLwAABgNv
-KgAABi3xKgYqOgIoLwAACgIDfQQAAAQqOgIoLwAACgIDfQUAAAQqHgIoLwAACiqufgYAAAQtHnIj
+AAZ9AwAABCqSBHIHBQBwGm8tAAAKLBUCBQIDKC4AAAoOBHMFAAAGby4AAAYqSisHAgNvLwAABgNv
+KgAABi3xKgYqOgIoLwAACgIDfQQAAAQqOgIoLwAACgIDfQUAAAQqHgIoLwAACiqufgYAAAQtHnIb
 BQBw0AcAAAIoMAAACm8xAAAKczIAAAqABgAABH4GAAAEKhp+BwAABCoeAoAHAAAEKhp+CAAABCoe
 AigzAAAKKi5zNwAABoAIAAAEKgAAQlNKQgEAAQAAAAAADAAAAHY0LjAuMzAzMTkAAAAABQBsAAAA
-XAkAACN+AADICQAA5AkAACNTdHJpbmdzAAAAAKwTAACYBQAAI1VTAEQZAAAQAAAAI0dVSUQAAABU
+XAkAACN+AADICQAA5AkAACNTdHJpbmdzAAAAAKwTAACQBQAAI1VTADwZAAAQAAAAI0dVSUQAAABM
 GQAACAIAACNCbG9iAAAAAAAAAAIAAAFXFaIBCQEAAAD6ATMAFgAAAQAAACoAAAAIAAAACAAAADgA
 AAAPAAAAMwAAABAAAAABAAAAAwAAACUAAAAoAAAAAQAAAAUAAAABAAAAAAApBAEAAAAAAAYA/wKH
 BwYAkwOHBwYASwJ0Bw8A+wcAAAYAeAJABgYA4gJABgYAwwJABgYAegNABgYAHwNABgYAOANABgYA
@@ -1167,44 +1167,44 @@ c3NJbnB1dABnZXRfcHJvZHVjdHNrdQBFbnRyYWRhMF9Qcm9jZXNzSW5wdXRSb3cATmV4dFJvdwBn
 ZXRfQXNzZW1ibHkARXhlY3V0ZU5vblF1ZXJ5AGdldF9xdWFudGl0eQAAgJdEAGEAdABhACAAUwBv
 AHUAcgBjAGUAPQBsAG8AYwBhAGwAaABvAHMAdAA7AEkAbgBpAHQAaQBhAGwAIABDAGEAdABhAGwA
 bwBnAD0ARABXAEgAXwBUAE8AUABBAFoASQBPADsASQBuAHQAZQBnAHIAYQB0AGUAZAAgAFMAZQBj
-AHUAcgBpAHQAeQA9AFMAUwBQAEkAOwAAgbsNAAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAUwBF
-AEwARQBDAFQAIABUAE8AUAAgADEAIABsAG8AdABlAF8AYwBvAGQAZQAsACAAYwBhAG4AdABpAGQA
-YQBkAF8AZABpAHMAcABvAG4AaQBiAGwAZQANAAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAARgBS
-AE8ATQAgAGQAYgBvAC4ATABvAHQAZQBDAGEAbgB0AGkAZABhAGQAVABlAG0AcABvAHIAYQBsAA0A
-CgAgACAAIAAgACAAIAAgACAAIAAgACAAIABXAEgARQBSAEUAIABjAGEAbgB0AGkAZABhAGQAXwBk
-AGkAcwBwAG8AbgBpAGIAbABlACAAPgA9ACAAQABjAGEAbgB0AGkAZABhAGQAVgBlAG4AdABhAA0A
-CgAgACAAIAAgACAAIAAgACAAIAAgACAAIABBAE4ARAAgAHMAawB1ACAAPQAgAEAAcwBrAHUADQAK
-ACAAIAAgACAAIAAgACAAIAAgACAAIAAgAE8AUgBEAEUAUgAgAEIAWQAgAGwAbwB0AGUAXwBkAGEA
-dABlACAAQQBTAEMAAB1AAGMAYQBuAHQAaQBkAGEAZABWAGUAbgB0AGEAAAlAAHMAawB1AAATbABv
-AHQAZQBfAGMAbwBkAGUAAIFlDQAKACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAVQBQ
-AEQAQQBUAEUAIABkAGIAbwAuAEwAbwB0AGUAQwBhAG4AdABpAGQAYQBkAFQAZQBtAHAAbwByAGEA
-bAANAAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIABTAEUAVAAgAGMAYQBuAHQAaQBk
-AGEAZABfAGQAaQBzAHAAbwBuAGkAYgBsAGUAIAA9ACAAYwBhAG4AdABpAGQAYQBkAF8AZABpAHMA
-cABvAG4AaQBiAGwAZQAgAC0AIABAAGMAYQBuAHQAaQBkAGEAZABVAHQAaQBsAGkAegBhAGQAYQAN
-AAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIABXAEgARQBSAEUAIABsAG8AdABlAF8A
-YwBvAGQAZQAgAD0AIABAAGwAbwB0AGUAQwBvAGQAZQABJUAAYwBhAG4AdABpAGQAYQBkAFUAdABp
-AGwAaQB6AGEAZABhAAATQABsAG8AdABlAEMAbwBkAGUAABtOAG8AIABkAGkAcwBwAG8AbgBpAGIA
-bABlAACAvUwAYQAgAHAAcgBvAHAAaQBlAGQAYQBkACAASQBzAE4AdQBsAGwAIABuAG8AIABwAHUA
-ZQBkAGUAIABlAHMAdABhAGIAbABlAGMAZQByAHMAZQAgAGUAbgAgAEYAYQBsAHMAZQAuACAARQBu
-ACAAcwB1ACAAbAB1AGcAYQByACwAIABhAHMAaQBnAG4AZQAgAHUAbgAgAHYAYQBsAG8AcgAgAGEA
-IABsAGEAIABjAG8AbAB1AG0AbgBhAC4AABNFAG4AdAByAGEAZABhACAAMAAAcVMAQwBfADkAZQA4
-AGYAMQA0ADQAMQA4ADMANQA5ADQAOQA0ADYAYgBhAGEAMwBhADYAOAAxAGMAOAA2ADkANQA0AGQA
-ZAAuAFAAcgBvAHAAZQByAHQAaQBlAHMALgBSAGUAcwBvAHUAcgBjAGUAcwAAAAAAexLK6B4aPUmr
-Qs69hyxiGgAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERaQQgABF9DgcHET0ODhE9EkESRRJBBiAC
-AQ4SOQUgABKAgQcgAhKAhQ4cBCAAEkUDIAACBCABHA4DIAAOAyAACAkgAwESTR0IElEDBhJNAwYd
-CAQgAQgIBCABAggEIAEJCAQgAQ4IBSABET0IBSACAQgcByACAg4RgJ0FIAEdCAgIAAESgKERgKUF
-IAASgKkHIAIBDhKAqQi3elxWGTTgiQiJhF3NgIDMkQMGEjkDBhIUAwYSGAMGElUDBhJhAwYSZQMG
-EiAFIAEBEgwDIAAJBCAAET0EIAEBAgkgBAEIDhJNElEFIAEBElUEAAASYQQAABJlBQABARJlBAAA
-EiADAAABAygACAMoAAIDKAAJAygADgQoABE9BAgAEmEECAASZQQIABIgCAEACAAAAAAAHgEAAQBU
-AhZXcmFwTm9uRXhjZXB0aW9uVGhyb3dzAQgBAAIAAAAAACgBACNTQ185ZThmMTQ0MTgzNTk0OTQ2
-YmFhM2E2ODFjODY5NTRkZAAABQEAAAAAFgEAEUNvcHlyaWdodCBAICAyMDI0AABJAQAaLk5FVEZy
-YW1ld29yayxWZXJzaW9uPXY0LjcBAFQOFEZyYW1ld29ya0Rpc3BsYXlOYW1lEi5ORVQgRnJhbWV3
-b3JrIDQuNwQBAAAAAAC0AAAAzsrvvgEAAACRAAAAbFN5c3RlbS5SZXNvdXJjZXMuUmVzb3VyY2VS
-ZWFkZXIsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGlj
-S2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OSNTeXN0ZW0uUmVzb3VyY2VzLlJ1bnRpbWVSZXNvdXJj
-ZVNldAIAAAAAAAAAAAAAAFBBRFBBRFC0AAAAOEEAAAAAAAAAAAAAUkEAAAAgAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAERBAAAAAAAAAAAAAAAAX0NvckRsbE1haW4AbXNjb3JlZS5kbGwAAAAAAP8lACAA
-EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AHUAcgBpAHQAeQA9AFMAUwBQAEkAOwAAgbkKACAAIAAgACAAIAAgACAAIAAgACAAIAAgAFMARQBM
+AEUAQwBUACAAVABPAFAAIAAxACAASQBkACwAIABsAG8AdABlAF8AYwBvAGQAZQAsACAAYwBhAG4A
+dABpAGQAYQBkAF8AZABpAHMAcABvAG4AaQBiAGwAZQAKACAAIAAgACAAIAAgACAAIAAgACAAIAAg
+AEYAUgBPAE0AIABkAGIAbwAuAEwAbwB0AGUAQwBhAG4AdABpAGQAYQBkAFQAZQBtAHAAbwByAGEA
+bAAKACAAIAAgACAAIAAgACAAIAAgACAAIAAgAFcASABFAFIARQAgAGMAYQBuAHQAaQBkAGEAZABf
+AGQAaQBzAHAAbwBuAGkAYgBsAGUAIAA+AD0AIABAAGMAYQBuAHQAaQBkAGEAZABWAGUAbgB0AGEA
+CgAgACAAIAAgACAAIAAgACAAIAAgACAAIABBAE4ARAAgAHMAawB1ACAAPQAgAEAAcwBrAHUACgAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIABPAFIARABFAFIAIABCAFkAIABsAG8AdABlAF8AZABhAHQA
+ZQAgAEEAUwBDAAAdQABjAGEAbgB0AGkAZABhAGQAVgBlAG4AdABhAAAJQABzAGsAdQAAE2wAbwB0
+AGUAXwBjAG8AZABlAACBXwoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIABVAFAARABB
+AFQARQAgAGQAYgBvAC4ATABvAHQAZQBDAGEAbgB0AGkAZABhAGQAVABlAG0AcABvAHIAYQBsAAoA
+IAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIABTAEUAVAAgAGMAYQBuAHQAaQBkAGEAZABf
+AGQAaQBzAHAAbwBuAGkAYgBsAGUAIAA9ACAAYwBhAG4AdABpAGQAYQBkAF8AZABpAHMAcABvAG4A
+aQBiAGwAZQAgAC0AIABAAGMAYQBuAHQAaQBkAGEAZABVAHQAaQBsAGkAegBhAGQAYQAKACAAIAAg
+ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAVwBIAEUAUgBFACAAbABvAHQAZQBfAGMAbwBkAGUA
+IAA9ACAAQABsAG8AdABlAEMAbwBkAGUAASVAAGMAYQBuAHQAaQBkAGEAZABVAHQAaQBsAGkAegBh
+AGQAYQAAE0AAbABvAHQAZQBDAG8AZABlAAAbTgBvACAAZABpAHMAcABvAG4AaQBiAGwAZQAAgL1M
+AGEAIABwAHIAbwBwAGkAZQBkAGEAZAAgAEkAcwBOAHUAbABsACAAbgBvACAAcAB1AGUAZABlACAA
+ZQBzAHQAYQBiAGwAZQBjAGUAcgBzAGUAIABlAG4AIABGAGEAbABzAGUALgAgAEUAbgAgAHMAdQAg
+AGwAdQBnAGEAcgAsACAAYQBzAGkAZwBuAGUAIAB1AG4AIAB2AGEAbABvAHIAIABhACAAbABhACAA
+YwBvAGwAdQBtAG4AYQAuAAATRQBuAHQAcgBhAGQAYQAgADAAAHFTAEMAXwA5AGUAOABmADEANAA0
+ADEAOAAzADUAOQA0ADkANAA2AGIAYQBhADMAYQA2ADgAMQBjADgANgA5ADUANABkAGQALgBQAHIA
+bwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIAYwBlAHMAAAAAAAackdFh5uBCoat7xCAuIgAA
+BCABAQgDIAABBSABARERBCABAQ4FIAEBEWkEIAARfQ4HBxE9Dg4RPRJBEkUSQQYgAgEOEjkFIAAS
+gIEHIAISgIUOHAQgABJFAyAAAgQgARwOAyAADgMgAAgJIAMBEk0dCBJRAwYSTQMGHQgEIAEICAQg
+AQIIBCABCQgEIAEOCAUgARE9CAUgAgEIHAcgAgIOEYCdBSABHQgICAABEoChEYClBSAAEoCpByAC
+AQ4SgKkIt3pcVhk04IkIiYRdzYCAzJEDBhI5AwYSFAMGEhgDBhJVAwYSYQMGEmUDBhIgBSABARIM
+AyAACQQgABE9BCABAQIJIAQBCA4STRJRBSABARJVBAAAEmEEAAASZQUAAQESZQQAABIgAwAAAQMo
+AAgDKAACAygACQMoAA4EKAARPQQIABJhBAgAEmUECAASIAgBAAgAAAAAAB4BAAEAVAIWV3JhcE5v
+bkV4Y2VwdGlvblRocm93cwEIAQACAAAAAAAoAQAjU0NfOWU4ZjE0NDE4MzU5NDk0NmJhYTNhNjgx
+Yzg2OTU0ZGQAAAUBAAAAABYBABFDb3B5cmlnaHQgQCAgMjAyNAAASQEAGi5ORVRGcmFtZXdvcmss
+VmVyc2lvbj12NC43AQBUDhRGcmFtZXdvcmtEaXNwbGF5TmFtZRIuTkVUIEZyYW1ld29yayA0LjcE
+AQAAAAAAtAAAAM7K774BAAAAkQAAAGxTeXN0ZW0uUmVzb3VyY2VzLlJlc291cmNlUmVhZGVyLCBt
+c2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2Vu
+PWI3N2E1YzU2MTkzNGUwODkjU3lzdGVtLlJlc291cmNlcy5SdW50aW1lUmVzb3VyY2VTZXQCAAAA
+AAAAAAAAAABQQURQQURQtAAAADBBAAAAAAAAAAAAAEpBAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAA8QQAAAAAAAAAAAAAAAF9Db3JEbGxNYWluAG1zY29yZWUuZGxsAAAAAAD/JQAgABAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABABAA
 AAAYAACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAAAABIAAAAWGAA
@@ -1233,7 +1233,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAwAAABkMQAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAwAAABcMQAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -1278,7 +1278,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                   dataType="System.String"
                   description="Suma de comprobación para comparar los metadatos del componente con los códigos compilados."
                   name="MetadataChecksum140"
-                  typeConverter="NOTBROWSABLE">FC</property>
+                  typeConverter="NOTBROWSABLE">9D</property>
                 <property
                   dataType="System.String"
                   name="UserComponentTypeName">Microsoft.ScriptComponentHost</property>
@@ -1305,12 +1305,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                       cachedName="product_id"
                       lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[product_id]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\Componente de script.Inputs[Entrada 0].Columns[product_sku]"
+                      refId="Package\Data Flow Task\Componente de script.Inputs[Entrada 0].Columns[productsku]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
                       cachedName="product_sku"
-                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[product_sku]" />
+                      lineageId="Package\Data Flow Task\ODBC Source.Outputs[ODBC Source Output].Columns[product_sku]"
+                      name="productsku" />
                     <inputColumn
                       refId="Package\Data Flow Task\Componente de script.Inputs[Entrada 0].Columns[customer_id]"
                       cachedDataType="i4"
@@ -4656,6 +4657,22 @@ where [refTable].[lote_code] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="128,42"
+          Id="Package\Data Flow Task\Dim Store"
+          TopLeft="844,513" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\Data Flow Task\Destino de ADO NET"
+          TopLeft="1283,881" />
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Data Flow Task\Componente de script"
+          TopLeft="264.5,202.5" />
+        <NodeLayout
+          Size="149,42"
+          Id="Package\Data Flow Task\ODBC Source"
+          TopLeft="37,23" />
+        <NodeLayout
           Size="144,42"
           Id="Package\Data Flow Task\Dim Discount"
           TopLeft="740,431" />
@@ -4664,9 +4681,9 @@ where [refTable].[lote_code] = ?</property>
           Id="Package\Data Flow Task\Filtrando sales"
           TopLeft="202,109" />
         <NodeLayout
-          Size="149,42"
-          Id="Package\Data Flow Task\ODBC Source"
-          TopLeft="37,23" />
+          Size="179,42"
+          Id="Package\Data Flow Task\total_cost_calculado"
+          TopLeft="1017,703" />
         <NodeLayout
           Size="126,42"
           Id="Package\Data Flow Task\Dim Time"
@@ -4683,18 +4700,78 @@ where [refTable].[lote_code] = ?</property>
           Size="139,42"
           Id="Package\Data Flow Task\Dim Product"
           TopLeft="600,247" />
-        <NodeLayout
-          Size="128,42"
-          Id="Package\Data Flow Task\Dim Store"
-          TopLeft="844,513" />
-        <NodeLayout
-          Size="183,42"
-          Id="Package\Data Flow Task\Destino de ADO NET"
-          TopLeft="1283,881" />
-        <NodeLayout
-          Size="179,42"
-          Id="Package\Data Flow Task\total_cost_calculado"
-          TopLeft="1017,703" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="1106.5,745">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="125,39"
+              Start="0,0"
+              End="125,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.5"
+                    Point2="0,19.5"
+                    Point3="4,19.5" />
+                  <mssgle:LineSegment
+                    End="121,19.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="121,19.5"
+                    Point2="125,19.5"
+                    Point3="125,23.5" />
+                  <mssgle:LineSegment
+                    End="125,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="54.5,24.5,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Salida 0]"
+          TopLeft="450.5,223.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="149.5,44.5"
+              Start="0,0"
+              End="142,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="70.75,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="70.75,0"
+                    Point2="74.75,0"
+                    Point3="74.75,4" />
+                  <mssgle:LineSegment
+                    End="74.75,40.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="74.75,40.5"
+                    Point2="74.75,44.5"
+                    Point3="78.75,44.5" />
+                  <mssgle:LineSegment
+                    End="142,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="66.75,-22,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[ODBC Source Output]"
           TopLeft="111.5,65">
@@ -4728,6 +4805,42 @@ where [refTable].[lote_code] = ?</property>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="75,27,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Lookup No Match Output]"
+          TopLeft="277.5,151">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="80,51.5"
+              Start="0,0"
+              End="80,44">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.75"
+                    Point2="0,25.75"
+                    Point3="4,25.75" />
+                  <mssgle:LineSegment
+                    End="76,25.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="76,25.75"
+                    Point2="80,25.75"
+                    Point3="80,29.75" />
+                  <mssgle:LineSegment
+                    End="80,44" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-24.6750390625,30.75,129.350078125,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4947,121 +5060,40 @@ where [refTable].[lote_code] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="1106.5,745">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="125,39"
-              Start="0,0"
-              End="125,31.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,15.5"
-                    Point2="0,19.5"
-                    Point3="4,19.5" />
-                  <mssgle:LineSegment
-                    End="121,19.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="121,19.5"
-                    Point2="125,19.5"
-                    Point3="125,23.5" />
-                  <mssgle:LineSegment
-                    End="125,31.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="54.5,24.5,16,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="186,42"
-          Id="Package\Data Flow Task\Componente de script"
-          TopLeft="264.5,202.5" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Lookup No Match Output]"
-          TopLeft="277.5,151">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="80,51.5"
-              Start="0,0"
-              End="80,44">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.75" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.75"
-                    Point2="0,25.75"
-                    Point3="4,25.75" />
-                  <mssgle:LineSegment
-                    End="76,25.75" />
-                  <mssgle:CubicBezierSegment
-                    Point1="76,25.75"
-                    Point2="80,25.75"
-                    Point3="80,29.75" />
-                  <mssgle:LineSegment
-                    End="80,44" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-24.6750390625,30.75,129.350078125,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Salida 0]"
-          TopLeft="450.5,223.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="149.5,44.5"
-              Start="0,0"
-              End="142,44.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="70.75,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="70.75,0"
-                    Point2="74.75,0"
-                    Point3="74.75,4" />
-                  <mssgle:LineSegment
-                    End="74.75,40.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="74.75,40.5"
-                    Point2="74.75,44.5"
-                    Point3="78.75,44.5" />
-                  <mssgle:LineSegment
-                    End="142,44.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="66.75,-22,16,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Dim Store">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[dim_store]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Destino de ADO NET">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task\Dim Discount">
     <Properties>
@@ -5091,7 +5123,7 @@ where [refTable].[lote_code] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -5101,7 +5133,7 @@ where [refTable].[lote_code] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -5160,35 +5192,12 @@ where [refTable].[lote_code] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[dim_product]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Dim Store">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
           type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[dim_store]</Value>
+          type="q3:string">[dbo].[dim_product]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -5200,31 +5209,55 @@ where [refTable].[lote_code] = ?</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Destino de ADO NET">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Data Flow Task 1">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="183,42"
+          Id="Package\Data Flow Task 1\Destino de ADO NET"
+          TopLeft="981,451" />
+        <NodeLayout
           Size="179,42"
           Id="Package\Data Flow Task 1\Origen de ADO NET"
           TopLeft="80,32" />
         <NodeLayout
-          Size="115,42"
-          Id="Package\Data Flow Task 1\Lookup"
-          TopLeft="503.5,310.5" />
+          Size="108,42"
+          Id="Package\Data Flow Task 1\Sort 1"
+          TopLeft="709,452" />
         <NodeLayout
           Size="158,42"
           Id="Package\Data Flow Task 1\Derived Column"
           TopLeft="174,180" />
+        <NodeLayout
+          Size="115,42"
+          Id="Package\Data Flow Task 1\Lookup"
+          TopLeft="503.5,310.5" />
+        <EdgeLayout
+          Id="Package\Data Flow Task 1.Paths[Sort Output]"
+          TopLeft="817,472.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="164,0"
+              Start="0,0"
+              End="156.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="156.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task 1.Paths[Salida de origen de ADO NET]"
           TopLeft="169.5,74">
@@ -5256,51 +5289,11 @@ where [refTable].[lote_code] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task 1.Paths[Derived Column Output]"
-          TopLeft="253,222">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="308,88.5"
-              Start="0,0"
-              End="308,81">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,40.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,40.25"
-                    Point2="0,44.25"
-                    Point3="4,44.25" />
-                  <mssgle:LineSegment
-                    End="304,44.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="304,44.25"
-                    Point2="308,44.25"
-                    Point3="308,48.25" />
-                  <mssgle:LineSegment
-                    End="308,81" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="183,42"
-          Id="Package\Data Flow Task 1\Destino de ADO NET"
-          TopLeft="981,451" />
-        <NodeLayout
-          Size="108,42"
-          Id="Package\Data Flow Task 1\Sort 1"
-          TopLeft="709,452" />
         <EdgeLayout
           Id="Package\Data Flow Task 1.Paths[Lookup No Match Output]"
           TopLeft="561,352.5">
@@ -5338,25 +5331,39 @@ where [refTable].[lote_code] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task 1.Paths[Sort Output]"
-          TopLeft="817,472.5">
+          Id="Package\Data Flow Task 1.Paths[Derived Column Output]"
+          TopLeft="253,222">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="164,0"
+              EndConnector="308,88.5"
               Start="0,0"
-              End="156.5,0">
+              End="308,81">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="156.5,0" />
+                    End="0,40.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,40.25"
+                    Point2="0,44.25"
+                    Point3="4,44.25" />
+                  <mssgle:LineSegment
+                    End="304,44.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="304,44.25"
+                    Point2="308,44.25"
+                    Point3="308,48.25" />
+                  <mssgle:LineSegment
+                    End="308,81" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5376,7 +5383,7 @@ where [refTable].[lote_code] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -5386,7 +5393,7 @@ where [refTable].[lote_code] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

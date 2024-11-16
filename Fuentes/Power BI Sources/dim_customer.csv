@@ -1,29 +1,54 @@
 customer_id,customer_bk,customer_name,customer_address,customer_city,customer_region,customer_email,customer_segment,loyalty_status,updated_at
-0,0,Guest,Unknown,Unknown,Unknown,guest@unknown.com,Unregistered,N/A,2024-11-03 14:45:03.030000000
-1199,1,Mauricio Ordoñez,Res. Altos Del Escorial,Mejicanos,No Region,vasquez9600@gmail.com,Leal,Activo,2024-11-03 15:32:46.740000000
-1200,2,Orlando Proud,Calle la mascota,San Salvador,No Region,df64@gmail.com,Frecuente,Activo,2024-11-03 15:32:46.740000000
-1201,3,Guadalupe Belmont,Calle Guadalupana,San Salvador,No Region,gt@gmail.com,Frecuente,Activo,2024-11-03 15:32:46.740000000
-1202,4,Fagoaga Benitez,Avenida bernal,San Salvador,No Region,gf@gmail.com,Frecuente,Activo,2024-11-03 15:32:46.740000000
-1203,5,Lopez Hernandez,Avenida el cocal,San Salvador,No Region,lp@gmail.com,Nuevo,Activo,2024-11-03 15:32:46.740000000
-1204,6,Kevin Solis,Colonia el amate,San Salvador,No Region,kv@gmail.com,Nuevo,Activo,2024-11-03 15:32:46.740000000
-1205,7,cj Benavides,Sitio del niño,Opico,No Region,cj@gmail.com,Frecuente,Activo,2024-11-03 15:32:46.743000000
-1206,8,Luciana Mendoza,Calle el Jabali,Opico,No Region,lcm@gmail.com,Frecuente,Activo,2024-11-03 15:32:46.743000000
-1207,9,Jorge Luna,Barrio opico,Opico,No Region,jl@gmail.com,Frecuente,Activo,2024-11-03 15:32:46.743000000
-1208,10,Marbella Fuentes,Calle Toreros,San Vicente,No Region,mb@gmail.com,Nuevo,Activo,2024-11-03 15:32:46.743000000
-1209,11,Antonio Banderas,Calle San Antonio Abad,San Salvador,No Region,at@gmail.com,Frecuente,Activo,2024-11-03 15:32:46.743000000
-1210,12,Mauricio Ordoñez,Res. Altos Del Escorial,Mejicanos,No Region,vasquez9600@gmail.com,Frecuente,Activo,2024-11-03 15:32:46.743000000
-1211,13,Roman Riquelme,Calle motocros,San Salvador,No Region,rm@gmail.com,Frecuente,Activo,2024-11-03 15:32:46.743000000
-1212,14,Fernando Palomo,Avenida San Jacinto,San Salvador,No Region,fp@gmail.com,Frecuente,Activo,2024-11-03 15:32:46.747000000
-1213,15,Diego Olmo,Residencial San Luis,San Salvador,No Region,do@gmail.com,Frecuente,Activo,2024-11-03 15:32:46.747000000
-1214,16,Luis Hernandez,Ciudad Real,Santa Ana,No Region,lh6@gmail.com,Frecuente,Activo,2024-11-03 15:32:46.747000000
-1215,17,Mario Gonzales,Ciudad Marsella,Opico,No Region,mz@gmail.com,Frecuente,Activo,2024-11-03 15:32:46.747000000
-1216,18,Fabricio Sandoval,Boulevard Constitucion,San Salvador,No Region,fs@gmail.com,Leal,Activo,2024-11-03 15:32:46.747000000
-1217,19,Pedro Fuentes,Boulevar del Ejercito,San Salvador,No Region,pf@gmail.com,Frecuente,Activo,2024-11-03 15:32:46.747000000
-1218,20,Lucio Gomez,Res. Albania,Ahuachapan,No Region,lg@gmail.com,Leal,Activo,2024-11-03 15:32:46.747000000
-1219,21,Marcelo Buendia,Colonia tutunichapa 2,San Salvador,No Region,mbs@gmail.com,Frecuente,Activo,2024-11-03 15:32:46.750000000
-1220,22,Roberto Nazario,Res. Altos Del Escorial,Mejicanos,No Region,rz@gmail.com,Frecuente,Activo,2024-11-03 15:32:46.750000000
-1221,23,Hugo Cubias,Calle el Jabali,San Salvador,No Region,hc@gmail.com,Frecuente,Activo,2024-11-03 15:32:46.793000000
-1222,24,Luis Vasquez,Res. Altos Del Escorial,Mejicanos,No Region,lv@gmail.com,Frecuente,Activo,2024-11-03 15:32:46.793000000
-1223,25,Oliver queen,Res. Altos Del bosque,Mejicanos,No Region,oq@gmail.com,Nuevo,Activo,2024-11-03 15:32:46.793000000
-1224,26,Fabricio Roman,Res. Colores Palidos,Mejicanos,No Region,fr@gmail.com,Frecuente,Activo,2024-11-03 15:32:46.793000000
-1225,27,Karim Hernandez,Res. Altos Del Escalon,Mejicanos,No Region,kh@gmail.com,Leal,Activo,2024-11-03 15:32:46.793000000
+0,0,Guest,Unknown,Unknown,Unknown,guest@unknown.com,Unregistered,N/A,2024-11-16 00:56:49.250000000
+1615,1,Mauricio Ordoñez,Res. Altos Del Escorial,Mejicanos,No Region,vasquez9600@gmail.com,Leal,Activo,2024-11-16 00:57:37.233000000
+1616,2,Orlando Proud,Calle la mascota,San Salvador,No Region,df64@gmail.com,Frecuente,Activo,2024-11-16 00:57:37.233000000
+1617,3,Guadalupe Belmont,Calle Guadalupana,San Salvador,No Region,gt@gmail.com,Frecuente,Activo,2024-11-16 00:57:37.233000000
+1618,4,Fagoaga Benitez,Avenida bernal,San Salvador,No Region,gf@gmail.com,Frecuente,Activo,2024-11-16 00:57:37.233000000
+1619,5,Lopez Hernandez,Avenida el cocal,San Salvador,No Region,lp@gmail.com,Nuevo,Activo,2024-11-16 00:57:37.233000000
+1620,6,Kevin Solis,Colonia el amate,San Salvador,No Region,kv@gmail.com,Nuevo,Activo,2024-11-16 00:57:37.233000000
+1621,7,cj Benavides,Sitio del niño,Opico,No Region,cj@gmail.com,Frecuente,Activo,2024-11-16 00:57:37.233000000
+1622,8,Luciana Mendoza,Calle el Jabali,Opico,No Region,lcm@gmail.com,Frecuente,Activo,2024-11-16 00:57:37.233000000
+1623,9,Jorge Luna,Barrio opico,Opico,No Region,jl@gmail.com,Frecuente,Activo,2024-11-16 00:57:37.233000000
+1624,10,Marbella Fuentes,Calle Toreros,San Vicente,No Region,mb@gmail.com,Nuevo,Activo,2024-11-16 00:57:37.233000000
+1625,11,Antonio Banderas,Calle San Antonio Abad,San Salvador,No Region,at@gmail.com,Frecuente,Activo,2024-11-16 00:57:37.233000000
+1626,12,Mauricio Ordoñez,Res. Altos Del Escorial,Mejicanos,No Region,vasquez9600@gmail.com,Frecuente,Activo,2024-11-16 00:57:37.233000000
+1627,13,Roman Riquelme,Calle motocros,San Salvador,No Region,rm@gmail.com,Frecuente,Activo,2024-11-16 00:57:37.233000000
+1628,14,Fernando Palomo,Avenida San Jacinto,San Salvador,No Region,fp@gmail.com,Frecuente,Activo,2024-11-16 00:57:37.233000000
+1629,15,Diego Olmo,Residencial San Luis,San Salvador,No Region,do@gmail.com,Frecuente,Activo,2024-11-16 00:57:37.233000000
+1630,16,Luis Hernandez,Ciudad Real,Santa Ana,No Region,lh6@gmail.com,Frecuente,Activo,2024-11-16 00:57:37.233000000
+1631,17,Mario Gonzales,Ciudad Marsella,Opico,No Region,mz@gmail.com,Frecuente,Activo,2024-11-16 00:57:37.233000000
+1632,18,Fabricio Sandoval,Boulevard Constitucion,San Salvador,No Region,fs@gmail.com,Leal,Activo,2024-11-16 00:57:37.233000000
+1633,19,Pedro Fuentes,Boulevar del Ejercito,San Salvador,No Region,pf@gmail.com,Frecuente,Activo,2024-11-16 00:57:37.233000000
+1634,20,Lucio Gomez,Res. Albania,Ahuachapan,No Region,lg@gmail.com,Leal,Activo,2024-11-16 00:57:37.233000000
+1635,21,Marcelo Buendia,Colonia tutunichapa 2,San Salvador,No Region,mbs@gmail.com,Frecuente,Activo,2024-11-16 00:57:37.233000000
+1636,22,Roberto Nazario,Res. Altos Del Escorial,Mejicanos,No Region,rz@gmail.com,Frecuente,Activo,2024-11-16 00:57:37.233000000
+1637,23,Hugo Cubias,Calle el Jabali,San Salvador,No Region,hc@gmail.com,Frecuente,Activo,2024-11-16 00:57:37.233000000
+1638,24,Luis Vasquez,Res. Altos Del Escorial,Mejicanos,No Region,lv@gmail.com,Frecuente,Activo,2024-11-16 00:57:37.233000000
+1639,25,Oliver queen,Res. Altos Del bosque,Mejicanos,No Region,oq@gmail.com,Nuevo,Activo,2024-11-16 00:57:37.233000000
+1640,26,Fabricio Roman,Res. Colores Palidos,Mejicanos,No Region,fr@gmail.com,Frecuente,Activo,2024-11-16 00:57:37.233000000
+1641,27,Karim Hernandez,Res. Altos Del Escalon,Mejicanos,No Region,kh@gmail.com,Leal,Activo,2024-11-16 00:57:37.233000000
+1642,28,Cristian Castro,No Address,No City,No Region,cc@gmail.com,Desconocido,Desconocido,2024-11-16 00:57:37.233000000
+1643,29,Cristian Castro,Res. Altos Del Escorial,Mejicanos,No Region,cc5@gmail.com,Frecuente,Activo,2024-11-16 00:57:37.233000000
+1644,30,Manuel Medrano,Res. Altos Del Escorial,Mejicanos,No Region,mm@gmail.com,Frecuente,Activo,2024-11-16 00:57:37.233000000
+1645,31,Roberto Bolaños,Res. Altos Del Escombro,Mejicanos,No Region,rb@gmail.com,Nuevo,Activo,2024-11-16 00:57:37.233000000
+1646,32,Alberto Masferrer,Res. San Jacinto,Mejicanos,No Region,am@gmail.com,Leal,Activo,2024-11-16 00:57:37.233000000
+1647,33,Oscar Lemus,Barrio Central,Mejicanos,No Region,ol@gmail.com,Frecuente,Activo,2024-11-16 00:57:37.233000000
+1648,34,Hector Ramirez,Res. El paisnal,Mejicanos,No Region,hr@gmail.com,Leal,Activo,2024-11-16 00:57:37.233000000
+1649,35,Patricio Mejia,Calle Altiplanos,Mejicanos,No Region,pm@gmail.com,Frecuente,Activo,2024-11-16 00:57:37.233000000
+1650,36,Balmore Pocasangre,Avenida el Jabali,Mejicanos,No Region,bp@gmail.com,Leal,Activo,2024-11-16 00:57:37.233000000
+1651,37,Carlos Menjivar,Res. Altos Del Escorial,Mejicanos,No Region,cma@gmail.com,Nuevo,Activo,2024-11-16 00:57:37.233000000
+1652,38,Aurelio Zelaya,No Address,No City,No Region,az@gmail.com,Desconocido,Desconocido,2024-11-16 00:57:37.233000000
+1653,39,Aurelio Zelaya,Calle San Luis,Mejicanos,No Region,azrt@gmail.com,Frecuente,Activo,2024-11-16 00:57:37.233000000
+1654,40,Oliver Orozco,Res. Altos Del Escorial,Mejicanos,No Region,olcv@gmail.com,Frecuente,Activo,2024-11-16 00:57:37.233000000
+1655,41,Harry Mendoza,Ruta Panoramica,Mejicanos,No Region,hmz@gmail.com,Leal,Activo,2024-11-16 00:57:37.233000000
+1656,42,Roberto Fernandez,Calle el bosque,Mejicanos,No Region,rfz@gmail.com,Leal,Activo,2024-11-16 00:57:37.233000000
+1657,43,Juan Valdes,Res. Altos Del Escorial,Mejicanos,No Region,jvs@gmail.com,Leal,Activo,2024-11-16 00:57:37.233000000
+1658,44,Ruddy Velasco,Res. Las Magnolias,Mejicanos,No Region,rrvv@gmail.com,Leal,Activo,2024-11-16 00:57:37.233000000
+1659,45,Rolando Castro,Res. Bernal,Mejicanos,No Region,rc@gmail.com,Frecuente,Activo,2024-11-16 00:57:37.233000000
+1660,46,Cesar Garcia,Altiplanos comalapa,Mejicanos,No Region,cg4@gmail.com,Frecuente,Activo,2024-11-16 00:57:37.233000000
+1661,47,Marcelo Gutierrez,Res. Altos Del Escorial,Mejicanos,No Region,mcgu@gmail.com,Leal,Activo,2024-11-16 00:57:37.233000000
+1662,48,Salvador Hernandez,Res. Loma Linda,Mejicanos,No Region,sah@gmail.com,Leal,Activo,2024-11-16 00:57:37.233000000
+1663,49,Cesar Cortez,Res. Altiplanos,Mejicanos,No Region,ccc@gmail.com,Leal,Activo,2024-11-16 00:57:37.233000000
+1664,50,Farabundo Lopez,Res. Palmira,S.S,No Region,flo@gmail.com,Frecuente,Activo,2024-11-16 00:57:37.233000000
+1665,51,Rene Lourdes,Calle 13,Mejicanos,No Region,rll@gmail.com,Leal,Activo,2024-11-16 00:57:37.233000000
+1666,52,Marcelo Cabrera,Res. Altos Del Escorial,Mejicanos,No Region,cmm@gmail.com,Leal,Activo,2024-11-16 00:57:37.233000000
